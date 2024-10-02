@@ -106,8 +106,8 @@ Studenti su podeljeni u 10 grupa i to:
             </tr>
             <tr>
                 <td>7.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>Aleksa Nenadović</td>
+                <td>SV79/2023</td>
             </tr>
             <tr>
                 <td>8.</td>
@@ -132,7 +132,7 @@ Studenti su podeljeni u 10 grupa i to:
         </thead>
             <tr>
                 <td><b><i>1.</i></b></td>
-                <td><b><i>Rela Brdar</i></b></td>
+                <td><b><i>Relja Brdar</i></b></td>
                 <td><b><i>SV/2023</i></b></td>
             </tr>
             <tr>
@@ -316,7 +316,7 @@ Studenti su podeljeni u 10 grupa i to:
             <tr>
                 <td>4.</td>
                 <td>Lana Vuković</td>
-                <td>SV/2023</td>
+                <td>PR89/2023</td>
             </tr>
             <tr>
                 <td>5.</td>
