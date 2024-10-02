@@ -7,6 +7,7 @@ Ovaj repozitorijum sadrži materijale razrađene tokom zimskog semestra 2024/202
 
 Studenti su podeljeni u 10 grupa i to:
 
+<!--Grupa 1 -->
 <details>
     <summary style="font-size: 1.25rem; font-weight: bold">Grupa 1</summary>
     <table>
@@ -62,6 +63,7 @@ Studenti su podeljeni u 10 grupa i to:
     </table>
 </details>
 
+<!--Grupa 2 -->
 <details>
     <summary style="font-size: 1.25rem; font-weight: bold">Grupa 2</summary>
     <table>
@@ -89,34 +91,35 @@ Studenti su podeljeni u 10 grupa i to:
             </tr>
             <tr>
                 <td>4.</td>
-                <td> </td>
-                <td> </td>
+                <td>Marko Đorđević</td>
+                <td>SV28/2023</td>
             </tr>
             <tr>
                 <td>5.</td>
-                <td> </td>
-                <td> </td>
+                <td>Anastazija Petrov</td>
+                <td>SV26/2023</td>
             </tr>
             <tr>
                 <td>6.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>7.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>8.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
         <tbody>
         </tbody>
     </table>
 </details>
 
+<!--Grupa 3 -->
 <details>
     <summary style="font-size: 1.25rem; font-weight: bold">Grupa 3</summary>
     <table>
@@ -129,49 +132,50 @@ Studenti su podeljeni u 10 grupa i to:
         </thead>
             <tr>
                 <td><b><i>1.</i></b></td>
-                <td><b><i></i></b></td>
-                <td><b><i></i></b></td>
+                <td><b><i>Rela Brdar</i></b></td>
+                <td><b><i>SV/2023</i></b></td>
             </tr>
             <tr>
                 <td>2.</td>
-                <td> </td>
-                <td> </td>
+                <td>Marko Sladojević</td>
+                <td>SV33/2023</td>
             </tr>
             <tr>
                 <td>3.</td>
-                <td> </td>
-                <td> </td>
+                <td>Igor Amidžić</td>
+                <td>SV42/2023</td>
             </tr>
             <tr>
                 <td>4.</td>
-                <td> </td>
-                <td> </td>
+                <td>Miloš Damjanović</td>
+                <td>SV44/2023</td>
             </tr>
             <tr>
                 <td>5.</td>
-                <td> </td>
-                <td> </td>
+                <td>Vukan Radojević</td>
+                <td>SV67/2023</td>
             </tr>
             <tr>
                 <td>6.</td>
-                <td> </td>
-                <td> </td>
+                <td>Zoran Repić</td>
+                <td>SV39/2023</td>
             </tr>
             <tr>
                 <td>7.</td>
-                <td> </td>
-                <td> </td>
+                <td>Aleksandar Papić</td>
+                <td>SV80/2023</td>
             </tr>
             <tr>
                 <td>8.</td>
-                <td> </td>
-                <td> </td>
+                <td>Miloš Jovanović</td>
+                <td>SV74/2023</td>
             </tr>
         <tbody>
         </tbody>
     </table>
 </details>
 
+<!--Grupa 4 -->
 <details>
     <summary style="font-size: 1.25rem; font-weight: bold">Grupa 4</summary>
     <table>
@@ -185,48 +189,49 @@ Studenti su podeljeni u 10 grupa i to:
             <tr>
                 <td><b><i>1.</i></b></td>
                 <td><b><i></i></b></td>
-                <td><b><i></i></b></td>
+                <td><b><i>SV/2023</i></b></td>
             </tr>
             <tr>
                 <td>2.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>3.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>4.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>5.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>6.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>7.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>8.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
         <tbody>
         </tbody>
     </table>
 </details>
 
+<!--Grupa 5 -->
 <details>
     <summary style="font-size: 1.25rem; font-weight: bold">Grupa 5</summary>
     <table>
@@ -240,48 +245,49 @@ Studenti su podeljeni u 10 grupa i to:
             <tr>
                 <td><b><i>1.</i></b></td>
                 <td><b><i></i></b></td>
-                <td><b><i></i></b></td>
+                <td><b><i>SV/2023</i></b></td>
             </tr>
             <tr>
                 <td>2.</td>
-                <td> </td>
-                <td> </td>
+                <td>Luka Stević</td>
+                <td>SV65/2023</td>
             </tr>
             <tr>
                 <td>3.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>4.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>5.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>6.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>7.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>8.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
         <tbody>
         </tbody>
     </table>
 </details>
 
+<!--Grupa 6 -->
 <details>
     <summary style="font-size: 1.25rem; font-weight: bold">Grupa 6</summary>
     <table>
@@ -295,48 +301,49 @@ Studenti su podeljeni u 10 grupa i to:
             <tr>
                 <td><b><i>1.</i></b></td>
                 <td><b><i></i></b></td>
-                <td><b><i></i></b></td>
+                <td><b><i>SV/2023</i></b></td>
             </tr>
             <tr>
                 <td>2.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>3.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>4.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>5.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>6.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>7.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>8.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
         <tbody>
         </tbody>
     </table>
 </details>
 
+<!--Grupa 7 -->
 <details>
     <summary style="font-size: 1.25rem; font-weight: bold">Grupa 7</summary>
     <table>
@@ -350,48 +357,49 @@ Studenti su podeljeni u 10 grupa i to:
             <tr>
                 <td><b><i>1.</i></b></td>
                 <td><b><i></i></b></td>
-                <td><b><i></i></b></td>
+                <td><b><i>SV/2023</i></b></td>
             </tr>
             <tr>
                 <td>2.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>3.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>4.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>5.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>6.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>7.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>8.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
         <tbody>
         </tbody>
     </table>
 </details>
 
+<!--Grupa 8 -->
 <details>
     <summary style="font-size: 1.25rem; font-weight: bold">Grupa 8</summary>
     <table>
@@ -405,48 +413,49 @@ Studenti su podeljeni u 10 grupa i to:
             <tr>
                 <td><b><i>1.</i></b></td>
                 <td><b><i></i></b></td>
-                <td><b><i></i></b></td>
+                <td><b><i>SV/2023</i></b></td>
             </tr>
             <tr>
                 <td>2.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>3.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>4.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>5.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>6.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>7.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>8.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
         <tbody>
         </tbody>
     </table>
 </details>
 
+<!--Grupa 9 -->
 <details>
     <summary style="font-size: 1.25rem; font-weight: bold">Grupa 9</summary>
     <table>
@@ -459,49 +468,50 @@ Studenti su podeljeni u 10 grupa i to:
         </thead>
             <tr>
                 <td><b><i>1.</i></b></td>
-                <td><b><i></i></b></td>
-                <td><b><i></i></b></td>
+                <td><b><i>Sofija Zorić</i></b></td>
+                <td><b><i>SV60/2023</i></b></td>
             </tr>
             <tr>
                 <td>2.</td>
-                <td> </td>
-                <td> </td>
+                <td>Danica Komatović</td>
+                <td>SV20/2023</td>
             </tr>
             <tr>
                 <td>3.</td>
-                <td> </td>
-                <td> </td>
+                <td>Lana Mirkov</td>
+                <td>SV23/2023</td>
             </tr>
             <tr>
                 <td>4.</td>
-                <td> </td>
-                <td> </td>
+                <td>Dejana Šević</td>
+                <td>SV63/2023</td>
             </tr>
             <tr>
                 <td>5.</td>
-                <td> </td>
-                <td> </td>
+                <td>Milica Jovanić</td>
+                <td>SV9/2023</td>
             </tr>
             <tr>
                 <td>6.</td>
-                <td> </td>
-                <td> </td>
+                <td>Isidora Korda</td>
+                <td>SV54/2023</td>
             </tr>
             <tr>
                 <td>7.</td>
-                <td> </td>
-                <td> </td>
+                <td>Ana Paroški</td>
+                <td>SV/532023</td>
             </tr>
             <tr>
                 <td>8.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
         <tbody>
         </tbody>
     </table>
 </details>
 
+<!--Grupa 10 -->
 <details>
     <summary style="font-size: 1.25rem; font-weight: bold">Grupa 10</summary>
     <table>
@@ -515,49 +525,49 @@ Studenti su podeljeni u 10 grupa i to:
             <tr>
                 <td><b><i>1.</i></b></td>
                 <td><b><i></i></b></td>
-                <td><b><i></i></b></td>
+                <td><b><i>SV/2023</i></b></td>
             </tr>
             <tr>
                 <td>2.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>3.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>4.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>5.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>6.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>7.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
             <tr>
                 <td>8.</td>
-                <td> </td>
-                <td> </td>
+                <td></td>
+                <td>SV/2023</td>
             </tr>
         <tbody>
         </tbody>
     </table>
 </details>
 
-*(Koordinator svake grupe se nalazi pod rednim brojem 1.)*
+*(Koordinator svake grupe se nalazi pod rednim brojem 1)*
 
 Svaka grupa ima svoj folder i samo koordinatori imaju pristup repozitorijumu. 
 
