@@ -19,43 +19,43 @@ Studenti su podeljeni u 10 grupa i to:
         </thead>
             <tr>
                 <td><b><i>1.</i></b></td>
-                <td><b><i></i></b></td>
-                <td><b><i></i></b></td>
+                <td><b><i>Aleksa Dejanović</i></b></td>
+                <td><b><i>SV24/2023</i></b></td>
             </tr>
             <tr>
                 <td>2.</td>
-                <td> </td>
-                <td> </td>
+                <td>Mihajlo Milojević</td>
+                <td>SV57/2023</td>
             </tr>
             <tr>
                 <td>3.</td>
-                <td> </td>
-                <td> </td>
+                <td>Sara Stojkov</td>
+                <td>SV38/2023</td>
             </tr>
             <tr>
                 <td>4.</td>
-                <td> </td>
-                <td> </td>
+                <td>Luka Prlinčević</td>
+                <td>SV36/2023</td>
             </tr>
             <tr>
                 <td>5.</td>
-                <td> </td>
-                <td> </td>
+                <td>Anđela Bulatović</td>
+                <td>SV35/2023</td>
             </tr>
             <tr>
                 <td>6.</td>
-                <td> </td>
-                <td> </td>
+                <td>Marko Milutin</td>
+                <td>SV40/2023</td>
             </tr>
             <tr>
                 <td>7.</td>
-                <td> </td>
-                <td> </td>
+                <td>Petar Popović</td>
+                <td>SV17/2023</td>
             </tr>
             <tr>
                 <td>8.</td>
-                <td> </td>
-                <td> </td>
+                <td>Boško Vasilić</td>
+                <td>SV48/2023</td>
             </tr>
         <tbody>
         </tbody>
@@ -74,18 +74,18 @@ Studenti su podeljeni u 10 grupa i to:
         </thead>
             <tr>
                 <td><b><i>1.</i></b></td>
-                <td><b><i></i></b></td>
-                <td><b><i></i></b></td>
+                <td><b><i>Bogdan Ljubinković</i></b></td>
+                <td><b><i>SV2/2023</i></b></td>
             </tr>
             <tr>
                 <td>2.</td>
-                <td> </td>
-                <td> </td>
+                <td>Miljan Jokić</td>
+                <td>SV59/2023</td>
             </tr>
             <tr>
                 <td>3.</td>
-                <td> </td>
-                <td> </td>
+                <td>Lazar Jović</td>
+                <td>SV43/2023</td>
             </tr>
             <tr>
                 <td>4.</td>
