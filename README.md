@@ -111,8 +111,8 @@ Studenti su podeljeni u 10 grupa i to:
             </tr>
             <tr>
                 <td>8.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>Dalibor Nikolić</td>
+                <td>SV13/2023</td>
             </tr>
         <tbody>
         </tbody>
@@ -133,7 +133,7 @@ Studenti su podeljeni u 10 grupa i to:
             <tr>
                 <td><b><i>1.</i></b></td>
                 <td><b><i>Relja Brdar</i></b></td>
-                <td><b><i>SV/2023</i></b></td>
+                <td><b><i>SV30/2023</i></b></td>
             </tr>
             <tr>
                 <td>2.</td>
@@ -213,18 +213,18 @@ Studenti su podeljeni u 10 grupa i to:
             </tr>
             <tr>
                 <td>6.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>Ognjen Vujović</td>
+                <td>SV49/2023</td>
             </tr>
             <tr>
                 <td>7.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>Nikola Stevanović</td>
+                <td>SV71/2023</td>
             </tr>
             <tr>
                 <td>8.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>Luka Stević</td>
+                <td>SV65/2023</td>
             </tr>
         <tbody>
         </tbody>
@@ -244,28 +244,28 @@ Studenti su podeljeni u 10 grupa i to:
         </thead>
             <tr>
                 <td><b><i>1.</i></b></td>
-                <td><b><i></i></b></td>
-                <td><b><i>SV/2023</i></b></td>
+                <td><b><i>Igor Novaković</i></b></td>
+                <td><b><i>SV29/2023</i></b></td>
             </tr>
             <tr>
                 <td>2.</td>
-                <td>Luka Stević</td>
-                <td>SV65/2023</td>
+                <td>Ivana Ignjatić</td>
+                <td>SV6/2023</td>
             </tr>
             <tr>
                 <td>3.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>Elena Vuković</td>
+                <td>SV77/2023</td>
             </tr>
             <tr>
                 <td>4.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>Sara Cvjetković</td>
+                <td>SV78/2023</td>
             </tr>
             <tr>
                 <td>5.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>Mia Uglješić</td>
+                <td>SV22/2023</td>
             </tr>
             <tr>
                 <td>6.</td>
@@ -274,13 +274,13 @@ Studenti su podeljeni u 10 grupa i to:
             </tr>
             <tr>
                 <td>7.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>Milan Kačarević</td>
+                <td>SV73/2023</td>
             </tr>
             <tr>
                 <td>8.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>Marko Vranješ</td>
+                <td>SV72/2023</td>
             </tr>
         <tbody>
         </tbody>
@@ -335,8 +335,8 @@ Studenti su podeljeni u 10 grupa i to:
             </tr>
             <tr>
                 <td>8.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>Lazar Sazdov</td>
+                <td>SV25/2023</td>
             </tr>
         <tbody>
         </tbody>
@@ -376,23 +376,23 @@ Studenti su podeljeni u 10 grupa i to:
             </tr>
             <tr>
                 <td>5.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>Miomir Dujanović</td>
+                <td>SV19/2023</td>
             </tr>
             <tr>
                 <td>6.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>Stefan Ilić</td>
+                <td>SV12/2023</td>
             </tr>
             <tr>
                 <td>7.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>Teodora Aleksić</td>
+                <td>SV7/2023</td>
             </tr>
             <tr>
                 <td>8.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>Aleksa Ćurčić</td>
+                <td>SV70/2023</td>
             </tr>
         <tbody>
         </tbody>
@@ -447,8 +447,8 @@ Studenti su podeljeni u 10 grupa i to:
             </tr>
             <tr>
                 <td>8.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>Marko Pavlović</td>
+                <td>SV5/2023</td>
             </tr>
         <tbody>
         </tbody>
@@ -529,18 +529,18 @@ Studenti su podeljeni u 10 grupa i to:
             </tr>
             <tr>
                 <td>2.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>Aleksandar Stevanović</td>
+                <td>SV4/2023</td>
             </tr>
             <tr>
                 <td>3.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>Vukašin Vujović</td>
+                <td>SV11/2023</td>
             </tr>
             <tr>
                 <td>4.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>Milan Sazdov</td>
+                <td>SV21/2023</td>
             </tr>
             <tr>
                 <td>5.</td>
