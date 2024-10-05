@@ -188,8 +188,8 @@ Studenti su podeljeni u 10 grupa i to:
         </thead>
             <tr>
                 <td><b><i>1.</i></b></td>
-                <td><b><i></i></b></td>
-                <td><b><i>SV/2023</i></b></td>
+                <td><b><i>Maksim Vasić</i></b></td>
+                <td><b><i>SV45/2023</i></b></td>
             </tr>
             <tr>
                 <td>2.</td>
@@ -198,8 +198,8 @@ Studenti su podeljeni u 10 grupa i to:
             </tr>
             <tr>
                 <td>3.</td>
-                <td>Maksim Vasić</td>
-                <td>SV45/2023</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>4.</td>
