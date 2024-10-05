@@ -191,6 +191,8 @@ Studenti su podeljeni u 10 grupa i to:
                 <td><b><i>1.</i></b></td>
                 <td><b><i>Maksim Vasić</i></b></td>
                 <td><b><i>SV45/2023</i></b></td>
+                <td><b><i>Maksim Vasić</i></b></td>
+                <td><b><i>SV45/2023</i></b></td>
             </tr>
             <tr>
                 <td>2.</td>
