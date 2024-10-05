@@ -4,6 +4,7 @@ Ovaj repozitorijum sadrži materijale razrađene tokom zimskog semestra 2024/202
 
 ## Sajt predmeta: [diskretna matematika](https://sites.google.com/view/dm-ftn/)
 ## Sajt vežbi: [vežbe](https://sites.google.com/site/radojkaciganovicftn/nastava/diskretna-matematika)
+## Google Spreadsheed: [grupe i prisustvo](https://docs.google.com/spreadsheets/d/1iswk5rPmq2TmWJsrjGqEH26QxKZlirThVUGUnAvm6wM)
 
 Studenti su podeljeni u 10 grupa i to:
 
@@ -188,8 +189,8 @@ Studenti su podeljeni u 10 grupa i to:
         </thead>
             <tr>
                 <td><b><i>1.</i></b></td>
-                <td><b><i></i></b></td>
-                <td><b><i>SV/2023</i></b></td>
+                <td><b><i>Maksim Vasić</i></b></td>
+                <td><b><i>SV45/2023</i></b></td>
             </tr>
             <tr>
                 <td>2.</td>
@@ -198,31 +199,26 @@ Studenti su podeljeni u 10 grupa i to:
             </tr>
             <tr>
                 <td>3.</td>
-                <td>Maksim Vasić</td>
-                <td>SV45/2023</td>
-            </tr>
-            <tr>
-                <td>4.</td>
                 <td>Đorđe Vujanović</td>
                 <td>SV8/2023</td>
             </tr>
             <tr>
-                <td>5.</td>
+                <td>4.</td>
                 <td>Nikola Pereski</td>
                 <td>SV54/2023</td>
             </tr>
             <tr>
-                <td>6.</td>
+                <td>5.</td>
                 <td>Ognjen Vujović</td>
                 <td>SV49/2023</td>
             </tr>
             <tr>
-                <td>7.</td>
+                <td>6.</td>
                 <td>Nikola Stevanović</td>
                 <td>SV71/2023</td>
             </tr>
             <tr>
-                <td>8.</td>
+                <td>7.</td>
                 <td>Luka Stević</td>
                 <td>SV65/2023</td>
             </tr>
@@ -269,8 +265,8 @@ Studenti su podeljeni u 10 grupa i to:
             </tr>
             <tr>
                 <td>6.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>Anđela Broćeta</td>
+                <td>SV75/2023</td>
             </tr>
             <tr>
                 <td>7.</td>
@@ -494,17 +490,12 @@ Studenti su podeljeni u 10 grupa i to:
             <tr>
                 <td>6.</td>
                 <td>Isidora Korda</td>
-                <td>SV54/2023</td>
+                <td>SV52/2023</td>
             </tr>
             <tr>
                 <td>7.</td>
                 <td>Ana Paroški</td>
-                <td>SV/532023</td>
-            </tr>
-            <tr>
-                <td>8.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>SV53/2023</td>
             </tr>
         <tbody>
         </tbody>
@@ -544,23 +535,8 @@ Studenti su podeljeni u 10 grupa i to:
             </tr>
             <tr>
                 <td>5.</td>
-                <td></td>
-                <td>SV/2023</td>
-            </tr>
-            <tr>
-                <td>6.</td>
-                <td></td>
-                <td>SV/2023</td>
-            </tr>
-            <tr>
-                <td>7.</td>
-                <td></td>
-                <td>SV/2023</td>
-            </tr>
-            <tr>
-                <td>8.</td>
-                <td></td>
-                <td>SV/2023</td>
+                <td>Igor Maljik</td>
+                <td>SV37/2023</td>
             </tr>
         <tbody>
         </tbody>
