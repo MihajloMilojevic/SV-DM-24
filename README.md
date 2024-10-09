@@ -222,6 +222,11 @@ Studenti su podeljeni u 10 grupa i to:
                 <td>Luka Stević</td>
                 <td>SV65/2023</td>
             </tr>
+            <tr>
+                <td>8.</td>
+                <td>Stefan Nalčić</td>
+                <td>SV64/2023</td>
+            </tr>
         <tbody>
         </tbody>
     </table>
