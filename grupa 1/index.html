@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <title>TPRG | Diskretna matematika</title>
+    <style>
+        h1 {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            font-size: 3rem;
+            font-weight: bolder;
+            flex-wrap: wrap;
+        }
+        h1 img {
+            max-width: 75px;
+            width: 100%;
+            height: auto;
+        }
+        ul, ol {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding-left: 3rem;
+        }
+        ol {
+            list-style-type: decimal !important;
+            font-weight: bold;
+        }
+        ul h2, ol h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        ul li, ol li {
+            font-size: 1.25rem;
+            margin-left: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            width: 100%;
+        }
+        a:not(.notebook) {
+            text-decoration: underline;
+        }
+        .notebook {
+            font-size: 1rem;
+            color: blue;
+            background-color: lightblue;
+            padding: 0.25rem 0.75rem;
+            border-radius: 99999999999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            text-decoration: none !important;
+        }
+        .notebook img {
+            width: 100%;
+            max-width: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        .split {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .split > * {
+            flex: 1;
+            min-width: 300px;
+        }
+        .alone {
+            margin-left: 40px;
+            padding: 0.75rem 1.5rem;
+        }
+        @media screen and (max-width: 768px) {
+            ul, ol {
+                padding-left: 10px;
+            }
+            .alone {
+                margin-left: 10px;
+            }
+        } 
+    </style>
+</head>
+<body>
+    <h1>
+        <img src="favicon.png" alt="logo">
+        TPRG - Diskretna matematika
+        <img src="favicon.png" alt="logo">
+    </h1>
+    <a class="notebook alone" href="./tprg-dm-notebooks.zip" download>
+        <img src="./download.svg" alt="download" />
+        Preuzmi sve notebook-e
+    </a>
+    <div class="split">
+        <ul>
+            <h2>Ponavljanje</h2>
+            <li>
+                <a href="./01-skup.html">01 Skupovi</a> 
+                <a class="notebook" href="./01-skup.ipynb" download>
+                    <img src="./download.svg" alt="download" />
+                    notebook
+                </a>
+            </li>
+            <li>
+                <a href="./02-multiskup.html">02 Multiskupovi</a> 
+                <a class="notebook" href="./02-multiskup.ipynb" download>
+                    <img src="./download.svg" alt="download" />
+                    notebook
+                </a>
+            </li>
+            <li>
+                <a href="./03-n-torke.html">03 n-torke</a> 
+                <a class="notebook" href="./03-n-torke.ipynb" download>
+                    <img src="./download.svg" alt="download" />
+                    notebook
+                </a>
+            </li>
+            <li>
+                <a href="./04-relacije-i-funkcije.html">04 Relacije i funkcije </a> 
+                <a class="notebook" href="./04-relacije-i-funkcije.ipynb" download>
+                    <img src="./download.svg" alt="download" />
+                    notebook
+                </a>
+            </li>
+            <li>
+                <a href="./05-matematicka-indukcija.html">05 Matematička indukcija</a> 
+                <a class="notebook" href="./05-matematicka-indukcija.ipynb" download>
+                    <img src="./download.svg" alt="download" />
+                    notebook
+                </a>
+            </li>
+            
+            <h2>Kombinatorne metode</h2>
+            <li>
+                <a href="./06-nabrajanja-i-prebrojavanja.html">06 Nabrajanja i prebrojavanja</a> 
+                <a class="notebook" href="./06-nabrajanja-i-prebrojavanja.ipynb" download>
+                    <img src="./download.svg" alt="download" />
+                    notebook
+                </a>
+            </li>
+            <li><a href="#">07 Permutacije (Uskoro)</a></li>
+    
+            <h2>Teorija grafova (Uskoro)</h2>
+        </ul>
+        <ol>
+            <h2>Članovi tima <img src="./favicon.png" alt="TPRG" width="40px"></h2>
+            <li>1. Aleksa Dejanović - SV24/2023</li>
+            <li>2. Mihajlo Milojević - SV57/2023</li>
+            <li>3. Sara Stojkov - SV38/2023</li>
+            <li>4. Luka Prlinčević - SV36/2023</li>
+            <li>5. Anđela Bulatović - SV35/2023</li>
+            <li>6. Marko Milutin - SV40/2023</li>
+            <li>7. Petar Popović - SV17/2023</li>
+            <li>8. Boško Vasilić - SV48/2023</li>
+        </ol>
+    </div>
+</body>
+</html>
