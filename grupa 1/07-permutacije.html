@@ -4,7 +4,7 @@
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-<title>03 n-torke | TPRG</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+<title>07 Uređeni izbori - permutacije | TPRG</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
   import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
@@ -13091,7 +13091,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <a href="index.html" style="color: black !important; display:flex; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap; text-decoration: none; font-weight: bold; font-size: 3.5rem;">
-<img alt="logo" src="favicon.png" style="width: 75px; height: auto; padding: 0;"/> 
+<img alt="logo" src="favicon.png" style="width: 75px; height: auto; padding: 0;"/>
 <span style="flex: 1">TPRG - Diskretna matematika | Početna</span>
 <a>
 </a></a></div>
@@ -13102,10 +13102,10 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="display:flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;">
 <p>
-<a href="./02-multiskup.html">&lt; 02 Multiskup</a>
+<a href="./06-nabrajanja-i-prebrojavanja.html">&lt; 06 Nabrajanja i prebrojavanja</a>
 </p>
 <p>
-<a href="./04-relacije-i-funkcije.html">04 Relacije i funkcije&gt;</a>
+<a href="./08-kombinacije.html">08 Kombinacije &gt;</a>
 </p>
 </div>
 </div>
@@ -13114,35 +13114,79 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="n-torke">n-torke<a class="anchor-link" href="#n-torke">¶</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>U matematici, n-torka je konačna, uređena lista (niz) od $n$ objekata. n-torke se koriste za opis matematičkih objekata koji se sastoje iz specifičnih delova, kao što je na primer graf $(V, E)$ ili tačka $(x, y)$.</p>
-<p>$n$-torke se matematički definišu na sledeći način:</p>
+<h1 id="Ure%C4%91eni-izbori---permutacije">Uređeni izbori - permutacije<a class="anchor-link" href="#Ure%C4%91eni-izbori---permutacije">¶</a></h1><p>Kada prebrojavamo elemente nekog skupa, moramo se zapitati 2 pitanja:</p>
 <ol>
-<li>$0$-torka odnosno prazna $n$-torka je predstavljenja sa $\emptyset$</li>
-<li>Uređeni par ($2$-torka) definisana je sa
-$$(a, b) = \{\{a\}, \{a, b\}\} $$</li>
-<li>Uređena n-torka se definiše rekurzivno kao uređeni par $(n-1)$-torke i elementa $a_n$
-$$(a_1, a_2, ..., a_n) = ((a_1, a_2, ..., a_{n-1}), a_n)$$</li>
+<li>Da li je redosleded elemenata bitan?</li>
+<li>Da li se elementi biraju iz skupa ili multiskupa?</li>
 </ol>
-<p>n-torke su uređene, što znači da je redosled elemenata bitan:
-$$(1, 2) \not = (2, 1)$$
-Elementi n-torke se mogu ponavljati.</p>
-<p>Dve n-torke su jednako ako i samo ako su svi elementi na istim pozicijama jednaki:
-$$(x_1, x_2,...,x_n) = (y_1, y_2, ...y_n) \iff x_1 = y_1 \land x_2 = y_2 \land ... \land x_n = y_n$$</p>
+<p>Odgovor na prvo pitanje kaže nam da li radimo sa <em>uređenim</em> ili <em>neuređenim</em> izborima.</p>
+<p>Ovde pričamo o uređenim izborima - permutacijama.</p>
+<p>Odgovor na drugo pitanje kaže nam da li je dozvoljeno ponavljanje elemenata i koliko puta. Na osnovu ovoga uređene izbore možemo podeliti u 4 grupe:</p>
+<ul>
+<li><p>uređenje $m$ elemenata iz multiskupa koji ima $n$ elemenata</p>
+<ol>
+<li>$m$-permutacije multiskupa ($m\le n, M = [b_1, ..., b_l]_{m,...,m}$)</li>
+<li>permutacije multiskupa ($m = n, M = [b_1, ..., b_l]_{m_1,...,m_l}$)</li>
+</ol>
+</li>
+<li><p>uređenje $m$ elemenata iz skupa koji ima $n$ elemenata</p>
+<ol start="3">
+<li>$m$-permutacije skupa ($m\le n$)</li>
+<li>permutacije skupa ($m=n$)</li>
+</ol>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="n-torke-u-programiranju">n-torke u programiranju<a class="anchor-link" href="#n-torke-u-programiranju">¶</a></h2><p>U Pythonu torke su implementirane pomoću strukture <code>tuple</code>. Torke su u pythonu jedan od sekvencijalnih tipova, odnosno kolecija sa indeksima.</p>
-<p>n-torke se mogu kreirai pomoću literala navodjenjem elemenata u uglastim zagradama.</p>
+<iframe src="https://tprg-diskretna-matematika.vercel.app/07-podela-interactive.html" style="width: 100%; max-height: 600px; height: 100vh">
+</iframe>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="$m$-permutacije-multiskupa-(varijacije-sa-ponavljanjem)">$m$-permutacije multiskupa (varijacije sa ponavljanjem)<a class="anchor-link" href="#$m$-permutacije-multiskupa-(varijacije-sa-ponavljanjem)">¶</a></h2><p>Neka je dat skup $B = \{b_1, b_2, ..., b_l\}$ sa $l\le 1$ elemenata i neka je
+$$M = [b_1, b_2, ..., b_l]_{m, m, ..., m}$$
+multiskup u kojem se svaki element iz $B$ pojavljuje tačno $m$ puta. Broj elemenata u multiskupu $M$ je $n = m\cdot l$. Ako izaberemo $m$-točlani podmultiskup od $M$ i uredimo ga, dobijemo jednu $m$-permutaciju multiskupa.</p>
+<h3 id="Definicija"><em>Definicija</em><a class="anchor-link" href="#Definicija">¶</a></h3><p>$m$-permutacija multiskupa $M = [b_1, b_2, ..., b_l]_{m, m, ..., m}$ je bilo koja uređena $m$-torka elemenata iz skupa M, tj. bilo koja uređena $m$-torka u kojoj je svaka komponenta element iz skupa $B$.</p>
+<p>Broj $m$-permutacija multiskupa $M = [b_1, b_2, ..., b_l]_{m, m, ..., m}$ označava se sa $$\overline{P}(l; m)$$</p>
+<h3 id="Teorema"><em>Teorema</em><a class="anchor-link" href="#Teorema">¶</a></h3><p>Broj $m$ permutacija elemenata multiskupa $M = [b_1, b_2, ..., b_l]_{m, m, ..., m}$ jednak je $l^m$,
+$$\overline{P}(l;m) = l^m$$</p>
+<p><em>Dokaz:</em></p>
+<p>Na osnovu definicije $m$-permitacija multiskupa jasno je da je $m$-permutacija jedan element iz $\underbrace{B\times B\times ... \times B}_{m \text{ puta}} = B^m$, ondnosno ukupan broj $m$-permutacija multiskupa jednak je broju elemenata Dekartovog proizvoda skupa $B$ $m$ puta.
+$$\overline{P}(l;m) = |B\times B\times ... \times B|$$
+što je na osnovu principa proizvoda jednako
+$$|B\times B\times ... \times B| = |B|^m = l^m$$</p>
+<p>$$\tag*{□}$$</p>
+<h4 id="Teorema"><em>Teorema</em><a class="anchor-link" href="#Teorema">¶</a></h4><p>Neka je $n\le1$ i neka je $B = \{b_1, ..., b_l\}$. Odrediti broj podskupova skupa $B$.</p>
+<p><em>Dokaz:</em></p>
+<p>Posmatrajmo preslikavanje
+$$\varphi: \mathcal{P}(B)\rightarrow \{0,1\}^l$$
+koje je definisano na sledeći način:
+$$\varphi(X) = (c_1, c_2, ..., c_l)$$
+gde je $X\subseteq B$ i
+$$c_i = 
+\begin{cases}
+1 &amp;, b_i\in X \\
+0 &amp;, b_i\notin X
+\end{cases}$$</p>
+<p>S obzirom da je $\varphi$ bijektivno preslikavanje, na osnovu principu bijekcije sledi da je broj podskupova jednak broju $|\{0,1\}^l|$ odnosno na osnovu principa proizvoda (i definicije $m$-permutacija) jednak je $2^l$.
+$$\tag*{□}$$</p>
+<h3 id="Primer---pin-kod">Primer - pin kod<a class="anchor-link" href="#Primer---pin-kod">¶</a></h3><p>Često nam je potrebno da generišemo brojčani pin kod kao vrstu šifre (pin za ulazak u zgradu, pin telefona, bankovne kartice...). Ukoliko se ograničimo samo na skup cifara $$C = \{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}$$ postavlja se pitanje koliko postoji pin kodova dužine $m$.</p>
+<p><em>Rešenje</em></p>
+<p><em>I način:</em></p>
+<p>Ako kod ima $m$ cifara i za svaku cifru možemo izabrati jednu od 10 dekadnih cifara (cifre se mogu ponavljati) onda to možemo zapisati kao</p>
+<p>$$\underbrace{\underline{\text{ }\text{ }10\text{ cifara}\text{ }\text{ }}\text{ }\underline{\text{ }\text{ }10\text{ cifara}\text{ }\text{ }}\text{ }\underline{\text{ }\text{ }10\text{ cifara}\text{ }\text{ }}\text{ }\underline{\text{ }\text{ }10\text{ cifara}\text{ }\text{ }}\text{ }...\underline{\text{ }\text{ }10\text{ cifara}\text{ }\text{ }}\text{ }}_{m \text{ puta}}$$</p>
+<p>što je po principu proizvoda jednako $$\underbrace{10\cdot 10\cdot 10\cdot...\cdot 10}_{m\text{ puta}} = 10^m$$
+<em>II način:</em></p>
+<p>Svaki pin kod je zapravo jedna $m$-permutacija multiskupa (varijacija sa ponavljanjem), pa bi trebalo da je njihov broj jednak
+$$\overline{P}(10; m) = 10^m$$</p>
+<p>Ovde možemo i napisati kod koji bi generisao ove kodove:</p>
 </div>
 </div>
 </div>
@@ -13151,8 +13195,28 @@ $$(x_1, x_2,...,x_n) = (y_1, y_2, ...y_n) \iff x_1 = y_1 \land x_2 = y_2 \land .
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">torka</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">torka</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pin</span><span class="p">(</span><span class="n">digits</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">m</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">previous</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>                                                      <span class="c1"># dosli smo do kraja rekurzije</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">previous</span><span class="p">))]</span>                        <span class="c1"># vracamo listu sa jednim elementom - trenutnim pinom</span>
+    
+    <span class="n">pins</span> <span class="o">=</span> <span class="p">[]</span>                                                       <span class="c1"># inicijalizujemo praznu listu za cuvanje pinova koji ce se generisati</span>
+
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">digits</span><span class="p">:</span>                                                <span class="c1"># za svaku cifru u listi cifara</span>
+        <span class="n">pins</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">pin</span><span class="p">(</span><span class="n">digits</span><span class="p">,</span> <span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">previous</span> <span class="o">+</span> <span class="p">[</span><span class="n">d</span><span class="p">]))</span>             <span class="c1"># rekurzivno pozivamo funkciju sa manjim m i dodajemo trenutnu cifru u listu prethodnih cifara</span>
+    
+    <span class="k">return</span> <span class="n">pins</span>                                                     <span class="c1"># vracamo listu generisanih pinova</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">digits</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pin</span><span class="p">(</span><span class="n">digits</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[]))</span>           <span class="c1"># samo 2 cifre zbog velikog broja mogucih pinova</span>
 </pre></div>
 </div>
 </div>
@@ -13162,7 +13226,7 @@ $$(x_1, x_2,...,x_n) = (y_1, y_2, ...y_n) \iff x_1 = y_1 \land x_2 = y_2 \land .
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(1, 2, 3, 4, 5)
+<pre>['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99']
 </pre>
 </div>
 </div>
@@ -13172,7 +13236,76 @@ $$(x_1, x_2,...,x_n) = (y_1, y_2, ...y_n) \iff x_1 = y_1 \land x_2 = y_2 \land .
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Elementima torke se pristupa njihovim indeksom, počevši od 0.</p>
+<h2 id="$m$-permutacije-skupa-(varijacije-bez-ponavljanja)">$m$-permutacije skupa (varijacije bez ponavljanja)<a class="anchor-link" href="#$m$-permutacije-skupa-(varijacije-bez-ponavljanja)">¶</a></h2><p>Neka je dat skup $B = \{b_1, b_2, ..., b_n\}$ i neka je $1\le m\le n$.</p>
+<h3 id="Definicija"><em>Definicija</em><a class="anchor-link" href="#Definicija">¶</a></h3><p>$m$-permutacija elemenata skupa B je bilo koja $m$-torka elemenata skupa $B$ u kojoj su svaka dva elementa međusobno različita.</p>
+<p>Broj $m$-permutacija skupa od $n$ elemenata označava se sa
+$$P(n;m)$$</p>
+<h3 id="Teorema"><em>Teorema</em><a class="anchor-link" href="#Teorema">¶</a></h3><p>Broj $m$-permutacija skupa $B = \{b_1, b_2, ..., b_n\}$ jednak je
+$$P(n;m) = n(n-1)...(n-m+1)$$</p>
+<p><em>Dokaz:</em></p>
+<p>Dokaz ćemo dati indukcijom po $m$.</p>
+<ol>
+<li>Baza indukcije ($m = 1$): Uređena torka sa jednom komponentom je samo taj element. Broj načina da izaberemo taj jedan element je $n$, za svako $n\in\mathbb{N}$.</li>
+<li>Induktivna hipoteza ($T_m$): Tvrđenje važi za $P(n';m)$, za svako $n'\ge m$</li>
+<li>Induktivni korak ($T_m \implies T_{m+1}$): Dokazaćemo da tvrđenje važi za $P(n; m+1)$, za svako $n\ge m+1$. Znači, treba pokazati da je broj uređenih torki dužine $m+1$ skupa $B$ sa osobinom da je svaki par komponenti međusobno različit jednak
+$$\begin{aligned}
+P(n; m+1) &amp;= n\cdot(n-1)\cdot...\cdot(n-(m+1)+1) \\
+&amp;= n\cdot(n-1)\cdot...\cdot(n-m);
+\end{aligned}$$</li>
+</ol>
+<p>Svaka uređena torka sa datom osobinom pripada skupu $B_1\cup B_2\cup...\cup B_n$ gde je
+$$
+\begin{aligned}
+B_1 &amp;= \{(b_1, c_2, c_3, ..., c_{m+1})|(c_2, c_3, ..., c_{m+1}) \text{ je $m$-permutacija skupa } B\setminus\{b_1\}\} \\
+\text{...} &amp;= \text{...} \\
+B_n &amp;= \{(b_n, c_2, c_3, ..., c_{m+1})|(c_2, c_3, ..., c_{m+1}) \text{ je $m$-permutacija skupa } B\setminus\{b_n\}\} \\
+\end{aligned}
+$$</p>
+<p>Prema induktivnoj hipotezi, za svako $i\in \{1, 2, ..., n\}$, broj elemenata u $B_i$ jednak je broju $m$-permutacija elemenata skupa $B\setminus\{b_i\}$ tj.
+$$P(n-1; m) = (n-1)\cdot...\cdot((n-1)-m+1) = (n-1)\cdot...\cdot(n-m) \text{ za } (n-1 \ge m)$$</p>
+<p>Prema principu sume, broj $(m+1)$-permutacija je
+$$
+\begin{aligned}
+P(n; m+1) &amp;= |B_1\cup B_2\cup...\cup B_n| = |B_1| + |B_2| + ... + |B_n| \\
+&amp;= (P(n-1; m)) + ... + (P(n-1; m)) \\
+&amp;= n\cdot P(n-1; m) \\
+&amp;= n\cdot(n-1)\cdot...\cdot(n-m).
+\end{aligned}
+$$</p>
+<p>što je i trebalo dokazati.
+$$\tag*{□}$$</p>
+<h3 id="Primer---raspodela-kontenjera">Primer - raspodela kontenjera<a class="anchor-link" href="#Primer---raspodela-kontenjera">¶</a></h3><p>Razvili smo softver i sada je vreme da našu aplikaciju pustimo u produkciju. Za lakši rad kreirali smo Doker kontenjere i potrebno je pokrenuti po jedan kontenjer na $k$ od $n$ raspoloživih servera, s tim da će redosled pokretanja uticati na to koliko saobraćaja će biti preusmereno na taj server.</p>
+<p><em>Rešenje:</em></p>
+<p><em>I način:</em>
+S obzirom da je redosled pokretanja servera bitan možemo zaključiti da se radi o nekom o uređenih izbora.</p>
+<p>Zatim na svakom serveru pokrećemo po najviše jednu instancu programa što znači da se radi o izboru bez ponavljanja.</p>
+<p>I konačno uzimajući u obzir pretho i činjenicu da se ne biraju nužno svi serveri, već samo $k$ njih, dolazimo do zaključka da se radi $m$-permutaciji skupa.</p>
+<p>Broj načina da pokrenemo ove kontenjere jednak je broju $P(n, k) = n(n-1)...(n-k+1)$</p>
+<p><em>II način:</em>
+U ovom zadatku kontenjeri biraju servere. Za prvi kontenjer imamo $n$ servera na kojima on može da se instancira, drugi ima $n-1$ opcija jer ne može biti pokrenut na istom serveru kao i prvi, ..., $k$-ti kontenjer ima $n-k+1$ servera za izbor.</p>
+<p>Po principu proizvoda rešenje je: $n(n-1)...(n-k+1)$</p>
+<p>Evo i simulacije u kodu:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">server</span><span class="p">(</span><span class="n">servers</span><span class="p">:</span> <span class="nb">set</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>                                                      <span class="c1"># dosli smo do kraja rekurzije</span>
+        <span class="k">return</span> <span class="p">[[]]</span>                                                 <span class="c1"># vracamo listu sa jednim elementom - praznom listom</span>
+    
+    <span class="n">configurations</span> <span class="o">=</span> <span class="p">[]</span>                                             <span class="c1"># inicijalizujemo praznu listu za cuvanje konfiguracija koje ce se generisati</span>
+
+    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">servers</span><span class="p">:</span>                                               <span class="c1"># za svaki server u skupu servera</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">server</span><span class="p">(</span><span class="n">servers</span> <span class="o">-</span> <span class="p">{</span><span class="n">s</span><span class="p">},</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>                      <span class="c1"># za svaku konfiguraciju sa manje servera</span>
+            <span class="n">configurations</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">s</span><span class="p">]</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span>                          <span class="c1"># dodajemo trenutni server na pocetak konfiguracije</span>
+    
+    <span class="k">return</span> <span class="n">configurations</span>                                           <span class="c1"># vracamo listu generisanih konfiguracija</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -13181,8 +13314,17 @@ $$(x_1, x_2,...,x_n) = (y_1, y_2, ...y_n) \iff x_1 = y_1 \land x_2 = y_2 \land .
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">torka</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">torka</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">servers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Meksiko"</span><span class="p">,</span> <span class="s2">"Vatikan"</span><span class="p">,</span> <span class="s2">"Nigerija"</span><span class="p">,</span> <span class="s2">"Surinam"</span><span class="p">,</span> <span class="s2">"Tajland"</span><span class="p">,</span> <span class="s2">"Novi Zeland"</span><span class="p">}</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">excepted_number_of_configurations</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="n">excepted_number_of_configurations</span> <span class="o">*=</span> <span class="nb">len</span><span class="p">(</span><span class="n">servers</span><span class="p">)</span> <span class="o">-</span> <span class="n">i</span>
+<span class="n">conf</span> <span class="o">=</span> <span class="n">server</span><span class="p">(</span><span class="n">servers</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">conf</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">. </span><span class="se">\t</span><span class="si">{</span><span class="s1">' - '</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">s</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">c</span><span class="p">])</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Broj konfiguracija: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Ocekivani broj konfiguracija: </span><span class="si">{</span><span class="n">excepted_number_of_configurations</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -13192,8 +13334,128 @@ $$(x_1, x_2,...,x_n) = (y_1, y_2, ...y_n) \iff x_1 = y_1 \land x_2 = y_2 \land .
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1
-4
+<pre>1. 	    Tajland     -     Nigerija    -     Meksiko    
+2. 	    Tajland     -     Nigerija    -     Vatikan    
+3. 	    Tajland     -     Nigerija    -     Surinam    
+4. 	    Tajland     -     Nigerija    -   Novi Zeland  
+5. 	    Tajland     -   Novi Zeland   -     Surinam    
+6. 	    Tajland     -   Novi Zeland   -     Vatikan    
+7. 	    Tajland     -   Novi Zeland   -     Nigerija   
+8. 	    Tajland     -   Novi Zeland   -     Meksiko    
+9. 	    Tajland     -     Meksiko     -     Surinam    
+10. 	    Tajland     -     Meksiko     -     Vatikan    
+11. 	    Tajland     -     Meksiko     -     Nigerija   
+12. 	    Tajland     -     Meksiko     -   Novi Zeland  
+13. 	    Tajland     -     Vatikan     -     Meksiko    
+14. 	    Tajland     -     Vatikan     -     Surinam    
+15. 	    Tajland     -     Vatikan     -     Nigerija   
+16. 	    Tajland     -     Vatikan     -   Novi Zeland  
+17. 	    Tajland     -     Surinam     -     Meksiko    
+18. 	    Tajland     -     Surinam     -     Vatikan    
+19. 	    Tajland     -     Surinam     -     Nigerija   
+20. 	    Tajland     -     Surinam     -   Novi Zeland  
+21. 	    Nigerija    -     Meksiko     -     Vatikan    
+22. 	    Nigerija    -     Meksiko     -     Tajland    
+23. 	    Nigerija    -     Meksiko     -     Surinam    
+24. 	    Nigerija    -     Meksiko     -   Novi Zeland  
+25. 	    Nigerija    -   Novi Zeland   -     Vatikan    
+26. 	    Nigerija    -   Novi Zeland   -     Tajland    
+27. 	    Nigerija    -   Novi Zeland   -     Surinam    
+28. 	    Nigerija    -   Novi Zeland   -     Meksiko    
+29. 	    Nigerija    -     Vatikan     -     Surinam    
+30. 	    Nigerija    -     Vatikan     -     Tajland    
+31. 	    Nigerija    -     Vatikan     -   Novi Zeland  
+32. 	    Nigerija    -     Vatikan     -     Meksiko    
+33. 	    Nigerija    -     Surinam     -     Vatikan    
+34. 	    Nigerija    -     Surinam     -     Tajland    
+35. 	    Nigerija    -     Surinam     -   Novi Zeland  
+36. 	    Nigerija    -     Surinam     -     Meksiko    
+37. 	    Nigerija    -     Tajland     -     Surinam    
+38. 	    Nigerija    -     Tajland     -     Vatikan    
+39. 	    Nigerija    -     Tajland     -   Novi Zeland  
+40. 	    Nigerija    -     Tajland     -     Meksiko    
+41. 	    Meksiko     -     Nigerija    -     Vatikan    
+42. 	    Meksiko     -     Nigerija    -     Tajland    
+43. 	    Meksiko     -     Nigerija    -     Surinam    
+44. 	    Meksiko     -     Nigerija    -   Novi Zeland  
+45. 	    Meksiko     -   Novi Zeland   -     Surinam    
+46. 	    Meksiko     -   Novi Zeland   -     Tajland    
+47. 	    Meksiko     -   Novi Zeland   -     Nigerija   
+48. 	    Meksiko     -   Novi Zeland   -     Vatikan    
+49. 	    Meksiko     -     Vatikan     -     Surinam    
+50. 	    Meksiko     -     Vatikan     -     Tajland    
+51. 	    Meksiko     -     Vatikan     -     Nigerija   
+52. 	    Meksiko     -     Vatikan     -   Novi Zeland  
+53. 	    Meksiko     -     Surinam     -     Vatikan    
+54. 	    Meksiko     -     Surinam     -     Tajland    
+55. 	    Meksiko     -     Surinam     -     Nigerija   
+56. 	    Meksiko     -     Surinam     -   Novi Zeland  
+57. 	    Meksiko     -     Tajland     -     Surinam    
+58. 	    Meksiko     -     Tajland     -     Vatikan    
+59. 	    Meksiko     -     Tajland     -     Nigerija   
+60. 	    Meksiko     -     Tajland     -   Novi Zeland  
+61. 	    Surinam     -     Nigerija    -     Vatikan    
+62. 	    Surinam     -     Nigerija    -     Tajland    
+63. 	    Surinam     -     Nigerija    -   Novi Zeland  
+64. 	    Surinam     -     Nigerija    -     Meksiko    
+65. 	    Surinam     -     Meksiko     -     Vatikan    
+66. 	    Surinam     -     Meksiko     -     Tajland    
+67. 	    Surinam     -     Meksiko     -     Nigerija   
+68. 	    Surinam     -     Meksiko     -   Novi Zeland  
+69. 	    Surinam     -   Novi Zeland   -     Vatikan    
+70. 	    Surinam     -   Novi Zeland   -     Tajland    
+71. 	    Surinam     -   Novi Zeland   -     Nigerija   
+72. 	    Surinam     -   Novi Zeland   -     Meksiko    
+73. 	    Surinam     -     Vatikan     -     Tajland    
+74. 	    Surinam     -     Vatikan     -   Novi Zeland  
+75. 	    Surinam     -     Vatikan     -     Nigerija   
+76. 	    Surinam     -     Vatikan     -     Meksiko    
+77. 	    Surinam     -     Tajland     -     Vatikan    
+78. 	    Surinam     -     Tajland     -   Novi Zeland  
+79. 	    Surinam     -     Tajland     -     Nigerija   
+80. 	    Surinam     -     Tajland     -     Meksiko    
+81. 	  Novi Zeland   -     Nigerija    -     Vatikan    
+82. 	  Novi Zeland   -     Nigerija    -     Tajland    
+83. 	  Novi Zeland   -     Nigerija    -     Surinam    
+84. 	  Novi Zeland   -     Nigerija    -     Meksiko    
+85. 	  Novi Zeland   -     Meksiko     -     Surinam    
+86. 	  Novi Zeland   -     Meksiko     -     Tajland    
+87. 	  Novi Zeland   -     Meksiko     -     Nigerija   
+88. 	  Novi Zeland   -     Meksiko     -     Vatikan    
+89. 	  Novi Zeland   -     Vatikan     -     Surinam    
+90. 	  Novi Zeland   -     Vatikan     -     Tajland    
+91. 	  Novi Zeland   -     Vatikan     -     Nigerija   
+92. 	  Novi Zeland   -     Vatikan     -     Meksiko    
+93. 	  Novi Zeland   -     Surinam     -     Vatikan    
+94. 	  Novi Zeland   -     Surinam     -     Tajland    
+95. 	  Novi Zeland   -     Surinam     -     Nigerija   
+96. 	  Novi Zeland   -     Surinam     -     Meksiko    
+97. 	  Novi Zeland   -     Tajland     -     Surinam    
+98. 	  Novi Zeland   -     Tajland     -     Vatikan    
+99. 	  Novi Zeland   -     Tajland     -     Nigerija   
+100. 	  Novi Zeland   -     Tajland     -     Meksiko    
+101. 	    Vatikan     -     Nigerija    -     Surinam    
+102. 	    Vatikan     -     Nigerija    -     Tajland    
+103. 	    Vatikan     -     Nigerija    -   Novi Zeland  
+104. 	    Vatikan     -     Nigerija    -     Meksiko    
+105. 	    Vatikan     -     Meksiko     -     Surinam    
+106. 	    Vatikan     -     Meksiko     -     Tajland    
+107. 	    Vatikan     -     Meksiko     -     Nigerija   
+108. 	    Vatikan     -     Meksiko     -   Novi Zeland  
+109. 	    Vatikan     -   Novi Zeland   -     Surinam    
+110. 	    Vatikan     -   Novi Zeland   -     Tajland    
+111. 	    Vatikan     -   Novi Zeland   -     Nigerija   
+112. 	    Vatikan     -   Novi Zeland   -     Meksiko    
+113. 	    Vatikan     -     Surinam     -     Tajland    
+114. 	    Vatikan     -     Surinam     -   Novi Zeland  
+115. 	    Vatikan     -     Surinam     -     Nigerija   
+116. 	    Vatikan     -     Surinam     -     Meksiko    
+117. 	    Vatikan     -     Tajland     -     Surinam    
+118. 	    Vatikan     -     Tajland     -   Novi Zeland  
+119. 	    Vatikan     -     Tajland     -     Nigerija   
+120. 	    Vatikan     -     Tajland     -     Meksiko    
+Broj konfiguracija: 120
+Ocekivani broj konfiguracija: 120
 </pre>
 </div>
 </div>
@@ -13203,7 +13465,19 @@ $$(x_1, x_2,...,x_n) = (y_1, y_2, ...y_n) \iff x_1 = y_1 \land x_2 = y_2 \land .
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Torka je nepromjenjiva (immutable), što znači da se ne može mijenjati nakon što je definirana. Pokušajte promijeniti jedan od elemenata torke i vidjet ćete grešku.</p>
+<h2 id="Permutacije-skupa-(permutacije-bez-ponavljanja)">Permutacije skupa (permutacije bez ponavljanja)<a class="anchor-link" href="#Permutacije-skupa-(permutacije-bez-ponavljanja)">¶</a></h2><p>Neka je $B = \{b_1, b_2, ..., b_n\}$. U slučaju kada je $m=n$, za $m$-permutaciju skupa $B$ se kaže da je permutacija. Broj permutacija skupa $B$ označava se sa
+$$P(n)$$</p>
+<h2 id="Teorema"><em>Teorema</em><a class="anchor-link" href="#Teorema">¶</a></h2><p>Broj permutacija skupa $B$ je
+$$P(n) = n\cdot(n-1)\cdot...\cdot2\cdot1$$</p>
+<p><em>Dokaz:</em></p>
+<p>Tvrđenje je specijalni slučaj prethodne teoreme (broj $m$-permutacija skupa) za $m=n$.
+$$\tag*{□}$$</p>
+<h3 id="Primer---raspodela-zadataka">Primer - raspodela zadataka<a class="anchor-link" href="#Primer---raspodela-zadataka">¶</a></h3><p>Studenti softverskog inženjerstva su podeljeni u grupe od po 8 studenata na predmetu Diskretna matematika i imaju zadatak da pripreme prezentaciju o uređenim izborima.</p>
+<p>Videli su da imaju 4 vrste uređenih izbora - varijacije i permutacije sa i bez ponavljanja i za svaku od 4 vrste treba da pripreme teorijsku osnovu i primere, što znači da imaju ukupno 8 zadaka, tačno koliko njih ima u grupi.</p>
+<p>Međutim studenti su pokušali da odlože spremanje prezentacije, razmiljajući koliko ukupno načina postoji da rasporede zadatke međusobno. Ispostavilo se da im je to bio veoma težak problem i treba im pomoć (da su učili na vreme već bi znali odgovor).</p>
+<p><em>Rešenje</em></p>
+<p>Prvi student može da odabere jedan od 8 zadataka, drugi jedan od preostalih 7, ..., poslednji ima samo jedan preostali zadatak i to mu je što mu je. Po principu proizvoda ukupan broj načina je $8\cdot7\cdot6\cdot5\cdot4\cdot3\cdot2\cdot1 = 8! = 40320$</p>
+<p>Očigledno je da se radi o permutacijama skupa.</p>
 </div>
 </div>
 </div>
@@ -13212,7 +13486,22 @@ $$(x_1, x_2,...,x_n) = (y_1, y_2, ...y_n) \iff x_1 = y_1 \land x_2 = y_2 \land .
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">torka</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">p</span> <span class="o">*=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -13221,14 +13510,9 @@ $$(x_1, x_2,...,x_n) = (y_1, y_2, ...y_n) \iff x_1 = y_1 \land x_2 = y_2 \land .
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">TypeError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-intense-fg ansi-bold">In[5], line 1</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span> <span class="ansi-yellow-bg">torka</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">2</span><span class="ansi-yellow-bg">]</span> <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(98,98,98)">2</span>
-
-<span class="ansi-red-intense-fg ansi-bold">TypeError</span>: 'tuple' object does not support item assignment</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>40320
+</pre>
 </div>
 </div>
 </div>
@@ -13237,7 +13521,786 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[5], line 1</span>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Više o torkama u <a href="https://docs.python.org/3/library/stdtypes.html#tuple">pythonovoj dokumentaciji</a>.</p>
+<h2 id="Permutacije-multiskupa-(permutacije-sa-ponavljanjem)">Permutacije multiskupa (permutacije sa ponavljanjem)<a class="anchor-link" href="#Permutacije-multiskupa-(permutacije-sa-ponavljanjem)">¶</a></h2><p>Neka je dat multiskup
+$$M = [b_1, b_2, ..., b_l]_{m_1, m_2, ..., m_l} = \{\{\underbrace{b_1, ..., b_1}_{m_1}, ..., \underbrace{b_l, ..., b_l}_{m_l}\}\}$$
+i neka je $n = \sum\limits_{i=1}^{l}{m_i}$ broj elemenata datom multiskupa. Svaka uređena $n$-torka elemenata multiskupa $M$ je permutacija datog multiskupa.</p>
+<h3 id="Definicija"><em>Definicija</em><a class="anchor-link" href="#Definicija">¶</a></h3><p>Permutacija multiskupa $M$ je proizvoljna $n$-torka u kojoj se $b_1$ pojavljuje $m_1$ puta, $b_2$ se pojavljuje $m_2$ pura, ..., $b_l$ se pojavljuje $m_l$ puta.</p>
+<p>Broj permutacija multiskupa $M = [b_1, b_2, ..., b_l]_{m_1, m_2, ..., m_l}$ označava se sa
+$$\overline{P}(m_1;m_2,...,m_l)$$</p>
+<h3 id="Teorema"><em>Teorema</em><a class="anchor-link" href="#Teorema">¶</a></h3><p>Broj permutacija multiskupa $M$ jednak je
+$$\overline{P}(m_1, m_2, ..., m_l) = \frac{(m_1+m_2+...+m_l)!}{m_1!\cdot m_2!\cdot...\cdot m_l!}$$</p>
+<p><em>Dokaz:</em></p>
+<p>Ako bi svi elementi skupa $M$ bili različiti, broj permutacija bi bio $(m_1+m_2+...+m_l)!$. Međutim, zbog ponavljanja određenih elemenata, imamo $m_1!\cdot m_2!\cdot...\cdot m_l!$ istih permutacija.</p>
+<p>$$\tag*{□}$$</p>
+<h4 id="Primer---neprijatelji">Primer - neprijatelji<a class="anchor-link" href="#Primer---neprijatelji">¶</a></h4><p>Pravimo igricu!!! Odlično. Sada ubacujemo prepreke našem igraču. Kreirali smo $4$ različitih prepreki i zamki i potrebno ih je rasporediti na $10$ mesta na ovom nivou. Odlučeno je da se prepreka $A$ ponavlja $2$ puta, prepreka $B$ ponavlja $3$ puta, prepreka $C$ ponavlja čak $4$ puta (najlakša je) i zamka $D$ se pojavljuje jednom. Na koliko različitih načina se igrač može susresti sa ovim preprekama prelazeći ovaj nivo?</p>
+<p><em>Rešenje</em></p>
+<p>Ukupan način da se ove prepreke rasporede jednak je broju permutacija skupa od 10 elemenata odnosno $10!$, međutim s obzirom da se prepreke ponavljaju, svaka međusobna permutacija istih prepreki ne treba računati kao nov način. Odnosno svih $2!$ načina da se rasporede prepreke $A$ su isti, svih $3!$ načina prepreke $B$, svih $4!$ načina prepreke $C$ i $1!$ načina rasporeda zamke.</p>
+<p>Rešenje onda odgovara broju permutacija sa ponavljanjem i jednak je:
+$$\overline{P}(2,3,4,1) = \frac{(2+3+4+l)!}{2!3!4!1!} = 12600$$</p>
+<p>Dovoljno da igrač nikada ne igra sa istim rasporedom (osim ako nije baaaaššš loš).</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">((</span><span class="n">factorial</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>12600.0
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Veza-$m$-permutacija-i-permutacija-i-funkcija">Veza $m$-permutacija i permutacija i funkcija<a class="anchor-link" href="#Veza-$m$-permutacija-i-permutacija-i-funkcija">¶</a></h2><h3 id="Preslikavanja-$A%5Crightarrow-B$">Preslikavanja $A\rightarrow B$<a class="anchor-link" href="#Preslikavanja-$A%5Crightarrow-B$">¶</a></h3><h4 id="Teorema">Teorema<a class="anchor-link" href="#Teorema">¶</a></h4><p>Neka su $A$ i $B$ skupovi sa osobinom $|A| = m \ge 1$ i $|B| = n\ge 1$. Broj preslikavanja $f: A\rightarrow B$ jednak je $n^m$, odnosno broju $m$-permutacija multiskupa.</p>
+<p><em>Dokaz:</em></p>
+<p>Neka je $A = \{a_1, a_2, ..., a_m\}$.</p>
+<p>Svako preslikavanje $f$ dato je sa
+$$(f(a_1), f(a_2), ..., f(a_m))\in B\times B\times ...\times B $$
+Preslikavanje
+$${f|f:A\rightarrow B} \rightarrow B\times B\times ...\times B$$
+je bijekcija, te na osnovu principa bijekcije i principa proizvoda važi
+$$|{f|f:A\rightarrow B}| = |B\times B\times ...\times B| = |B|\cdot|B|\cdot...\cdot|B| = n^m$$</p>
+<p>$$\tag*{□}$$</p>
+<p><br/></p>
+<p>Ovim je pokazano da svako preslikavanje skupa $A$ u skup $B$ odgovara jednoj $m$-permutaciji skupa $B$ od $|A| = n$ elemenata.</p>
+<h3 id="Injektivna-preslikavanja-$A%5Crightarrow-B$">Injektivna preslikavanja $A\rightarrow B$<a class="anchor-link" href="#Injektivna-preslikavanja-$A%5Crightarrow-B$">¶</a></h3><h4 id="Teorema">Teorema<a class="anchor-link" href="#Teorema">¶</a></h4><p>Neka je $B=\{b_1, b_2, ..., b_n\}$.</p>
+<p>Neka je $|A| = m$ i $n\ge m\ge 1$. Broj injektivnih preslikavanja $f:A\rightarrow B$ jednak je $n(n-1)(n-2)...(n-m+1)$ odnosno jednak je broju $m$-permutacija skupa.</p>
+<p><em>Dokaz:</em></p>
+<p>Dokaz ćemo dati indukcijom po $m$:</p>
+<ol>
+<li>Baza indukcije ($m=1$): za $A=\{a\}$, postoje sledeća preslikavanja: $f(a) = b_1; f(a) = b_2; ...; f(a) = b_n$ kojih je ukupno $n$</li>
+<li>Induktivna hipoteza ($T_m$): Pretpostavimo da tvrđenje važi za $|A| = m$</li>
+<li>Induktivni korak ($T_{m+1}$): Treba pokazati da tvrđenje važi za $|A| = m+1$</li>
+</ol>
+<p>Injektivna preslikavanja su oblika:
+$$(b_1, f(a_2), ..., f(a_{m+1}))\\ (b_2, f(a_2), ..., f(a_{m+1}))\\...\\ (b_n, f(a_2), ..., f(a_{m+1})) $$</p>
+<p>Na funkciju $g:\{a_2, a_3, ..., a_{m+1}\}\rightarrow B\setminus \{b_i\}$ možemo primeniti induktivnu hipotezu, tj. zaključujemo da takvih preslikavanja ima
+$$(n-1)\cdot(n-2)\cdot...\cdot((n-1)-m+1) = (n-1)\cdot(n-2)\cdot...\cdot(n-m)$$</p>
+<p>Prema principu zbira broj injektivnih funkcija $f:A\xrightarrow{"1-1"} B$ jednak je
+$$\underbrace{(n-1)\cdot(n-2)\cdot...\cdot(n-m) + (n-1)\cdot(n-2)\cdot...\cdot(n-m) +... + (n-1)\cdot(n-2)\cdot...\cdot(n-m)}_{m \text{ puta}} = \\ = n\cdot(n-1)\cdot(n-2)\cdot...\cdot(n-m) + (n-1)\cdot(n-2)\cdot...\cdot(n-m) +... + (n-1)\cdot(n-2)\cdot...\cdot(n-m)$$</p>
+<p>što je i trebalo pokazati.</p>
+<p>$$\tag*{□}$$</p>
+<p><br/></p>
+<p>Ovime je pokazano da je broj injektivnih funkcija skupa $A$ u skup $B$, gde $B$ ima više elemenata jednak broju $m$-permutacija skupa, odnosno svaka $m$-permutacija jednoznačno definiše injektivnu funkciju.</p>
+<h3 id="Bijektivna-preslikavanja-$A%5Crightarrow-B$">Bijektivna preslikavanja $A\rightarrow B$<a class="anchor-link" href="#Bijektivna-preslikavanja-$A%5Crightarrow-B$">¶</a></h3><h4 id="Teorema">Teorema<a class="anchor-link" href="#Teorema">¶</a></h4><p>Bijektivnih preslikavanja skupa $A$ u samog sebe ima $n!$ i jednak je broju permutacija skupa $A$.</p>
+<p><em>Dokaz:</em></p>
+<p>Ovo je specijalan slučaj prethodne teoreme za $m=n$. Ako je $n=m$ to znači da skupovi $A$ i $B$ imaju jednak broj elemenata, odnosno $|A| = |B|$ pa na osnovu principa bijekcija postoje bijektivna preslikavanja i svako takvo preslikavnje je jedna $n$-permutacija skupa, odnosno samo permutacija skupa $A$.</p>
+<p>$$\tag*{□}$$
+<br/></p>
+<p>Ovime je pokazano da svako bijektivno preslikavnje skupa u samog sebe (ili skupova sa istom kardinalnošću) odgovara jednoj permutaciji tog skupa.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Funkcija koja ispisuje sve funkcije iz skupa A u skup B</span>
+<span class="k">def</span> <span class="nf">print_all_functions</span><span class="p">(</span><span class="n">set_a</span><span class="p">,</span> <span class="n">set_b</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">mapping</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="n">set_b</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">set_a</span><span class="p">)):</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">function</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">set_a</span><span class="p">,</span> <span class="n">mapping</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="s2">"; "</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s1">'f(</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1">) = </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">'</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">function</span><span class="o">.</span><span class="n">items</span><span class="p">()])</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">count</span>
+
+<span class="c1"># Funkcija koja ispisuje sve injekcije iz skupa A u skup B</span>
+<span class="k">def</span> <span class="nf">print_all_functions_injections</span><span class="p">(</span><span class="n">set_a</span><span class="p">,</span> <span class="n">set_b</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">mapping</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="n">set_b</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">set_a</span><span class="p">)):</span>
+        <span class="n">function</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">set_a</span><span class="p">,</span> <span class="n">mapping</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">function</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">function</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="s2">"; "</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s1">'f(</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1">) = </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">'</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">function</span><span class="o">.</span><span class="n">items</span><span class="p">()])</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">count</span>
+
+<span class="c1"># Funkcija koja ispisuje sve bijekcije iz skupa A u skup B</span>
+<span class="k">def</span> <span class="nf">print_all_functions_bijections</span><span class="p">(</span><span class="n">set_a</span><span class="p">,</span> <span class="n">set_b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">set_a</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">set_b</span><span class="p">):</span>
+        <span class="c1"># po principu bijekcije skupovi moraju biti iste kardinalnosti</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">print_all_functions_injections</span><span class="p">(</span><span class="n">set_a</span><span class="p">,</span> <span class="n">set_b</span><span class="p">)</span> <span class="c1"># svaka injektivna funkcija skupova sa istim brojem elemenata je i bijektivna</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Primer 1 - skupovi iste kardinalnosti</span>
+<span class="n">set_a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">set_b</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">}</span>
+<span class="n">count_all</span> <span class="o">=</span> <span class="n">print_all_functions</span><span class="p">(</span><span class="n">set_a</span><span class="p">,</span> <span class="n">set_b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Ukupno funkcija: </span><span class="si">{</span><span class="n">count_all</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"="</span><span class="o">*</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">count_injections</span> <span class="o">=</span> <span class="n">print_all_functions_injections</span><span class="p">(</span><span class="n">set_a</span><span class="p">,</span> <span class="n">set_b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Ukupno injekcija: </span><span class="si">{</span><span class="n">count_injections</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"="</span><span class="o">*</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">count_bijections</span> <span class="o">=</span> <span class="n">print_all_functions_bijections</span><span class="p">(</span><span class="n">set_a</span><span class="p">,</span> <span class="n">set_b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Ukupno bijekcija: </span><span class="si">{</span><span class="n">count_bijections</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"="</span><span class="o">*</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1. f(1) = c; f(2) = c; f(3) = c
+2. f(1) = c; f(2) = c; f(3) = a
+3. f(1) = c; f(2) = c; f(3) = b
+4. f(1) = c; f(2) = a; f(3) = c
+5. f(1) = c; f(2) = a; f(3) = a
+6. f(1) = c; f(2) = a; f(3) = b
+7. f(1) = c; f(2) = b; f(3) = c
+8. f(1) = c; f(2) = b; f(3) = a
+9. f(1) = c; f(2) = b; f(3) = b
+10. f(1) = a; f(2) = c; f(3) = c
+11. f(1) = a; f(2) = c; f(3) = a
+12. f(1) = a; f(2) = c; f(3) = b
+13. f(1) = a; f(2) = a; f(3) = c
+14. f(1) = a; f(2) = a; f(3) = a
+15. f(1) = a; f(2) = a; f(3) = b
+16. f(1) = a; f(2) = b; f(3) = c
+17. f(1) = a; f(2) = b; f(3) = a
+18. f(1) = a; f(2) = b; f(3) = b
+19. f(1) = b; f(2) = c; f(3) = c
+20. f(1) = b; f(2) = c; f(3) = a
+21. f(1) = b; f(2) = c; f(3) = b
+22. f(1) = b; f(2) = a; f(3) = c
+23. f(1) = b; f(2) = a; f(3) = a
+24. f(1) = b; f(2) = a; f(3) = b
+25. f(1) = b; f(2) = b; f(3) = c
+26. f(1) = b; f(2) = b; f(3) = a
+27. f(1) = b; f(2) = b; f(3) = b
+
+Ukupno funkcija: 27
+====================
+1. f(1) = c; f(2) = a; f(3) = b
+2. f(1) = c; f(2) = b; f(3) = a
+3. f(1) = a; f(2) = c; f(3) = b
+4. f(1) = a; f(2) = b; f(3) = c
+5. f(1) = b; f(2) = c; f(3) = a
+6. f(1) = b; f(2) = a; f(3) = c
+
+Ukupno injekcija: 6
+====================
+1. f(1) = c; f(2) = a; f(3) = b
+2. f(1) = c; f(2) = b; f(3) = a
+3. f(1) = a; f(2) = c; f(3) = b
+4. f(1) = a; f(2) = b; f(3) = c
+5. f(1) = b; f(2) = c; f(3) = a
+6. f(1) = b; f(2) = a; f(3) = c
+
+Ukupno bijekcija: 6
+====================
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Primer 2 - skup A ima više elemenata od skupa B</span>
+<span class="n">set_a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+<span class="n">set_b</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">}</span>
+<span class="n">count_all</span> <span class="o">=</span> <span class="n">print_all_functions</span><span class="p">(</span><span class="n">set_a</span><span class="p">,</span> <span class="n">set_b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Ukupno funkcija: </span><span class="si">{</span><span class="n">count_all</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"="</span><span class="o">*</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">count_injections</span> <span class="o">=</span> <span class="n">print_all_functions_injections</span><span class="p">(</span><span class="n">set_a</span><span class="p">,</span> <span class="n">set_b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Ukupno injekcija: </span><span class="si">{</span><span class="n">count_injections</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"="</span><span class="o">*</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">count_bijections</span> <span class="o">=</span> <span class="n">print_all_functions_bijections</span><span class="p">(</span><span class="n">set_a</span><span class="p">,</span> <span class="n">set_b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Ukupno bijekcija: </span><span class="si">{</span><span class="n">count_bijections</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"="</span><span class="o">*</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1. f(1) = a; f(2) = a; f(3) = a; f(4) = a; f(5) = a
+2. f(1) = a; f(2) = a; f(3) = a; f(4) = a; f(5) = b
+3. f(1) = a; f(2) = a; f(3) = a; f(4) = b; f(5) = a
+4. f(1) = a; f(2) = a; f(3) = a; f(4) = b; f(5) = b
+5. f(1) = a; f(2) = a; f(3) = b; f(4) = a; f(5) = a
+6. f(1) = a; f(2) = a; f(3) = b; f(4) = a; f(5) = b
+7. f(1) = a; f(2) = a; f(3) = b; f(4) = b; f(5) = a
+8. f(1) = a; f(2) = a; f(3) = b; f(4) = b; f(5) = b
+9. f(1) = a; f(2) = b; f(3) = a; f(4) = a; f(5) = a
+10. f(1) = a; f(2) = b; f(3) = a; f(4) = a; f(5) = b
+11. f(1) = a; f(2) = b; f(3) = a; f(4) = b; f(5) = a
+12. f(1) = a; f(2) = b; f(3) = a; f(4) = b; f(5) = b
+13. f(1) = a; f(2) = b; f(3) = b; f(4) = a; f(5) = a
+14. f(1) = a; f(2) = b; f(3) = b; f(4) = a; f(5) = b
+15. f(1) = a; f(2) = b; f(3) = b; f(4) = b; f(5) = a
+16. f(1) = a; f(2) = b; f(3) = b; f(4) = b; f(5) = b
+17. f(1) = b; f(2) = a; f(3) = a; f(4) = a; f(5) = a
+18. f(1) = b; f(2) = a; f(3) = a; f(4) = a; f(5) = b
+19. f(1) = b; f(2) = a; f(3) = a; f(4) = b; f(5) = a
+20. f(1) = b; f(2) = a; f(3) = a; f(4) = b; f(5) = b
+21. f(1) = b; f(2) = a; f(3) = b; f(4) = a; f(5) = a
+22. f(1) = b; f(2) = a; f(3) = b; f(4) = a; f(5) = b
+23. f(1) = b; f(2) = a; f(3) = b; f(4) = b; f(5) = a
+24. f(1) = b; f(2) = a; f(3) = b; f(4) = b; f(5) = b
+25. f(1) = b; f(2) = b; f(3) = a; f(4) = a; f(5) = a
+26. f(1) = b; f(2) = b; f(3) = a; f(4) = a; f(5) = b
+27. f(1) = b; f(2) = b; f(3) = a; f(4) = b; f(5) = a
+28. f(1) = b; f(2) = b; f(3) = a; f(4) = b; f(5) = b
+29. f(1) = b; f(2) = b; f(3) = b; f(4) = a; f(5) = a
+30. f(1) = b; f(2) = b; f(3) = b; f(4) = a; f(5) = b
+31. f(1) = b; f(2) = b; f(3) = b; f(4) = b; f(5) = a
+32. f(1) = b; f(2) = b; f(3) = b; f(4) = b; f(5) = b
+
+Ukupno funkcija: 32
+====================
+
+Ukupno injekcija: 0
+====================
+
+Ukupno bijekcija: 0
+====================
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Primer 3 - skup B ima više elemenata od skupa A</span>
+<span class="n">set_a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
+<span class="n">set_b</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">,</span> <span class="s1">'f'</span><span class="p">}</span>
+<span class="n">count_all</span> <span class="o">=</span> <span class="n">print_all_functions</span><span class="p">(</span><span class="n">set_a</span><span class="p">,</span> <span class="n">set_b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Ukupno funkcija: </span><span class="si">{</span><span class="n">count_all</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"="</span><span class="o">*</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">count_injections</span> <span class="o">=</span> <span class="n">print_all_functions_injections</span><span class="p">(</span><span class="n">set_a</span><span class="p">,</span> <span class="n">set_b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Ukupno injekcija: </span><span class="si">{</span><span class="n">count_injections</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"="</span><span class="o">*</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">count_bijections</span> <span class="o">=</span> <span class="n">print_all_functions_bijections</span><span class="p">(</span><span class="n">set_a</span><span class="p">,</span> <span class="n">set_b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Ukupno bijekcija: </span><span class="si">{</span><span class="n">count_bijections</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"="</span><span class="o">*</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1. f(1) = c; f(2) = c
+2. f(1) = c; f(2) = d
+3. f(1) = c; f(2) = a
+4. f(1) = c; f(2) = f
+5. f(1) = c; f(2) = b
+6. f(1) = d; f(2) = c
+7. f(1) = d; f(2) = d
+8. f(1) = d; f(2) = a
+9. f(1) = d; f(2) = f
+10. f(1) = d; f(2) = b
+11. f(1) = a; f(2) = c
+12. f(1) = a; f(2) = d
+13. f(1) = a; f(2) = a
+14. f(1) = a; f(2) = f
+15. f(1) = a; f(2) = b
+16. f(1) = f; f(2) = c
+17. f(1) = f; f(2) = d
+18. f(1) = f; f(2) = a
+19. f(1) = f; f(2) = f
+20. f(1) = f; f(2) = b
+21. f(1) = b; f(2) = c
+22. f(1) = b; f(2) = d
+23. f(1) = b; f(2) = a
+24. f(1) = b; f(2) = f
+25. f(1) = b; f(2) = b
+
+Ukupno funkcija: 25
+====================
+1. f(1) = c; f(2) = d
+2. f(1) = c; f(2) = a
+3. f(1) = c; f(2) = f
+4. f(1) = c; f(2) = b
+5. f(1) = d; f(2) = c
+6. f(1) = d; f(2) = a
+7. f(1) = d; f(2) = f
+8. f(1) = d; f(2) = b
+9. f(1) = a; f(2) = c
+10. f(1) = a; f(2) = d
+11. f(1) = a; f(2) = f
+12. f(1) = a; f(2) = b
+13. f(1) = f; f(2) = c
+14. f(1) = f; f(2) = d
+15. f(1) = f; f(2) = a
+16. f(1) = f; f(2) = b
+17. f(1) = b; f(2) = c
+18. f(1) = b; f(2) = d
+19. f(1) = b; f(2) = a
+20. f(1) = b; f(2) = f
+
+Ukupno injekcija: 20
+====================
+
+Ukupno bijekcija: 0
+====================
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Leksikografski-poredak">Leksikografski poredak<a class="anchor-link" href="#Leksikografski-poredak">¶</a></h2><p>Kada pričamo o $m$-permutacijama i permutacijama često pominjemo i pojam leksičkog poretka. Leksički poredak permutacije je poredak kreiran nekom relacijom poretka $\rho$.</p>
+<p>Kaže se da je permutacija
+$$a_1, a_2, a_3, ..., a_m$$
+je leksikografski pre permutacije
+$$b_1, b_2, b_3, ..., b_m$$
+ako i samo ako postoji index $i$ takav da je $a_i\rho b_i$ i za svako $j\lt i$ važi $a_j = b_j$.
+Odnosno
+$$(a_1, ..., a_m)\rho (b_1, ..., b_m) \iff (\exists i\in \mathbb{N}_m)(\forall j\in \mathbb{N}_{i-1})(a_j = b_j \land a_i\rho b_i)$$</p>
+<p>Kada pričamo o leksikografskom poretku kao relaciju poretka koristimo ili $\le$ za brojeve ili abecedni redosled slova.</p>
+<h3 id="Primer">Primer<a class="anchor-link" href="#Primer">¶</a></h3><p>Leksikografski poredak svih permutacija skupa $A = \{1,2,3\}$:
+$$
+\text{1. }\text{ }\text{ }\text{ }\text{ } 1\text{ }2\text{ }3 \\
+\text{2. }\text{ }\text{ }\text{ }\text{ } 1\text{ }3\text{ }2 \\
+\text{3. }\text{ }\text{ }\text{ }\text{ } 2\text{ }1\text{ }3 \\
+\text{4. }\text{ }\text{ }\text{ }\text{ } 2\text{ }3\text{ }1 \\
+\text{5. }\text{ }\text{ }\text{ }\text{ } 3\text{ }1\text{ }2 \\
+\text{6. }\text{ }\text{ }\text{ }\text{ } 3\text{ }2\text{ }1 \\
+$$</p>
+<p>Leksikografski poredak svih permutacija skupa $B = \{a, b, c\}$:
+$$
+\text{1. }\text{ }\text{ }\text{ }\text{ } a\text{ }b\text{ }c \\
+\text{2. }\text{ }\text{ }\text{ }\text{ } a\text{ }c\text{ }b \\
+\text{3. }\text{ }\text{ }\text{ }\text{ } b\text{ }a\text{ }c \\
+\text{4. }\text{ }\text{ }\text{ }\text{ } b\text{ }c\text{ }a \\
+\text{5. }\text{ }\text{ }\text{ }\text{ } c\text{ }a\text{ }c \\
+\text{6. }\text{ }\text{ }\text{ }\text{ } c\text{ }b\text{ }a \\
+$$</p>
+<p>Možete li uočiti neku sličnost između ova dva poretka?</p>
+<p>Ukoliko kreiramo bijekciju $f: A\rightarrow B$ tako što se elementi sa istim "rednim brojem u poretku" preslikaju jedan u drugi dobijamo isti leksikografski poredak, odnosno:</p>
+<p>$$
+f = 
+\begin{pmatrix}
+   a_1 &amp; a_2 &amp; ... &amp; a_m \\
+   b_1 &amp; b_2 &amp; ... &amp; b_m
+\end{pmatrix}
+\text{ pri čemu je } \\
+(a_1\rho a_2\land a_2\rho a_3 \land ... \land a_{m-1}\rho a_m) \land (b_1\rho b_2\land b_2\rho b_3 \land ... \land b_{m-1}\rho b_m) 
+$$
+onda je leksikografski poredak skupa $A$ jednak leksikograskom poretku skupa $B$ pri čemu je
+$$b_i = f(a_i)$$</p>
+<h3 id="Algoritmi-leksikografskog-poretka">Algoritmi leksikografskog poretka<a class="anchor-link" href="#Algoritmi-leksikografskog-poretka">¶</a></h3><h4 id="Generisanje-svih-permutacija">Generisanje svih permutacija<a class="anchor-link" href="#Generisanje-svih-permutacija">¶</a></h4><p>Prvi algoritam jeste generisanje permutacija u leksikografskom poretku.</p>
+<p>Permutacije u leksikografskom poretku možemo da generišemo veoma lako rekurzivno.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">permutations</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">previous</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">previous</span><span class="p">]</span>
+    
+    <span class="n">perms</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">previous</span><span class="p">:</span>
+            <span class="n">perms</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">permutations</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">previous</span> <span class="o">+</span> <span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    
+    <span class="k">return</span> <span class="n">perms</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">all_permutations</span> <span class="o">=</span> <span class="n">permutations</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">[])</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">perm</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_permutations</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">.</span><span class="se">\t</span><span class="s2"> </span><span class="si">{</span><span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="w"> </span><span class="n">perm</span><span class="p">))</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1.	 1 2 3 4
+2.	 1 2 4 3
+3.	 1 3 2 4
+4.	 1 3 4 2
+5.	 1 4 2 3
+6.	 1 4 3 2
+7.	 2 1 3 4
+8.	 2 1 4 3
+9.	 2 3 1 4
+10.	 2 3 4 1
+11.	 2 4 1 3
+12.	 2 4 3 1
+13.	 3 1 2 4
+14.	 3 1 4 2
+15.	 3 2 1 4
+16.	 3 2 4 1
+17.	 3 4 1 2
+18.	 3 4 2 1
+19.	 4 1 2 3
+20.	 4 1 3 2
+21.	 4 2 1 3
+22.	 4 2 3 1
+23.	 4 3 1 2
+24.	 4 3 2 1
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Odre%C4%91ivanje-permutacije-po-broju">Određivanje permutacije po broju<a class="anchor-link" href="#Odre%C4%91ivanje-permutacije-po-broju">¶</a></h4><p>Sledeći algoritam je određivanje permutacije na osnovu njenjog rednog broja $k$, odnosno želimo da za ulaznu vrednost $k$, redni broj permutacije, generišemo tu permutaciju.</p>
+<p>Neka je dat skup $S = \{a_1, a_2, ..., a_n\}$ gde su elementi $a_1, a_2, ..., a_n$ u leksikografskom poretku.</p>
+<p>Svaka permutacija skupa $S$ će biti u obliku
+$$b_1 b_2 b_3...b_n$$</p>
+<p>Ukoliko fiksiramo prvi element, $b_1$ a ostale permutujemo slobodno, možemo primetiti da je broj permutaciji koje počinju elementom $b_1$ jednak broju permutaciji preostalih $n-1$ elemenata, odnosno sa $a_1$ počinje prvih $(n-1)!$ permutacija, sa $a_2$ počinje drugih $(n-1)!$ permutacija, ..., sa $a_n$ počinje poslednjih $(n-1)!$ permutacija.</p>
+<p>Na ovaj način možemo videti da će redni broj prvog elementa permutacije u leksikografskom poretku biti
+$p_1= \lceil \frac{k}{(n-1)!} \rceil$ pa možemo odabrati $b_{p_i}$ iz skupa $S$.</p>
+<p>Zatim možemo posmatrati skup $S\setminus\{a_{p_1}\}$ sa $n-1$ elemenata i $k' = k \mod (n-1)!$ i primeniti isti postupak.</p>
+<p>Na ovaj način smo dobili niz indeksa $p_1, p_2, ..., p_n$ koji prestavljaju indekse elemenata u nizu $a_1, a_2, ..., a_n$ takav da je $a_{p_1} a_{p_2}...a_{p_n}$ baš tražena $k$-ta permutacija skupa $S$.</p>
+<p>Sledi primer koji bi određivao $k$-tu permutaciju programski, ali pre toga bismo da napomenemo da se ovde oslanjamo na celobrojno deljenje da bismo dobili indekse niza, što se razlikuje od matematičkog zapisa zaokruživanja na više $\lceil x \rceil$.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [15]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">kth_permutation</span><span class="p">(</span><span class="n">S</span><span class="p">:</span> <span class="nb">set</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">S</span><span class="p">))</span>
+    <span class="n">permutation</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="n">f</span>
+        <span class="n">permutation</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">k</span> <span class="o">%=</span> <span class="n">f</span>
+    <span class="k">return</span> <span class="n">permutation</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [16]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">kth_permutation</span><span class="p">({</span><span class="s1">'S'</span><span class="p">,</span> <span class="s1">'U'</span><span class="p">,</span> <span class="s1">'P'</span><span class="p">,</span> <span class="s1">'E'</span><span class="p">,</span> <span class="s1">'R'</span><span class="p">},</span> <span class="mi">25</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>PERSU
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [17]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Generiše preslikavanje iz skupa Nn u skup S</span>
+<span class="k">def</span> <span class="nf">Nn2set_lexicographicly</span><span class="p">(</span><span class="n">S</span><span class="p">:</span> <span class="nb">set</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">callable</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">S</span><span class="p">))</span>
+    <span class="k">return</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">n</span><span class="p">]),</span> <span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [18]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Preslikavanje iz skupa Nn u skup {'S', 'U', 'P', 'E', 'R'} koje održava leksikografski redosled elemenata</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">Nn2set_lexicographicly</span><span class="p">({</span><span class="s1">'S'</span><span class="p">,</span> <span class="s1">'U'</span><span class="p">,</span> <span class="s1">'P'</span><span class="p">,</span> <span class="s1">'E'</span><span class="p">,</span> <span class="s1">'R'</span><span class="p">})</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0 -&gt; E
+1 -&gt; P
+2 -&gt; R
+3 -&gt; S
+4 -&gt; U
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [19]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">all_permutations</span> <span class="o">=</span> <span class="n">permutations</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[])</span>       <span class="c1"># generišemo sve permutacije 5 elemenata</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">perm</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_permutations</span><span class="p">):</span>     <span class="c1"># za svaku permutaciju</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">.</span><span class="se">\t</span><span class="s2"> </span><span class="si">{</span><span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">f</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">perm</span><span class="p">])</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">"</span><span class="se">\t\t</span><span class="s2">|</span><span class="se">\t\t</span><span class="s2">"</span><span class="p">)</span>    <span class="c1"># ispišemo permutaciju tako što svaki broj preslikamo u odgovarajuće slovo</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>                              <span class="c1"># ako smo ispisali tri permutacije u redu</span>
+        <span class="nb">print</span><span class="p">()</span>                                 <span class="c1"># prelazimo u novi red</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1.	 EPRSU		|		2.	 EPRUS		|		3.	 EPSRU		|		
+4.	 EPSUR		|		5.	 EPURS		|		6.	 EPUSR		|		
+7.	 ERPSU		|		8.	 ERPUS		|		9.	 ERSPU		|		
+10.	 ERSUP		|		11.	 ERUPS		|		12.	 ERUSP		|		
+13.	 ESPRU		|		14.	 ESPUR		|		15.	 ESRPU		|		
+16.	 ESRUP		|		17.	 ESUPR		|		18.	 ESURP		|		
+19.	 EUPRS		|		20.	 EUPSR		|		21.	 EURPS		|		
+22.	 EURSP		|		23.	 EUSPR		|		24.	 EUSRP		|		
+25.	 PERSU		|		26.	 PERUS		|		27.	 PESRU		|		
+28.	 PESUR		|		29.	 PEURS		|		30.	 PEUSR		|		
+31.	 PRESU		|		32.	 PREUS		|		33.	 PRSEU		|		
+34.	 PRSUE		|		35.	 PRUES		|		36.	 PRUSE		|		
+37.	 PSERU		|		38.	 PSEUR		|		39.	 PSREU		|		
+40.	 PSRUE		|		41.	 PSUER		|		42.	 PSURE		|		
+43.	 PUERS		|		44.	 PUESR		|		45.	 PURES		|		
+46.	 PURSE		|		47.	 PUSER		|		48.	 PUSRE		|		
+49.	 REPSU		|		50.	 REPUS		|		51.	 RESPU		|		
+52.	 RESUP		|		53.	 REUPS		|		54.	 REUSP		|		
+55.	 RPESU		|		56.	 RPEUS		|		57.	 RPSEU		|		
+58.	 RPSUE		|		59.	 RPUES		|		60.	 RPUSE		|		
+61.	 RSEPU		|		62.	 RSEUP		|		63.	 RSPEU		|		
+64.	 RSPUE		|		65.	 RSUEP		|		66.	 RSUPE		|		
+67.	 RUEPS		|		68.	 RUESP		|		69.	 RUPES		|		
+70.	 RUPSE		|		71.	 RUSEP		|		72.	 RUSPE		|		
+73.	 SEPRU		|		74.	 SEPUR		|		75.	 SERPU		|		
+76.	 SERUP		|		77.	 SEUPR		|		78.	 SEURP		|		
+79.	 SPERU		|		80.	 SPEUR		|		81.	 SPREU		|		
+82.	 SPRUE		|		83.	 SPUER		|		84.	 SPURE		|		
+85.	 SREPU		|		86.	 SREUP		|		87.	 SRPEU		|		
+88.	 SRPUE		|		89.	 SRUEP		|		90.	 SRUPE		|		
+91.	 SUEPR		|		92.	 SUERP		|		93.	 SUPER		|		
+94.	 SUPRE		|		95.	 SUREP		|		96.	 SURPE		|		
+97.	 UEPRS		|		98.	 UEPSR		|		99.	 UERPS		|		
+100.	 UERSP		|		101.	 UESPR		|		102.	 UESRP		|		
+103.	 UPERS		|		104.	 UPESR		|		105.	 UPRES		|		
+106.	 UPRSE		|		107.	 UPSER		|		108.	 UPSRE		|		
+109.	 UREPS		|		110.	 URESP		|		111.	 URPES		|		
+112.	 URPSE		|		113.	 URSEP		|		114.	 URSPE		|		
+115.	 USEPR		|		116.	 USERP		|		117.	 USPER		|		
+118.	 USPRE		|		119.	 USREP		|		120.	 USRPE		|		
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Odre%C4%91ivanje-broja-permutacije">Određivanje broja permutacije<a class="anchor-link" href="#Odre%C4%91ivanje-broja-permutacije">¶</a></h4><p>Suprotna operacija je određivanje rednog broja date permutacije. Algoritam je simetričan, sada idemo slovo po slovo i na osnovu njegovog indeksa ćemo povećavati $k$.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [20]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">permutation_number</span><span class="p">(</span><span class="n">S</span><span class="p">:</span> <span class="nb">set</span><span class="p">,</span> <span class="n">permutation</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">S</span><span class="p">))</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>       <span class="c1"># broj permutacije</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">permutation</span><span class="p">):</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">k</span> <span class="o">+=</span> <span class="n">j</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>        <span class="c1"># indeksiranje počinje od 1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [21]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">permutation_number</span><span class="p">({</span><span class="s1">'S'</span><span class="p">,</span> <span class="s1">'U'</span><span class="p">,</span> <span class="s1">'P'</span><span class="p">,</span> <span class="s1">'E'</span><span class="p">,</span> <span class="s1">'R'</span><span class="p">},</span> <span class="p">[</span><span class="s1">'P'</span><span class="p">,</span> <span class="s1">'E'</span><span class="p">,</span> <span class="s1">'R'</span><span class="p">,</span> <span class="s1">'S'</span><span class="p">,</span> <span class="s1">'U'</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>25
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Odre%C4%91ivanje-prethodne-i-slede%C4%87e-permutacije">Određivanje prethodne i sledeće permutacije<a class="anchor-link" href="#Odre%C4%91ivanje-prethodne-i-slede%C4%87e-permutacije">¶</a></h4><p>Poslednji algoritam iz ove grupe jeste algoritam određivanja sledeće i prethodne permutacije. Najlakši način bio bi da se pozovemo na prethodne 2 funkcije tako što odredimo redni broj permutacije $k$ i onda odredimo $k-1$. i $k+1$. permutaciju:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [22]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">before_after_permutation</span><span class="p">(</span><span class="n">S</span><span class="p">:</span> <span class="nb">set</span><span class="p">,</span> <span class="n">permutation</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">permutation_number</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">permutation</span><span class="p">)</span>
+    <span class="n">before</span><span class="p">,</span> <span class="n">after</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">before</span> <span class="o">=</span> <span class="n">kth_permutation</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">after</span> <span class="o">=</span> <span class="n">kth_permutation</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">before</span><span class="p">,</span> <span class="n">after</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [23]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">before_after_permutation</span><span class="p">({</span><span class="s1">'S'</span><span class="p">,</span> <span class="s1">'U'</span><span class="p">,</span> <span class="s1">'P'</span><span class="p">,</span> <span class="s1">'E'</span><span class="p">,</span> <span class="s1">'R'</span><span class="p">},</span> <span class="p">[</span><span class="s1">'P'</span><span class="p">,</span> <span class="s1">'E'</span><span class="p">,</span> <span class="s1">'R'</span><span class="p">,</span> <span class="s1">'S'</span><span class="p">,</span> <span class="s1">'U'</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Before:"</span><span class="p">,</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">if</span> <span class="n">b</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"After:"</span><span class="p">,</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Before: EUSRP
+After: PERUS
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [24]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">before_after_permutation</span><span class="p">({</span><span class="s1">'S'</span><span class="p">,</span> <span class="s1">'U'</span><span class="p">,</span> <span class="s1">'P'</span><span class="p">,</span> <span class="s1">'E'</span><span class="p">,</span> <span class="s1">'R'</span><span class="p">},</span> <span class="p">[</span><span class="s1">'E'</span><span class="p">,</span> <span class="s1">'P'</span><span class="p">,</span> <span class="s1">'R'</span><span class="p">,</span> <span class="s1">'S'</span><span class="p">,</span> <span class="s1">'U'</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Before:"</span><span class="p">,</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">if</span> <span class="n">b</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"After:"</span><span class="p">,</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Before: None
+After: EPRUS
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ovo verovatno nisu najefikasniji načini za određivane ovih permutacija, ali nećemo se baviti tim algoritmim sada, te vam savetujemo da ukoliko ste zainteresovani sami istražujete dalje.</p>
 </div>
 </div>
 </div>
@@ -13246,10 +14309,10 @@ Cell <span class="ansi-green-intense-fg ansi-bold">In[5], line 1</span>
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="display:flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;">
 <p>
-<a href="./02-multiskup.html">&lt; 02 Multiskup</a>
+<a href="./06-nabrajanja-i-prebrojavanja.html">&lt; 06 Nabrajanja i prebrojavanja</a>
 </p>
 <p>
-<a href="./04-relacije-i-funkcije.html">04 Relacije i funkcije&gt;</a>
+<a href="./08-kombinacije.html">08 Kombinacije &gt;</a>
 </p>
 </div>
 </div>

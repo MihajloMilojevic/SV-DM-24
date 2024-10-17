@@ -13143,9 +13143,9 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Princip-bijekcije">Princip bijekcije<a class="anchor-link" href="#Princip-bijekcije">¶</a></h2><p>Neka su $A$ i $B$ neprzani konačni skupovi. Tada važi:</p>
-<p>$$|A| = |B| \iff (\exist f) (f: A\xrightarrow["na"]{"1-1"} B)$$</p>
+<p>$$|A| = |B| \iff (\exists f) (f: A\xrightarrow["na"]{"1-1"} B)$$</p>
 <p><em>Dokaz:</em></p>
-<p>$\impliedby$ Dokaz ćemo dati kontradikcijom. Označimo $|A| = n$ i $B = m$, pri čemu je $n\not = b$. Sada razmatramo dva slučaja:</p>
+<p>$\impliedby$ Dokaz ćemo dati kontradikcijom. Označimo $|A| = n$ i $B = m$, pri čemu je $n\not = m$. Sada razmatramo dva slučaja:</p>
 <ol>
 <li>$n \lt m$</li>
 </ol>
@@ -13162,8 +13162,8 @@ div#notebook {
 <img alt="Preslikavnje iz skupa veće kardinalnosti u skup manje kardinalnosti" src="./imgs/06-funkcija-iz-veceg-u-manji.png" style="width: 100%; max-width: 500px;"/>
 <p style="text-align: center;"><i>Preslikavnje iz skupa veće kardinalnosti u skup manje kardinalnosti</i></p>
 </div>
-<p>Očigledno je da $n = m$ odnosno da je $|A| = $|B|$.</p>
-<p>$\implies$ Ukoliko je $|A| = $|B|$ onda svakom elementu možemo iz skupa $A$ možemo pridružiti tačno jedan element iz skupa $B$. Ovo možemo uraditi tako što ćemo elemente skupa smestiti u n-torku ili niz u proizvoljnom redosledu (koje su obe dužine $n$) i elementu na $i$-toj poziciji n-torke skupa $A$ pridružiti $i$-ti element n-torke skupa $B$. Na ovaj način smo definisali jedno preslikavanje iz skupa $A$ u skup $B$. S obzirom da su elementi skupova jedinstveni (odnosno nema duplikata) ovo preslikavanje će biti injektivno (svaki element se slika u različiti element), a s obzirom da ih je isti broj i svakom elementu skupa $B$ odgovara tačno jedan element skupa $A$, ovo preslikavanje i sirjektivno, odnosno postoji i može se formirati bijekcija iz $A$ u $B$ čime je dokaz gotov.</p>
+<p>Očigledno je da $n = m$ odnosno da je $|A| = |B|$.</p>
+<p>$\implies$ Ukoliko je $|A| = |B|$ onda svakom elementu možemo iz skupa $A$ možemo pridružiti tačno jedan element iz skupa $B$. Ovo možemo uraditi tako što ćemo elemente skupa smestiti u n-torku ili niz u proizvoljnom redosledu (koje su obe dužine $n$) i elementu na $i$-toj poziciji n-torke skupa $A$ pridružiti $i$-ti element n-torke skupa $B$. Na ovaj način smo definisali jedno preslikavanje iz skupa $A$ u skup $B$. S obzirom da su elementi skupova jedinstveni (odnosno nema duplikata) ovo preslikavanje će biti injektivno (svaki element se slika u različiti element), a s obzirom da ih je isti broj i svakom elementu skupa $B$ odgovara tačno jedan element skupa $A$, ovo preslikavanje i sirjektivno, odnosno postoji i može se formirati bijekcija iz $A$ u $B$ čime je dokaz gotov.</p>
 <p>$$\tag*{□}$$</p>
 <p><br/>
 <br/></p>
@@ -13534,7 +13534,7 @@ b_{i-n} &amp; \text{ za } n \lt i \le n + m
 </div>
 <p>$$\tag*{□}$$</p>
 <p>Teorema: princip sume</p>
-<p>Neka je $n\le 2$ i neka su $A_1, A_2,..., A_n$ konačni skupovi sa osobinom:
+<p>Neka je $n\ge 2$ i neka su $A_1, A_2,..., A_n$ konačni skupovi sa osobinom:
 $$\forall i, j \in \{1, 2, ..., n\} \text{ }\text{ }\text{ }\text{ } i \not = \implies A_i \cap A_j = \emptyset$$
 odnosno svaka dva skupa su međusobno disjunktna.</p>
 <p>Tada je:

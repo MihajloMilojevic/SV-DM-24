@@ -13121,54 +13121,6 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Operacije-sa-funkcijama">Operacije sa funkcijama<a class="anchor-link" href="#Operacije-sa-funkcijama">¶</a></h3><p>S obzirom da su funkcije u stvari skupovi parova elemenata, sa njima možemo da vršimo sve operacije kao i sa skupovima. Međutim, pored njih, postoje i operacije koje su namenjene samo funkcijama.</p>
-<h4 id="Slaganje-(kompozicija)-funkcija">Slaganje (kompozicija) funkcija<a class="anchor-link" href="#Slaganje-(kompozicija)-funkcija">¶</a></h4><p>Ako su date funkcije $f: A\rightarrow B$ i $g: B\rightarrow C$, tada se pod kompozijom funkcija $f$ i $g$ podrazumeva funckija $g\circ f: A\rightarrow C$ data pravilom preslikavanja:
-$$g\circ f = g(f(x)), x\in A$$</p>
-<h4 id="Redukcija-funkcije">Redukcija funkcije<a class="anchor-link" href="#Redukcija-funkcije">¶</a></h4><p>Ako su dati funckija $f: A\rightarrow B$ i podskup $A'\subseteq A$, tada se pod redukcijom funkcije $f$ na poddomen $A'$ u oznaci $f_{A'}$ podrazumeva funkcija $f_{A'}: A'\rightarrow B$, data pravilom preslikavanja:
-$$f_{A'}(x) = f(x), x\in A'$$</p>
-<h4 id="Identi%C4%8Dka-funkcija">Identička funkcija<a class="anchor-link" href="#Identi%C4%8Dka-funkcija">¶</a></h4><p>Za proizvoljan skup $A$, funkcija $i_{A}: A\rightarrow A$ data pravilom preslikavanja $i_A(x) = x, x\in A$ naziva se identička funkcija na skupu $A$.</p>
-<h4 id="Inverzna-funkcija">Inverzna funkcija<a class="anchor-link" href="#Inverzna-funkcija">¶</a></h4><p>Ako je data funkcija $f: A\rightarrow B$, tada se za funkciju $g: B\rightarrow A$ kaže da je inverzna funkcija za funkciju $f$ ako važi:
-$$g(f(x)) = x, x\in A$$
-odnosno
-$$f(g(y)) = y, y\in B$$</p>
-<p>Inverzna funkcija za funkciju f se obično obeležava sa $f^{-1}$.</p>
-<h4 id="Teorema">Teorema<a class="anchor-link" href="#Teorema">¶</a></h4><p>Za funkciju $f: A\rightarrow B$ postoji inverztna funkcija ako i samo ako je $f$ bijekcija.</p>
-<p><em>Dokaz:</em></p>
-<p>$\implies$ Pretpostavimo da funkcija $f: A\rightarrow B$ ima inverznu funkciju $f^{-1}: B\rightarrow A$ i dokažimo da je $f$ bijekcija.</p>
-<p>Funkcija f je injektivna, jer ako je $f(x_1)=f(x_2)=y$ za $x_1 \not = x_2$, tada iz definisanosti inverzne funkcije sledi da je $f^{-1}(y)=f^{-1}(x_1)=x_1$ i $f^{-1}(y)=f^{-1}(x_2)=x_2$, što je kontradiktorno činjenici da je $f^{-1}$ funkcija i da prema tome, može da ima samo jednu vrednost za datu vrednost argumenta. S druge strane funkcija je i sirjektivna, jer za svako $y\in B$ važi $f(f^{-1}(y)) = y$.</p>
-<p>$\impliedby$ Pretpostavimo sada da je $f$ bijekcija i dokažimo da onda postoji funkcija $h$ koja je njena inverzna funkcija. Funkciju $h$ ćemo definisati na sledeći način:
-$$h\subseteq B\times A, (y, x)\in h \text{ ako i samo ako je } f(x)=y$$</p>
-<p>Primetimo da smo ovim, u stvari samo definisali jedan podskup $h\subseteq B\times A$, pa stoga moramo da pokažemo da je h zaista funkcija, tj. da za svako $y\in B$ postoji tačno jedno $x\in A$ tako da je $h(y) = x$. Najpre, pošto je funckija $f$ sirjektivna, to za svako $y\in B$ postoji $x\in A$ takvo da je $f(x) = y$, pa po definiciji $h$ važi i $(y, x)\in h$. Dalje, pošto je $f$ injektivna ovakvo $x$ je jedinstveno, pa smo se zaista uverili da je $h$ funkcija i možemo slobodno da pišemo $h: B\rightarrow A, h(y) = x$ ako i samo je $f(x) = y$. Sada je jasno da važi $h(f(x)) = x$ i $f(h(y)) = y$ pa je $h$ inverzna funckija za $f$.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Operacije-sa-funkcijama">Operacije sa funkcijama<a class="anchor-link" href="#Operacije-sa-funkcijama">¶</a></h3><p>S obzirom da su funkcije u stvari skupovi parova elemenata, sa njima možemo da vršimo sve operacije kao i sa skupovima. Međutim, pored njih, postoje i operacije koje su namenjene samo funkcijama.</p>
-<h4 id="Slaganje-(kompozicija)-funkcija">Slaganje (kompozicija) funkcija<a class="anchor-link" href="#Slaganje-(kompozicija)-funkcija">¶</a></h4><p>Ako su date funkcije $f: A\rightarrow B$ i $g: B\rightarrow C$, tada se pod kompozijom funkcija $f$ i $g$ podrazumeva funckija $g\circ f: A\rightarrow C$ data pravilom preslikavanja:
-$$g\circ f = g(f(x)), x\in A$$</p>
-<h4 id="Redukcija-funkcije">Redukcija funkcije<a class="anchor-link" href="#Redukcija-funkcije">¶</a></h4><p>Ako su dati funckija $f: A\rightarrow B$ i podskup $A'\subseteq A$, tada se pod redukcijom funkcije $f$ na poddomen $A'$ u oznaci $f_{A'}$ podrazumeva funkcija $f_{A'}: A'\rightarrow B$, data pravilom preslikavanja:
-$$f_{A'}(x) = f(x), x\in A'$$</p>
-<h4 id="Identi%C4%8Dka-funkcija">Identička funkcija<a class="anchor-link" href="#Identi%C4%8Dka-funkcija">¶</a></h4><p>Za proizvoljan skup $A$, funkcija $i_{A}: A\rightarrow A$ data pravilom preslikavanja $i_A(x) = x, x\in A$ naziva se identička funkcija na skupu $A$.</p>
-<h4 id="Inverzna-funkcija">Inverzna funkcija<a class="anchor-link" href="#Inverzna-funkcija">¶</a></h4><p>Ako je data funkcija $f: A\rightarrow B$, tada se za funkciju $g: B\rightarrow A$ kaže da je inverzna funkcija za funkciju $f$ ako važi:
-$$g(f(x)) = x, x\in A$$
-odnosno
-$$f(g(y)) = y, y\in B$$</p>
-<p>Inverzna funkcija za funkciju f se obično obeležava sa $f^{-1}$.</p>
-<h4 id="Teorema">Teorema<a class="anchor-link" href="#Teorema">¶</a></h4><p>Za funkciju $f: A\rightarrow B$ postoji inverztna funkcija ako i samo ako je $f$ bijekcija.</p>
-<p><em>Dokaz:</em></p>
-<p>$\implies$ Pretpostavimo da funkcija $f: A\rightarrow B$ ima inverznu funkciju $f^{-1}: B\rightarrow A$ i dokažimo da je $f$ bijekcija.</p>
-<p>Funkcija f je injektivna, jer ako je $f(x_1)=f(x_2)=y$ za $x_1 \not = x_2$, tada iz definisanosti inverzne funkcije sledi da je $f^{-1}(y)=f^{-1}(x_1)=x_1$ i $f^{-1}(y)=f^{-1}(x_2)=x_2$, što je kontradiktorno činjenici da je $f^{-1}$ funkcija i da prema tome, može da ima samo jednu vrednost za datu vrednost argumenta. S druge strane funkcija je i sirjektivna, jer za svako $y\in B$ važi $f(f^{-1}(y)) = y$.</p>
-<p>$\impliedby$ Pretpostavimo sada da je $f$ bijekcija i dokažimo da onda postoji funkcija $h$ koja je njena inverzna funkcija. Funkciju $h$ ćemo definisati na sledeći način:
-$$h\subseteq B\times A, (y, x)\in h \text{ ako i samo ako je } f(x)=y$$</p>
-<p>Primetimo da smo ovim, u stvari samo definisali jedan podskup $h\subseteq B\times A$, pa stoga moramo da pokažemo da je h zaista funkcija, tj. da za svako $y\in B$ postoji tačno jedno $x\in A$ tako da je $h(y) = x$. Najpre, pošto je funckija $f$ sirjektivna, to za svako $y\in B$ postoji $x\in A$ takvo da je $f(x) = y$, pa po definiciji $h$ važi i $(y, x)\in h$. Dalje, pošto je $f$ injektivna ovakvo $x$ je jedinstveno, pa smo se zaista uverili da je $h$ funkcija i možemo slobodno da pišemo $h: B\rightarrow A, h(y) = x$ ako i samo je $f(x) = y$. Sada je jasno da važi $h(f(x)) = x$ i $f(h(y)) = y$ pa je $h$ inverzna funckija za $f$.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Relacije">Relacije<a class="anchor-link" href="#Relacije">¶</a></h2><h3 id="Osnovni-pojmovi">Osnovni pojmovi<a class="anchor-link" href="#Osnovni-pojmovi">¶</a></h3><p>Relacije predstavljaju veze (odnose) između izvesnih objekata. Relacija je neprazan podskup Dekartovog proizvoda skupova.</p>
 <p>Relacija $\rho$ dužine $n$ je neprazan podskup Dekartovog proizvoda $n$ skupova. Kada je $n=2$ tada govorimo o binarnoj relaciji, dakle o relaciji između elementa $x$ sa elementom $y$, odnosno o uređenom paru $(x, y)$  iz Dekartovog proizvoda $A\times B$. Ako je $(x, y) \in \rho$ tada kažemo da je element $x$ u relaciji sa elementom $y$ i pišemo $x\rho y$.</p>
 <p>Binarna relacija je samo sinonim za skup uređenih parova.</p>
@@ -13187,12 +13139,12 @@ $$h\subseteq B\times A, (y, x)\in h \text{ ako i samo ako je } f(x)=y$$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Primer-1">Primer 1<a class="anchor-link" href="#Primer-1">¶</a></h3><p>$$
 A = \{1,3,6\} \\
-A\times A = \{(1,1),(1,3),(1,6),(3,1),(3,3),(3,6),(6,1),(6,3),(6,6)\} \\
-\rho = \{(1,1),(1,3),(1,6),(3,1),(3,3),(3,6),(6,6)\} \\
+A\times A = \{(1,1),(1,3),(1,6),(3,3),(3,6),(6,1),(6,3),(6,6)\} \\
+\rho = \{(1,1),(1,3),(1,6),(3,3),(3,6),(6,6)\} \\
 \rho \subseteq A^2
 $$
 U ovom slučaju relacija $\rho$ manje ili jednako $\le$ izgleda ovako:
-$$ (1\le 1),(1\le 3),(1\le 6),(3\le 1),(3\le 3),(3\le 6),(6\le 6) $$</p>
+$$ (1\le 1),(1\le 3),(1\le 6),(3\le 3),(3\le 6),(6\le 6) $$</p>
 </div>
 </div>
 </div>
@@ -13256,10 +13208,10 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Funkcije">Funkcije<a class="anchor-link" href="#Funkcije">¶</a></h2><h3 id="Matemati%C4%8Dka-definicija">Matematička definicija<a class="anchor-link" href="#Matemati%C4%8Dka-definicija">¶</a></h3><p>Pod funkcijom se podrazumeva uređena trojka $(A, B, f)$, gde je $f\subseteq A\times B$, pri čemu svako $x\in A$ postoji tačno jedno $y\in B$ tako da $(x, y)\in f$. Skup $A$ se naziva domen, skup $B$ se naziva kodomen, a $f$ je pravilo preslikavanja. Činjenica da funkcija preslikava elemente domena $A$ u elemente kodomena $B$ pomoću pravila preslikavanja $f$ zapisuje se pomoću $f:A\rightarrow B$, a za $(x, y) \in f$ ravnopravno i češće pišemo $f(x) = y$. Samo pravilo preslikavanja $f$ zadaje se formulom ili navođenjem parova elemenata $(x, y)$ koji pripadaju $f$.</p>
 <h3 id="Osnovne-osobine-funkcija">Osnovne osobine funkcija<a class="anchor-link" href="#Osnovne-osobine-funkcija">¶</a></h3><h4 id="Injekcija-(%221-1%22)">Injekcija ("1-1")<a class="anchor-link" href="#Injekcija-(%221-1%22)">¶</a></h4><p>Neka je $f: A\rightarrow B$. Funkcija $f$ je injektivna ("1-1") ako za svaka dva elementa $a\in A$ i $b\in B$ važi:
-$$ a\not = b \implies f(a) \not = f(b) (\text{ ili čečće } f(a) = f(b) \implies a = b) $$</p>
+$$ a\not = b \implies f(a) \not = f(b) (\text{ ili češće } f(a) = f(b) \implies a = b) $$</p>
 <p>Injektivna funkcija iz $A$ u $B$ označava se sa:</p>
 <p>$$f: A\xrightarrow{"1-1"} B$$</p>
-<h4 id="Sirjekcija-(%22na%22)">Sirjekcija ("na")<a class="anchor-link" href="#Sirjekcija-(%22na%22)">¶</a></h4><p>Neka je $f: A\rightarrow B$. Funkcija $f$ je sirjektivna ("na") ako je $f(A) = f(B)$, tj. za svaki element $c\in B$ postoji $a\in A$ sa osobinom $f(a) = c$:
+<h4 id="Sirjekcija-(%22na%22)">Sirjekcija ("na")<a class="anchor-link" href="#Sirjekcija-(%22na%22)">¶</a></h4><p>Neka je $f: A\rightarrow B$. Funkcija $f$ je sirjektivna ("na") ako je $f(A) = B$, tj. za svaki element $c\in B$ postoji $a\in A$ sa osobinom $f(a) = c$:
 $$(\forall c\in B)(\exists a\in A)(f(a)=c)$$</p>
 <p>Sirjektivna funkcija iz $A$ u $B$ označava se sa:</p>
 <p>$$f: A\xrightarrow{"na"} B$$</p>
