@@ -4,7 +4,7 @@
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-<title>08 Neuređeni izbori - kombinacije | TPRG</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+<title>09 Binomni i polinomni koeficijenti i formule | TPRG</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
   import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
@@ -13102,10 +13102,10 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="display:flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;">
 <p>
-<a href="./07-permutacije.html">&lt; 07 Uređeni izbori - permutacije</a>
+<a href="./08-kombinacije.html">&lt; 08 Neuređeni izbori - kombinacije</a>
 </p>
 <p>
-<a href="./09-binomni-i-polinomni-koeficijenti.html">09 Binomni i polinomni koeficijent &gt;</a>
+<a href="#">USKORO &gt;</a>
 </p>
 </div>
 </div>
@@ -13114,26 +13114,29 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Neure%C4%91eni-izbori---kombinacije">Neuređeni izbori - kombinacije<a class="anchor-link" href="#Neure%C4%91eni-izbori---kombinacije">¶</a></h1><p>Prisetimo se pitanja koja smo postavljali na prošlom predavnju:</p>
-<ol>
-<li>Da li je redosleded elemenata bitan?</li>
-<li>Da li se elementi biraju iz skupa ili multiskupa?</li>
-</ol>
-<p>Ove nedelje odgovor na prvo pitanje je <em>NE</em> pa je tema ovonedeljnog predavanja neuređni izbori.</p>
-<p>Na osnovu odgovora na drugo pitanje možemo podeliti neuređene izbore na sledeći način:</p>
-<ol>
-<li>kombinacije sa ponavljanjem (elemente biramo iz multiskupa)</li>
-<li>kombinacije bez ponavljanja (elemente biramo iz skupa)</li>
-</ol>
+<h1 id="Binomni-i-polinomni-koeficijenti-i-formule">Binomni i polinomni koeficijenti i formule<a class="anchor-link" href="#Binomni-i-polinomni-koeficijenti-i-formule">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<!-- https://tprg-diskretna-matematika.vercel.app -->
-<iframe src="./08-podela-interactive.html" style="width: 100%; max-height: 600px; height: 100vh">
-</iframe>
+<h2 id="Binomni-koeficijent">Binomni koeficijent<a class="anchor-link" href="#Binomni-koeficijent">¶</a></h2><p>Binomni koeficijenti predstavljaju koeficijente u razvoju stepena binoma u zbir prema binomnoj teoremi.</p>
+<h3 id="Definicija:"><em>Definicija:</em><a class="anchor-link" href="#Definicija:">¶</a></h3><p>Neka su $m$ i $n$ celi brojevi sa osobinom $0 \leq m \leq n$. Binomni koeficijent $\binom{n}{m}$ je funkcija koja takvim parovima vrednosti $n$ i $m$ dodeljuje pozitivne cele brojeve na sledeći način:</p>
+<p>$$\binom{n}{m} = \frac{n\left(n - 1\right ) ... \left(n-m+1\right)}{m\left(m-1\right)...\ 2\cdot 1}, \ m \geq 1$$</p>
+<p>Binomni koeficijent se kombinatorno može interpretirati kao broj $m$-kombinacija skupa od $n$ elemenata, odnosno kao broj $m$-točlanih podskupova skupa od $n$ elemenata.</p>
+<p>Kombinatorna interpretacija formalno se može opisati relacijom
+$$\dbinom{n}{m} = C\left(n; m\right)$$</p>
+<h3 id="Faktorijel-reprezentacija:"><em>Faktorijel reprezentacija:</em><a class="anchor-link" href="#Faktorijel-reprezentacija:">¶</a></h3><p>Za cele brojeve $n$ i $m$ sa osobinom $0 \leq m \leq n$, važi:
+$$\dbinom{n}{m} = \frac{n!}{m!\left(n-m\right)!}$$
+<em>$Dokaz:$</em> Za $m \in \left\{0, n\right\}$ imamo:
+$$\dbinom{n}{n} = \frac{n!}{n!} = 1 = \dbinom{n}{0}$$
+Ako je $1 \leq m \leq n-1$ množenjem brojioca i imenioca sa $\left(n-m\right)!$ dobijamo:
+$$\dbinom{n}{m} = \frac{n\left(n-1\right)...\left(n-m+1\right)\left(n-m\right)!}{m\left(m-1\right)...\ 2\cdot 1\cdot \left(n-m\right)!} = \frac{n!}{m!\left(n-m\right)!}$$</p>
+<p><br/></p>
+<p>$$\tag*{□}$$
+<br/></p>
+<p>Možemo primetiti da binomni koeficijent $\binom{n}{m}$ odgovara broju kombinacija bez ponavljanja klase $m$ od $n$ elemenata. Broj načina da se od $n$ elemenata izabere $m$ elemenata jednak je broju načina da se od $n$ elemenata izabere preostalih $n-m$ elemenata. To je pokazano u osobini simetričnosti.</p>
 </div>
 </div>
 </div>
@@ -13142,83 +13145,15 @@ div#notebook {
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">itertools</span>
-<span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">bin_koef</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">m</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">top</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">bottom</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">top</span> <span class="o">*=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">m</span> <span class="o">+</span> <span class="n">i</span>
+        <span class="n">bottom</span> <span class="o">*=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">top</span> <span class="o">//</span> <span class="n">bottom</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Kombinacije-skupa---kombinacije-bez-ponavljanja">Kombinacije skupa - kombinacije bez ponavljanja<a class="anchor-link" href="#Kombinacije-skupa---kombinacije-bez-ponavljanja">¶</a></h2><p>Neka je dat skup $B$ sa $n$ elemenata i neka je $n\ge m\ge 1$.</p>
-<h3 id="Definicija"><em>Definicija</em><a class="anchor-link" href="#Definicija">¶</a></h3><p>$m$-kombinacija elemenata skupa $B$ ( ili kombinacije klase $m$ bez ponavljanja) je bilo koji podskup skupa $B$ koji sadrži $m$ elemenata. Odnosno:
-$$K\subseteq B \land |K| = m$$</p>
-<p>Broj $m$-kombinacija skupa $B = \{b_1, b_2, ..., b_n\}$ obelezava se sa
-$$C(n; m)$$</p>
-<p>Skup svih podskupova skupa $B$ od $m$ elemenata (odnosno skup svih kombinacija skupa $B$ klase $m$) označavaćemo sa
-$$\left( {B \atop m} \right)$$
-pa važi
-$$C(n; m) = \left\vert \left( {B \atop m} \right)\right\vert$$</p>
-<h3 id="Teorema"><em>Teorema</em><a class="anchor-link" href="#Teorema">¶</a></h3><p>Broj $m$-kombinacija elemenata skupa $B$ jednak je
-$$C(n; m) = \frac{n\cdot(n-1)\cdot...\cdot(n-m+1)}{m!}$$</p>
-<p><em>Dokaz:</em></p>
-<p>Neka je $n = |B| \ge 1$. Ako izaberemo proizvoljan podskup od $m$ elemenata skupa $B$, broj načina da uredimo taj podskup je $m!$. Odatle je značo broj $m$-permutacije skupa $B$ jednak broju $m$-kombinacija skupa $B$ pomnožen sa $m!$. Znači
-$$
-\begin{aligned}
-P(n; m) = m!\cdot C(n; m) &amp;\iff n\cdot(n-1)\cdot...\cdot(n-m+1) = m!\cdot C(n; m) \\
-&amp;\iff C(n; m) = \frac{n\cdot(n-1)\cdot...\cdot(n-m+1)}{m!}
-\end{aligned}
-$$</p>
-<p>$$\tag*{□}$$</p>
-<p><br/></p>
-<p>Ovime smo dali vezu između $m$-permutacija skupa i $m$-kombinacija skupa. Taj odnos se može izraziti na sledeći način:</p>
-<p><b>Varijacije su permutacije kombinacija.</b></p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Kombinacije-multiskupa---kombinacije-sa-ponavljanjem">Kombinacije multiskupa - kombinacije sa ponavljanjem<a class="anchor-link" href="#Kombinacije-multiskupa---kombinacije-sa-ponavljanjem">¶</a></h2><p>Neka je dat multiskup $M = [b_1, b_2, ..., b_l]_{m, m, ..., m} = \{\{\underbrace{b_1, ..., b_1}_{m}, \underbrace{b_2, ..., b_2}_{m}, ..., \underbrace{b_l, ..., b_l}_{m}\}\}$</p>
-<p>Svaki $m$-točlani podmultiskup  multiskupa $M$ je jedna $m$-kombinacija multiskupa $M$.</p>
-<h3 id="Definicija"><em>Definicija</em><a class="anchor-link" href="#Definicija">¶</a></h3><p>$m$-kombinacija elemenata multiskupa $M$ (ili kombinacije klase $m$ sa ponavljanjem) je $m$-točlani multiskup u kojem je svaki element iz $B$ i može se pojaviti više puta.</p>
-<p>Broj $m$-kombinacija multiskupa $M$ označavaćemo sa
-$$\overline{C}(l; m)$$</p>
-<h3 id="Teorema"><em>Teorema</em><a class="anchor-link" href="#Teorema">¶</a></h3><p>Broj $m$-kombinacija multiskupa $M = [b_1, b_2, ..., b_l]_{m, m, ..., m}$ jednak je
-$$\overline{C}(l; m) = \frac{(m+l-1)!}{m!(l-1)!}$$</p>
-<p><em>Dokaz:</em></p>
-<p>Neka je
-$$
-\begin{aligned}
-\left( {M \atop m} \right) &amp;= \{M_1 | |M_1| = m \land M_1\subseteq M\} \\
-A &amp;= \{(a_1, a_2, ..., a_{m-l+1})\in \{0, 1\}^{m+l-1} | \{\{a_1, a_2, ..., a_{m+l+1}\}\} = [0, 1]_{l-1, m}\}
-\end{aligned}
-$$</p>
-<p>Znači $\left( {M \atop m} \right)$ je skup svih $m$-točlanih podmultiskupova multiskupa $M$, a $A$ je skup svih uređenih torki dužine $m+l-1$
-koje imaju tačno $m$ komponenti jednakih $1$ i preostalih $l-1$ komponenti jednakih $0$.</p>
-<p>Definišimo preslikavanje
-$$\varphi_{(b_1, ..., b_l)}: \left( {M \atop m} \right) \rightarrow A$$
-na sledeći način
-$$\varphi_{(b_1, ..., b_l)}(M_1) = (c_1, c_2, ..., c_{m+l-1})$$
-gde je $M_1 = [b_1, b_2, ..., b_l]_{m_1, m_2, ..., m_l}$ i za svako $i\in \{1, 2, ..., l-1\}$
-$$c_{(i-1) + (m_i+1)} = 0 \land c_{(i-1)+j} = 1 \text{ }\text{ }\text{ za }\text{ }\text{ } 0\le j\le m_i$$</p>
-<p>Kako je $\varphi$ bijektivno preslikavanje,
-$$\overline{C}(l;m) = \left| \left( {M \atop m} \right) \right| = |A|$$</p>
-<p>Broj načina da rasporedimo $m$ jedinica i $l-1$ nula je
-$$\overline{P}(m, l-1) = \frac{(m+l-1)!}{m!(l-1)!}$$</p>
-<p>$$\tag*{□}$$</p>
-<p><br/></p>
-<p>Odavde možemo videti da postoji veza između kombinacija sa ponavljanjem i permutacija sa ponavljanjem. I koja je to veza:
-$$\overline{C}(l; m) = \overline{P}(m, l-1)$$</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Programi-i-primeri">Programi i primeri<a class="anchor-link" href="#Programi-i-primeri">¶</a></h2><p>Sledeća funkcija generiše sve $m$-kombinacije skupa $S$, a parametar <code>repetitions</code> nam govori da li se elementi ponavljaju ili ne.</p>
 </div>
 </div>
 </div>
@@ -13227,566 +13162,7 @@ $$\overline{C}(l; m) = \overline{P}(m, l-1)$$</p>
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">generate_combinations</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">set</span><span class="p">,</span> <span class="n">m</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">repetitions</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-    <span class="n">combinations</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">def</span> <span class="nf">backtrack</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">==</span> <span class="n">m</span><span class="p">:</span>
-            <span class="n">combinations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
-            <span class="k">return</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
-            <span class="n">backtrack</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="p">(</span><span class="mi">0</span> <span class="k">if</span> <span class="n">repetitions</span> <span class="k">else</span> <span class="mi">1</span><span class="p">),</span> <span class="n">path</span> <span class="o">+</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)[</span><span class="n">i</span><span class="p">]])</span>
-
-    <span class="n">backtrack</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[])</span>
-    <span class="k">return</span> <span class="n">combinations</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>A sledeću funkciju ćemo koristiti za ispis svih kombinacija</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [3]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_combinations</span><span class="p">(</span><span class="n">combinations</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">combinations</span><span class="p">)):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">:</span><span class="s2"> &gt;3</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">combinations</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Primer---sladoledi">Primer - sladoledi<a class="anchor-link" href="#Primer---sladoledi">¶</a></h3><p>Dato je 5 ukusa sladoleda, na koliko načina se mogu odabrati 2 kugle?</p>
-<p><em>Rešenje:</em></p>
-<p>S obzirom da samo biramo 2 kugle bez uslova da se ukusi ne smeju ponavljati, jasno je da se radi o kombinacija klase 2 sa ponavljanjem skupa od 5 elemenata.</p>
-<p>Broj načina da odaberemo ukuse je $\overline{C}(5; 2) = \frac{(2+5-1)!}{2!(5-1)!} = \frac{6!}{2!4!} = \frac{6\cdot 5\cdot 4!}{2\cdot 1\cdot 4!} = \frac{30}{2} = 15$</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [4]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">combinations</span> <span class="o">=</span> <span class="n">generate_combinations</span><span class="p">(</span>
-    <span class="n">s</span><span class="o">=</span><span class="p">{</span><span class="s2">"Vanila"</span><span class="p">,</span> <span class="s2">"Cokolada"</span><span class="p">,</span> <span class="s2">"Jagoda"</span><span class="p">,</span> <span class="s2">"Limun"</span><span class="p">,</span> <span class="s2">"Karamela"</span><span class="p">},</span>
-    <span class="n">m</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-    <span class="n">repetitions</span><span class="o">=</span><span class="kc">True</span>
-<span class="p">)</span>
-<span class="n">print_combinations</span><span class="p">(</span><span class="n">combinations</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>  1. Cokolada       Cokolada       
-  2. Cokolada       Limun          
-  3. Cokolada       Jagoda         
-  4. Cokolada       Karamela       
-  5. Cokolada       Vanila         
-  6. Limun          Limun          
-  7. Limun          Jagoda         
-  8. Limun          Karamela       
-  9. Limun          Vanila         
- 10. Jagoda         Jagoda         
- 11. Jagoda         Karamela       
- 12. Jagoda         Vanila         
- 13. Karamela       Karamela       
- 14. Karamela       Vanila         
- 15. Vanila         Vanila         
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Primer---timski-projekat">Primer - timski projekat<a class="anchor-link" href="#Primer---timski-projekat">¶</a></h3><p>Na projektu radi tim od 9 studenata. Specifikacijom projekta definisane su 3 velike celine: frontend, backend i baza podataka. Na koliko načina se studenti mogu podeliti u 3 tima od po 3, ako nije bitno koji tim će raditi koji deo i ni jedan student ne može biti član više timova?</p>
-<p><em>Rešenje:</em></p>
-<p>Zadatak ćemo rešiti tako što ćemo odrediti broj načina za formiranje svakog tima pojedinačno i s obzirom da su ti slučajevi povezani, možemo primeniti pravilo proizvoda da bismo odredili konačno rešenje.</p>
-<p>Broj načina da odredimo članove prvog tima je broj kombinacija klase 3 od 9 elemenata, odnosno broj načina da od svih 9 studenata odaberemo 3.
-$$|T_1| = C(9; 3) = 84$$
-Broj načina da odredimo drugi tim jednak je broju načina da od preostalih 6 odaberemo 3 studenta.
-$$|T_2| = C(6; 3) = 20$$
-I broj načina za određivanje trećeg tima jednak je broju načina da odabere 3 studenta od preostalih 3.
-$$|T_3| = C(3; 3) = 1$$</p>
-<p>Ukupan broj načina za određivanje timova je $$|T_1| \cdot |T_2| \cdot |T_3| = 84\cdot 20\cdot 1 = 1680$$</p>
-<p>Međutim ovo nije tačno rešenje!!!</p>
-<p>Tačan je način određivanja timova preko kombinacija, međutim izborom prvog, zatim drugog i na kraju trećeg tima, dobili smo uređenje tih timova. Pa je potrebno naše rešenje podeliti sa $3!$ jer postoji $3!$ načina da rasporedimo 3 različita tima.</p>
-<p>Stoga je konačno rešenje $$\frac{|T_1| \cdot |T_2| \cdot |T_3|}{3!} = \frac{1680}{6} = 280$$</p>
-<p>Drugi način da dodjemo do istog rešenja bio bi da posmatramo permutacije skupa studenata. Ako iz svake permutacije izdvojimo prvih 3 studenta kao jedan tim, drugih 3 kao drugi tim i preostalih 3 kao treći tim, dobijamo jednu podelu.</p>
-<p>Međutim, permutacije
-$$S_1, S_2, S_3 | S_4, S_5, S_6 | S_7, S_8, S_9 \text{ i } S_3, S_2, S_1 | S_4, S_5, S_6 | S_7, S_8, S_8$$
-Određuju iste podele
-$$
-S_1, S_2, S_3 | S_4, S_5, S_6 | S_7, S_8, S_9 \rightarrow \{\{S_1, S_2, S_3\}, \{S_4, S_, S_6\}, \{S_7, S_8, S_9\}\} \\
-S_3, S_2, S_1 | S_4, S_5, S_6 | S_7, S_8, S_9 \rightarrow \{\{S_1, S_2, S_3\}, \{S_4, S_, S_6\}, \{S_7, S_8, S_9\}\} 
-$$</p>
-<p>Očigledno je da se permutovanjem studenata unutar istog tima, sama podela ne menja, pa broj rešenja treba podeliti sa $3!$ (broj načina da se permutuju osobe istog tima) za svaki od 3 timova, odnosno sa $3!^3$.</p>
-<p>Takođe možemo primetiti da permutacije
-$$S_1, S_2, S_3 | S_4, S_5, S_6 | S_7, S_8, S_9 \text{ i }  S_7, S_8, S_9 | S_4, S_5, S_6 | S_1, S_2, S_3$$
-Takođe daju iste podele kao i pre, odnosno još uvek je bitan redosled timova, pa je rešenje potrebno podeliti sa $3!$ (ovaj put broj načina da se timovi rasporede).</p>
-<p>Te je konačno rešenje
-$$
-\frac{9!}{(3!)^3\cdot 3!} = 280
-$$</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [5]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"S1"</span><span class="p">,</span> <span class="s2">"S2"</span><span class="p">,</span> <span class="s2">"S3"</span><span class="p">,</span> <span class="s2">"S4"</span><span class="p">,</span> <span class="s2">"S5"</span><span class="p">,</span> <span class="s2">"S6"</span><span class="p">,</span> <span class="s2">"S7"</span><span class="p">,</span> <span class="s2">"S8"</span><span class="p">,</span> <span class="s2">"S9"</span><span class="p">}</span>   <span class="c1"># skup studenata</span>
-<span class="n">teams_1</span> <span class="o">=</span> <span class="n">generate_combinations</span><span class="p">(</span><span class="n">students</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>                        <span class="c1"># prvi tim dobijamo tako što odaberemo 3 studenta</span>
-<span class="n">possible_teams</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">team1</span> <span class="ow">in</span> <span class="n">teams_1</span><span class="p">:</span>
-    <span class="n">students_2</span> <span class="o">=</span> <span class="n">students</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">team1</span><span class="p">)</span>                              <span class="c1"># skup studenata koji nisu u prvom timu</span>
-    <span class="n">teams_2</span> <span class="o">=</span> <span class="n">generate_combinations</span><span class="p">(</span><span class="n">students_2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>                  <span class="c1"># drugi tim dobijamo tako što odaberemo 3 studenta iz preostalih</span>
-    <span class="k">for</span> <span class="n">team2</span> <span class="ow">in</span> <span class="n">teams_2</span><span class="p">:</span>
-        <span class="n">students_3</span> <span class="o">=</span> <span class="n">students_2</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">team2</span><span class="p">)</span>                        <span class="c1"># skup studenata koji nisu u prvom i drugom timu</span>
-        <span class="n">teams_3</span> <span class="o">=</span> <span class="n">generate_combinations</span><span class="p">(</span><span class="n">students_3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>              <span class="c1"># treći tim dobijamo tako što odaberemo 3 studenta iz preostalih</span>
-        <span class="k">for</span> <span class="n">team3</span> <span class="ow">in</span> <span class="n">teams_3</span><span class="p">:</span>
-            <span class="n">possible_teams</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">sorted</span><span class="p">([</span><span class="nb">sorted</span><span class="p">(</span><span class="n">team1</span><span class="p">),</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">team2</span><span class="p">),</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">team3</span><span class="p">)])))</span>  <span class="c1"># veoama loš način uklanjanja duplikata</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">possible_teams</span><span class="p">))</span>  <span class="c1"># ispisujemo broj mogućih kombinacija timova</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">team</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">possible_teams</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">:</span><span class="s2"> &gt;3</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">team</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> <span class="c1"># ispisujemo sve moguće kombinacije timova</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>280
-  1. [['S1', 'S6', 'S9'], ['S2', 'S3', 'S7'], ['S4', 'S5', 'S8']]
-  2. [['S1', 'S4', 'S9'], ['S2', 'S5', 'S7'], ['S3', 'S6', 'S8']]
-  3. [['S1', 'S2', 'S9'], ['S3', 'S5', 'S6'], ['S4', 'S7', 'S8']]
-  4. [['S1', 'S7', 'S8'], ['S2', 'S4', 'S6'], ['S3', 'S5', 'S9']]
-  5. [['S1', 'S7', 'S8'], ['S2', 'S4', 'S5'], ['S3', 'S6', 'S9']]
-  6. [['S1', 'S6', 'S9'], ['S2', 'S5', 'S8'], ['S3', 'S4', 'S7']]
-  7. [['S1', 'S2', 'S6'], ['S3', 'S4', 'S7'], ['S5', 'S8', 'S9']]
-  8. [['S1', 'S5', 'S7'], ['S2', 'S6', 'S8'], ['S3', 'S4', 'S9']]
-  9. [['S1', 'S2', 'S7'], ['S3', 'S5', 'S9'], ['S4', 'S6', 'S8']]
- 10. [['S1', 'S7', 'S9'], ['S2', 'S4', 'S8'], ['S3', 'S5', 'S6']]
- 11. [['S1', 'S4', 'S5'], ['S2', 'S3', 'S6'], ['S7', 'S8', 'S9']]
- 12. [['S1', 'S4', 'S6'], ['S2', 'S3', 'S5'], ['S7', 'S8', 'S9']]
- 13. [['S1', 'S5', 'S8'], ['S2', 'S7', 'S9'], ['S3', 'S4', 'S6']]
- 14. [['S1', 'S6', 'S8'], ['S2', 'S3', 'S5'], ['S4', 'S7', 'S9']]
- 15. [['S1', 'S3', 'S8'], ['S2', 'S4', 'S5'], ['S6', 'S7', 'S9']]
- 16. [['S1', 'S3', 'S6'], ['S2', 'S7', 'S8'], ['S4', 'S5', 'S9']]
- 17. [['S1', 'S3', 'S5'], ['S2', 'S4', 'S7'], ['S6', 'S8', 'S9']]
- 18. [['S1', 'S3', 'S5'], ['S2', 'S6', 'S8'], ['S4', 'S7', 'S9']]
- 19. [['S1', 'S7', 'S8'], ['S2', 'S5', 'S9'], ['S3', 'S4', 'S6']]
- 20. [['S1', 'S2', 'S8'], ['S3', 'S4', 'S7'], ['S5', 'S6', 'S9']]
- 21. [['S1', 'S2', 'S9'], ['S3', 'S4', 'S7'], ['S5', 'S6', 'S8']]
- 22. [['S1', 'S4', 'S7'], ['S2', 'S3', 'S9'], ['S5', 'S6', 'S8']]
- 23. [['S1', 'S3', 'S5'], ['S2', 'S7', 'S9'], ['S4', 'S6', 'S8']]
- 24. [['S1', 'S7', 'S8'], ['S2', 'S6', 'S9'], ['S3', 'S4', 'S5']]
- 25. [['S1', 'S4', 'S5'], ['S2', 'S6', 'S8'], ['S3', 'S7', 'S9']]
- 26. [['S1', 'S2', 'S8'], ['S3', 'S5', 'S9'], ['S4', 'S6', 'S7']]
- 27. [['S1', 'S3', 'S9'], ['S2', 'S5', 'S6'], ['S4', 'S7', 'S8']]
- 28. [['S1', 'S7', 'S8'], ['S2', 'S3', 'S6'], ['S4', 'S5', 'S9']]
- 29. [['S1', 'S6', 'S8'], ['S2', 'S4', 'S9'], ['S3', 'S5', 'S7']]
- 30. [['S1', 'S6', 'S8'], ['S2', 'S5', 'S9'], ['S3', 'S4', 'S7']]
- 31. [['S1', 'S6', 'S8'], ['S2', 'S3', 'S9'], ['S4', 'S5', 'S7']]
- 32. [['S1', 'S2', 'S3'], ['S4', 'S5', 'S8'], ['S6', 'S7', 'S9']]
- 33. [['S1', 'S3', 'S8'], ['S2', 'S5', 'S6'], ['S4', 'S7', 'S9']]
- 34. [['S1', 'S5', 'S7'], ['S2', 'S3', 'S6'], ['S4', 'S8', 'S9']]
- 35. [['S1', 'S2', 'S4'], ['S3', 'S6', 'S8'], ['S5', 'S7', 'S9']]
- 36. [['S1', 'S5', 'S6'], ['S2', 'S4', 'S7'], ['S3', 'S8', 'S9']]
- 37. [['S1', 'S4', 'S8'], ['S2', 'S3', 'S7'], ['S5', 'S6', 'S9']]
- 38. [['S1', 'S8', 'S9'], ['S2', 'S6', 'S7'], ['S3', 'S4', 'S5']]
- 39. [['S1', 'S3', 'S9'], ['S2', 'S4', 'S5'], ['S6', 'S7', 'S8']]
- 40. [['S1', 'S7', 'S9'], ['S2', 'S3', 'S4'], ['S5', 'S6', 'S8']]
- 41. [['S1', 'S2', 'S7'], ['S3', 'S4', 'S9'], ['S5', 'S6', 'S8']]
- 42. [['S1', 'S6', 'S9'], ['S2', 'S4', 'S7'], ['S3', 'S5', 'S8']]
- 43. [['S1', 'S2', 'S4'], ['S3', 'S5', 'S7'], ['S6', 'S8', 'S9']]
- 44. [['S1', 'S3', 'S4'], ['S2', 'S6', 'S9'], ['S5', 'S7', 'S8']]
- 45. [['S1', 'S6', 'S8'], ['S2', 'S7', 'S9'], ['S3', 'S4', 'S5']]
- 46. [['S1', 'S4', 'S7'], ['S2', 'S6', 'S8'], ['S3', 'S5', 'S9']]
- 47. [['S1', 'S2', 'S3'], ['S4', 'S7', 'S8'], ['S5', 'S6', 'S9']]
- 48. [['S1', 'S2', 'S8'], ['S3', 'S4', 'S5'], ['S6', 'S7', 'S9']]
- 49. [['S1', 'S2', 'S6'], ['S3', 'S4', 'S5'], ['S7', 'S8', 'S9']]
- 50. [['S1', 'S8', 'S9'], ['S2', 'S3', 'S5'], ['S4', 'S6', 'S7']]
- 51. [['S1', 'S5', 'S9'], ['S2', 'S3', 'S6'], ['S4', 'S7', 'S8']]
- 52. [['S1', 'S3', 'S4'], ['S2', 'S6', 'S8'], ['S5', 'S7', 'S9']]
- 53. [['S1', 'S3', 'S9'], ['S2', 'S4', 'S7'], ['S5', 'S6', 'S8']]
- 54. [['S1', 'S6', 'S7'], ['S2', 'S4', 'S5'], ['S3', 'S8', 'S9']]
- 55. [['S1', 'S4', 'S8'], ['S2', 'S3', 'S6'], ['S5', 'S7', 'S9']]
- 56. [['S1', 'S4', 'S7'], ['S2', 'S3', 'S5'], ['S6', 'S8', 'S9']]
- 57. [['S1', 'S4', 'S5'], ['S2', 'S7', 'S9'], ['S3', 'S6', 'S8']]
- 58. [['S1', 'S8', 'S9'], ['S2', 'S3', 'S6'], ['S4', 'S5', 'S7']]
- 59. [['S1', 'S4', 'S8'], ['S2', 'S5', 'S7'], ['S3', 'S6', 'S9']]
- 60. [['S1', 'S5', 'S8'], ['S2', 'S4', 'S7'], ['S3', 'S6', 'S9']]
- 61. [['S1', 'S4', 'S6'], ['S2', 'S8', 'S9'], ['S3', 'S5', 'S7']]
- 62. [['S1', 'S3', 'S6'], ['S2', 'S5', 'S8'], ['S4', 'S7', 'S9']]
- 63. [['S1', 'S5', 'S9'], ['S2', 'S6', 'S8'], ['S3', 'S4', 'S7']]
- 64. [['S1', 'S3', 'S4'], ['S2', 'S7', 'S8'], ['S5', 'S6', 'S9']]
- 65. [['S1', 'S2', 'S7'], ['S3', 'S6', 'S8'], ['S4', 'S5', 'S9']]
- 66. [['S1', 'S4', 'S6'], ['S2', 'S7', 'S8'], ['S3', 'S5', 'S9']]
- 67. [['S1', 'S4', 'S6'], ['S2', 'S5', 'S7'], ['S3', 'S8', 'S9']]
- 68. [['S1', 'S6', 'S7'], ['S2', 'S5', 'S8'], ['S3', 'S4', 'S9']]
- 69. [['S1', 'S3', 'S6'], ['S2', 'S5', 'S7'], ['S4', 'S8', 'S9']]
- 70. [['S1', 'S4', 'S9'], ['S2', 'S3', 'S7'], ['S5', 'S6', 'S8']]
- 71. [['S1', 'S4', 'S6'], ['S2', 'S5', 'S8'], ['S3', 'S7', 'S9']]
- 72. [['S1', 'S6', 'S9'], ['S2', 'S3', 'S8'], ['S4', 'S5', 'S7']]
- 73. [['S1', 'S7', 'S9'], ['S2', 'S4', 'S5'], ['S3', 'S6', 'S8']]
- 74. [['S1', 'S3', 'S7'], ['S2', 'S6', 'S9'], ['S4', 'S5', 'S8']]
- 75. [['S1', 'S5', 'S8'], ['S2', 'S3', 'S4'], ['S6', 'S7', 'S9']]
- 76. [['S1', 'S6', 'S7'], ['S2', 'S3', 'S8'], ['S4', 'S5', 'S9']]
- 77. [['S1', 'S8', 'S9'], ['S2', 'S5', 'S6'], ['S3', 'S4', 'S7']]
- 78. [['S1', 'S2', 'S5'], ['S3', 'S6', 'S8'], ['S4', 'S7', 'S9']]
- 79. [['S1', 'S3', 'S7'], ['S2', 'S5', 'S6'], ['S4', 'S8', 'S9']]
- 80. [['S1', 'S7', 'S8'], ['S2', 'S3', 'S5'], ['S4', 'S6', 'S9']]
- 81. [['S1', 'S7', 'S8'], ['S2', 'S4', 'S9'], ['S3', 'S5', 'S6']]
- 82. [['S1', 'S2', 'S6'], ['S3', 'S8', 'S9'], ['S4', 'S5', 'S7']]
- 83. [['S1', 'S4', 'S9'], ['S2', 'S7', 'S8'], ['S3', 'S5', 'S6']]
- 84. [['S1', 'S2', 'S4'], ['S3', 'S5', 'S9'], ['S6', 'S7', 'S8']]
- 85. [['S1', 'S2', 'S3'], ['S4', 'S8', 'S9'], ['S5', 'S6', 'S7']]
- 86. [['S1', 'S4', 'S8'], ['S2', 'S5', 'S9'], ['S3', 'S6', 'S7']]
- 87. [['S1', 'S3', 'S8'], ['S2', 'S6', 'S7'], ['S4', 'S5', 'S9']]
- 88. [['S1', 'S3', 'S6'], ['S2', 'S4', 'S8'], ['S5', 'S7', 'S9']]
- 89. [['S1', 'S3', 'S6'], ['S2', 'S4', 'S9'], ['S5', 'S7', 'S8']]
- 90. [['S1', 'S2', 'S6'], ['S3', 'S5', 'S9'], ['S4', 'S7', 'S8']]
- 91. [['S1', 'S5', 'S6'], ['S2', 'S4', 'S8'], ['S3', 'S7', 'S9']]
- 92. [['S1', 'S3', 'S7'], ['S2', 'S8', 'S9'], ['S4', 'S5', 'S6']]
- 93. [['S1', 'S3', 'S8'], ['S2', 'S4', 'S7'], ['S5', 'S6', 'S9']]
- 94. [['S1', 'S3', 'S7'], ['S2', 'S5', 'S8'], ['S4', 'S6', 'S9']]
- 95. [['S1', 'S4', 'S7'], ['S2', 'S5', 'S8'], ['S3', 'S6', 'S9']]
- 96. [['S1', 'S8', 'S9'], ['S2', 'S3', 'S4'], ['S5', 'S6', 'S7']]
- 97. [['S1', 'S2', 'S5'], ['S3', 'S7', 'S8'], ['S4', 'S6', 'S9']]
- 98. [['S1', 'S2', 'S5'], ['S3', 'S8', 'S9'], ['S4', 'S6', 'S7']]
- 99. [['S1', 'S4', 'S5'], ['S2', 'S7', 'S8'], ['S3', 'S6', 'S9']]
-100. [['S1', 'S6', 'S8'], ['S2', 'S4', 'S5'], ['S3', 'S7', 'S9']]
-101. [['S1', 'S7', 'S8'], ['S2', 'S3', 'S9'], ['S4', 'S5', 'S6']]
-102. [['S1', 'S2', 'S9'], ['S3', 'S4', 'S8'], ['S5', 'S6', 'S7']]
-103. [['S1', 'S5', 'S7'], ['S2', 'S6', 'S9'], ['S3', 'S4', 'S8']]
-104. [['S1', 'S4', 'S8'], ['S2', 'S6', 'S7'], ['S3', 'S5', 'S9']]
-105. [['S1', 'S2', 'S3'], ['S4', 'S5', 'S9'], ['S6', 'S7', 'S8']]
-106. [['S1', 'S3', 'S8'], ['S2', 'S7', 'S9'], ['S4', 'S5', 'S6']]
-107. [['S1', 'S2', 'S9'], ['S3', 'S4', 'S5'], ['S6', 'S7', 'S8']]
-108. [['S1', 'S6', 'S9'], ['S2', 'S4', 'S5'], ['S3', 'S7', 'S8']]
-109. [['S1', 'S6', 'S7'], ['S2', 'S3', 'S4'], ['S5', 'S8', 'S9']]
-110. [['S1', 'S5', 'S9'], ['S2', 'S6', 'S7'], ['S3', 'S4', 'S8']]
-111. [['S1', 'S5', 'S6'], ['S2', 'S7', 'S9'], ['S3', 'S4', 'S8']]
-112. [['S1', 'S2', 'S4'], ['S3', 'S7', 'S8'], ['S5', 'S6', 'S9']]
-113. [['S1', 'S3', 'S7'], ['S2', 'S4', 'S8'], ['S5', 'S6', 'S9']]
-114. [['S1', 'S3', 'S5'], ['S2', 'S7', 'S8'], ['S4', 'S6', 'S9']]
-115. [['S1', 'S3', 'S9'], ['S2', 'S5', 'S8'], ['S4', 'S6', 'S7']]
-116. [['S1', 'S3', 'S9'], ['S2', 'S5', 'S7'], ['S4', 'S6', 'S8']]
-117. [['S1', 'S2', 'S7'], ['S3', 'S4', 'S5'], ['S6', 'S8', 'S9']]
-118. [['S1', 'S4', 'S8'], ['S2', 'S6', 'S9'], ['S3', 'S5', 'S7']]
-119. [['S1', 'S2', 'S7'], ['S3', 'S4', 'S8'], ['S5', 'S6', 'S9']]
-120. [['S1', 'S5', 'S8'], ['S2', 'S4', 'S9'], ['S3', 'S6', 'S7']]
-121. [['S1', 'S4', 'S8'], ['S2', 'S5', 'S6'], ['S3', 'S7', 'S9']]
-122. [['S1', 'S3', 'S7'], ['S2', 'S5', 'S9'], ['S4', 'S6', 'S8']]
-123. [['S1', 'S6', 'S7'], ['S2', 'S4', 'S8'], ['S3', 'S5', 'S9']]
-124. [['S1', 'S2', 'S9'], ['S3', 'S4', 'S6'], ['S5', 'S7', 'S8']]
-125. [['S1', 'S5', 'S6'], ['S2', 'S3', 'S4'], ['S7', 'S8', 'S9']]
-126. [['S1', 'S4', 'S8'], ['S2', 'S7', 'S9'], ['S3', 'S5', 'S6']]
-127. [['S1', 'S2', 'S9'], ['S3', 'S5', 'S8'], ['S4', 'S6', 'S7']]
-128. [['S1', 'S7', 'S9'], ['S2', 'S4', 'S6'], ['S3', 'S5', 'S8']]
-129. [['S1', 'S3', 'S8'], ['S2', 'S5', 'S7'], ['S4', 'S6', 'S9']]
-130. [['S1', 'S3', 'S7'], ['S2', 'S4', 'S6'], ['S5', 'S8', 'S9']]
-131. [['S1', 'S2', 'S4'], ['S3', 'S6', 'S9'], ['S5', 'S7', 'S8']]
-132. [['S1', 'S3', 'S5'], ['S2', 'S6', 'S9'], ['S4', 'S7', 'S8']]
-133. [['S1', 'S2', 'S5'], ['S3', 'S4', 'S9'], ['S6', 'S7', 'S8']]
-134. [['S1', 'S5', 'S6'], ['S2', 'S4', 'S9'], ['S3', 'S7', 'S8']]
-135. [['S1', 'S5', 'S7'], ['S2', 'S3', 'S8'], ['S4', 'S6', 'S9']]
-136. [['S1', 'S2', 'S4'], ['S3', 'S6', 'S7'], ['S5', 'S8', 'S9']]
-137. [['S1', 'S4', 'S8'], ['S2', 'S3', 'S5'], ['S6', 'S7', 'S9']]
-138. [['S1', 'S6', 'S9'], ['S2', 'S7', 'S8'], ['S3', 'S4', 'S5']]
-139. [['S1', 'S6', 'S7'], ['S2', 'S3', 'S9'], ['S4', 'S5', 'S8']]
-140. [['S1', 'S3', 'S5'], ['S2', 'S4', 'S9'], ['S6', 'S7', 'S8']]
-141. [['S1', 'S4', 'S7'], ['S2', 'S5', 'S9'], ['S3', 'S6', 'S8']]
-142. [['S1', 'S3', 'S4'], ['S2', 'S8', 'S9'], ['S5', 'S6', 'S7']]
-143. [['S1', 'S4', 'S9'], ['S2', 'S6', 'S8'], ['S3', 'S5', 'S7']]
-144. [['S1', 'S7', 'S9'], ['S2', 'S5', 'S6'], ['S3', 'S4', 'S8']]
-145. [['S1', 'S2', 'S7'], ['S3', 'S4', 'S6'], ['S5', 'S8', 'S9']]
-146. [['S1', 'S4', 'S5'], ['S2', 'S6', 'S7'], ['S3', 'S8', 'S9']]
-147. [['S1', 'S5', 'S8'], ['S2', 'S4', 'S6'], ['S3', 'S7', 'S9']]
-148. [['S1', 'S2', 'S3'], ['S4', 'S6', 'S7'], ['S5', 'S8', 'S9']]
-149. [['S1', 'S2', 'S5'], ['S3', 'S4', 'S7'], ['S6', 'S8', 'S9']]
-150. [['S1', 'S5', 'S7'], ['S2', 'S4', 'S9'], ['S3', 'S6', 'S8']]
-151. [['S1', 'S3', 'S6'], ['S2', 'S4', 'S5'], ['S7', 'S8', 'S9']]
-152. [['S1', 'S6', 'S8'], ['S2', 'S4', 'S7'], ['S3', 'S5', 'S9']]
-153. [['S1', 'S5', 'S6'], ['S2', 'S7', 'S8'], ['S3', 'S4', 'S9']]
-154. [['S1', 'S2', 'S6'], ['S3', 'S7', 'S9'], ['S4', 'S5', 'S8']]
-155. [['S1', 'S5', 'S6'], ['S2', 'S3', 'S9'], ['S4', 'S7', 'S8']]
-156. [['S1', 'S3', 'S8'], ['S2', 'S6', 'S9'], ['S4', 'S5', 'S7']]
-157. [['S1', 'S2', 'S6'], ['S3', 'S5', 'S8'], ['S4', 'S7', 'S9']]
-158. [['S1', 'S4', 'S9'], ['S2', 'S5', 'S6'], ['S3', 'S7', 'S8']]
-159. [['S1', 'S3', 'S5'], ['S2', 'S8', 'S9'], ['S4', 'S6', 'S7']]
-160. [['S1', 'S3', 'S9'], ['S2', 'S4', 'S6'], ['S5', 'S7', 'S8']]
-161. [['S1', 'S3', 'S9'], ['S2', 'S4', 'S8'], ['S5', 'S6', 'S7']]
-162. [['S1', 'S3', 'S4'], ['S2', 'S5', 'S7'], ['S6', 'S8', 'S9']]
-163. [['S1', 'S4', 'S7'], ['S2', 'S6', 'S9'], ['S3', 'S5', 'S8']]
-164. [['S1', 'S2', 'S9'], ['S3', 'S6', 'S7'], ['S4', 'S5', 'S8']]
-165. [['S1', 'S6', 'S8'], ['S2', 'S3', 'S7'], ['S4', 'S5', 'S9']]
-166. [['S1', 'S5', 'S8'], ['S2', 'S6', 'S9'], ['S3', 'S4', 'S7']]
-167. [['S1', 'S4', 'S7'], ['S2', 'S5', 'S6'], ['S3', 'S8', 'S9']]
-168. [['S1', 'S4', 'S6'], ['S2', 'S3', 'S9'], ['S5', 'S7', 'S8']]
-169. [['S1', 'S3', 'S9'], ['S2', 'S6', 'S8'], ['S4', 'S5', 'S7']]
-170. [['S1', 'S2', 'S8'], ['S3', 'S6', 'S9'], ['S4', 'S5', 'S7']]
-171. [['S1', 'S6', 'S8'], ['S2', 'S3', 'S4'], ['S5', 'S7', 'S9']]
-172. [['S1', 'S2', 'S5'], ['S3', 'S4', 'S6'], ['S7', 'S8', 'S9']]
-173. [['S1', 'S6', 'S9'], ['S2', 'S5', 'S7'], ['S3', 'S4', 'S8']]
-174. [['S1', 'S5', 'S6'], ['S2', 'S8', 'S9'], ['S3', 'S4', 'S7']]
-175. [['S1', 'S3', 'S8'], ['S2', 'S4', 'S6'], ['S5', 'S7', 'S9']]
-176. [['S1', 'S2', 'S4'], ['S3', 'S5', 'S8'], ['S6', 'S7', 'S9']]
-177. [['S1', 'S3', 'S6'], ['S2', 'S7', 'S9'], ['S4', 'S5', 'S8']]
-178. [['S1', 'S2', 'S8'], ['S3', 'S4', 'S6'], ['S5', 'S7', 'S9']]
-179. [['S1', 'S5', 'S8'], ['S2', 'S6', 'S7'], ['S3', 'S4', 'S9']]
-180. [['S1', 'S3', 'S4'], ['S2', 'S5', 'S6'], ['S7', 'S8', 'S9']]
-181. [['S1', 'S2', 'S5'], ['S3', 'S4', 'S8'], ['S6', 'S7', 'S9']]
-182. [['S1', 'S7', 'S9'], ['S2', 'S5', 'S8'], ['S3', 'S4', 'S6']]
-183. [['S1', 'S7', 'S9'], ['S2', 'S3', 'S8'], ['S4', 'S5', 'S6']]
-184. [['S1', 'S6', 'S7'], ['S2', 'S5', 'S9'], ['S3', 'S4', 'S8']]
-185. [['S1', 'S5', 'S8'], ['S2', 'S3', 'S9'], ['S4', 'S6', 'S7']]
-186. [['S1', 'S3', 'S5'], ['S2', 'S4', 'S8'], ['S6', 'S7', 'S9']]
-187. [['S1', 'S3', 'S5'], ['S2', 'S4', 'S6'], ['S7', 'S8', 'S9']]
-188. [['S1', 'S4', 'S5'], ['S2', 'S8', 'S9'], ['S3', 'S6', 'S7']]
-189. [['S1', 'S2', 'S6'], ['S3', 'S4', 'S8'], ['S5', 'S7', 'S9']]
-190. [['S1', 'S4', 'S9'], ['S2', 'S5', 'S8'], ['S3', 'S6', 'S7']]
-191. [['S1', 'S6', 'S7'], ['S2', 'S8', 'S9'], ['S3', 'S4', 'S5']]
-192. [['S1', 'S3', 'S4'], ['S2', 'S5', 'S9'], ['S6', 'S7', 'S8']]
-193. [['S1', 'S5', 'S8'], ['S2', 'S3', 'S7'], ['S4', 'S6', 'S9']]
-194. [['S1', 'S4', 'S6'], ['S2', 'S7', 'S9'], ['S3', 'S5', 'S8']]
-195. [['S1', 'S7', 'S9'], ['S2', 'S3', 'S6'], ['S4', 'S5', 'S8']]
-196. [['S1', 'S3', 'S6'], ['S2', 'S8', 'S9'], ['S4', 'S5', 'S7']]
-197. [['S1', 'S2', 'S3'], ['S4', 'S5', 'S6'], ['S7', 'S8', 'S9']]
-198. [['S1', 'S3', 'S7'], ['S2', 'S4', 'S9'], ['S5', 'S6', 'S8']]
-199. [['S1', 'S2', 'S3'], ['S4', 'S7', 'S9'], ['S5', 'S6', 'S8']]
-200. [['S1', 'S4', 'S9'], ['S2', 'S6', 'S7'], ['S3', 'S5', 'S8']]
-201. [['S1', 'S5', 'S9'], ['S2', 'S4', 'S8'], ['S3', 'S6', 'S7']]
-202. [['S1', 'S2', 'S9'], ['S3', 'S5', 'S7'], ['S4', 'S6', 'S8']]
-203. [['S1', 'S4', 'S7'], ['S2', 'S3', 'S8'], ['S5', 'S6', 'S9']]
-204. [['S1', 'S2', 'S8'], ['S3', 'S4', 'S9'], ['S5', 'S6', 'S7']]
-205. [['S1', 'S3', 'S7'], ['S2', 'S6', 'S8'], ['S4', 'S5', 'S9']]
-206. [['S1', 'S2', 'S6'], ['S3', 'S7', 'S8'], ['S4', 'S5', 'S9']]
-207. [['S1', 'S6', 'S9'], ['S2', 'S3', 'S4'], ['S5', 'S7', 'S8']]
-208. [['S1', 'S4', 'S6'], ['S2', 'S3', 'S8'], ['S5', 'S7', 'S9']]
-209. [['S1', 'S5', 'S9'], ['S2', 'S3', 'S7'], ['S4', 'S6', 'S8']]
-210. [['S1', 'S2', 'S8'], ['S3', 'S6', 'S7'], ['S4', 'S5', 'S9']]
-211. [['S1', 'S4', 'S8'], ['S2', 'S3', 'S9'], ['S5', 'S6', 'S7']]
-212. [['S1', 'S4', 'S7'], ['S2', 'S8', 'S9'], ['S3', 'S5', 'S6']]
-213. [['S1', 'S8', 'S9'], ['S2', 'S4', 'S6'], ['S3', 'S5', 'S7']]
-214. [['S1', 'S3', 'S5'], ['S2', 'S6', 'S7'], ['S4', 'S8', 'S9']]
-215. [['S1', 'S8', 'S9'], ['S2', 'S3', 'S7'], ['S4', 'S5', 'S6']]
-216. [['S1', 'S3', 'S4'], ['S2', 'S5', 'S8'], ['S6', 'S7', 'S9']]
-217. [['S1', 'S6', 'S7'], ['S2', 'S3', 'S5'], ['S4', 'S8', 'S9']]
-218. [['S1', 'S5', 'S7'], ['S2', 'S3', 'S4'], ['S6', 'S8', 'S9']]
-219. [['S1', 'S2', 'S8'], ['S3', 'S7', 'S9'], ['S4', 'S5', 'S6']]
-220. [['S1', 'S2', 'S3'], ['S4', 'S6', 'S9'], ['S5', 'S7', 'S8']]
-221. [['S1', 'S2', 'S8'], ['S3', 'S5', 'S7'], ['S4', 'S6', 'S9']]
-222. [['S1', 'S5', 'S7'], ['S2', 'S3', 'S9'], ['S4', 'S6', 'S8']]
-223. [['S1', 'S3', 'S4'], ['S2', 'S6', 'S7'], ['S5', 'S8', 'S9']]
-224. [['S1', 'S5', 'S9'], ['S2', 'S3', 'S4'], ['S6', 'S7', 'S8']]
-225. [['S1', 'S5', 'S7'], ['S2', 'S8', 'S9'], ['S3', 'S4', 'S6']]
-226. [['S1', 'S2', 'S9'], ['S3', 'S7', 'S8'], ['S4', 'S5', 'S6']]
-227. [['S1', 'S7', 'S9'], ['S2', 'S3', 'S5'], ['S4', 'S6', 'S8']]
-228. [['S1', 'S4', 'S5'], ['S2', 'S3', 'S9'], ['S6', 'S7', 'S8']]
-229. [['S1', 'S3', 'S6'], ['S2', 'S5', 'S9'], ['S4', 'S7', 'S8']]
-230. [['S1', 'S2', 'S7'], ['S3', 'S5', 'S8'], ['S4', 'S6', 'S9']]
-231. [['S1', 'S3', 'S9'], ['S2', 'S7', 'S8'], ['S4', 'S5', 'S6']]
-232. [['S1', 'S2', 'S6'], ['S3', 'S4', 'S9'], ['S5', 'S7', 'S8']]
-233. [['S1', 'S2', 'S7'], ['S3', 'S8', 'S9'], ['S4', 'S5', 'S6']]
-234. [['S1', 'S2', 'S8'], ['S3', 'S5', 'S6'], ['S4', 'S7', 'S9']]
-235. [['S1', 'S2', 'S5'], ['S3', 'S6', 'S7'], ['S4', 'S8', 'S9']]
-236. [['S1', 'S7', 'S8'], ['S2', 'S5', 'S6'], ['S3', 'S4', 'S9']]
-237. [['S1', 'S2', 'S4'], ['S3', 'S5', 'S6'], ['S7', 'S8', 'S9']]
-238. [['S1', 'S4', 'S9'], ['S2', 'S3', 'S8'], ['S5', 'S6', 'S7']]
-239. [['S1', 'S5', 'S8'], ['S2', 'S3', 'S6'], ['S4', 'S7', 'S9']]
-240. [['S1', 'S3', 'S6'], ['S2', 'S4', 'S7'], ['S5', 'S8', 'S9']]
-241. [['S1', 'S2', 'S5'], ['S3', 'S6', 'S9'], ['S4', 'S7', 'S8']]
-242. [['S1', 'S2', 'S3'], ['S4', 'S5', 'S7'], ['S6', 'S8', 'S9']]
-243. [['S1', 'S5', 'S9'], ['S2', 'S3', 'S8'], ['S4', 'S6', 'S7']]
-244. [['S1', 'S4', 'S6'], ['S2', 'S5', 'S9'], ['S3', 'S7', 'S8']]
-245. [['S1', 'S7', 'S9'], ['S2', 'S6', 'S8'], ['S3', 'S4', 'S5']]
-246. [['S1', 'S5', 'S6'], ['S2', 'S3', 'S8'], ['S4', 'S7', 'S9']]
-247. [['S1', 'S2', 'S9'], ['S3', 'S6', 'S8'], ['S4', 'S5', 'S7']]
-248. [['S1', 'S3', 'S8'], ['S2', 'S4', 'S9'], ['S5', 'S6', 'S7']]
-249. [['S1', 'S4', 'S7'], ['S2', 'S3', 'S6'], ['S5', 'S8', 'S9']]
-250. [['S1', 'S6', 'S8'], ['S2', 'S5', 'S7'], ['S3', 'S4', 'S9']]
-251. [['S1', 'S3', 'S7'], ['S2', 'S4', 'S5'], ['S6', 'S8', 'S9']]
-252. [['S1', 'S6', 'S9'], ['S2', 'S4', 'S8'], ['S3', 'S5', 'S7']]
-253. [['S1', 'S2', 'S5'], ['S3', 'S7', 'S9'], ['S4', 'S6', 'S8']]
-254. [['S1', 'S4', 'S5'], ['S2', 'S3', 'S7'], ['S6', 'S8', 'S9']]
-255. [['S1', 'S2', 'S4'], ['S3', 'S8', 'S9'], ['S5', 'S6', 'S7']]
-256. [['S1', 'S6', 'S7'], ['S2', 'S4', 'S9'], ['S3', 'S5', 'S8']]
-257. [['S1', 'S4', 'S5'], ['S2', 'S6', 'S9'], ['S3', 'S7', 'S8']]
-258. [['S1', 'S4', 'S9'], ['S2', 'S3', 'S5'], ['S6', 'S7', 'S8']]
-259. [['S1', 'S2', 'S4'], ['S3', 'S7', 'S9'], ['S5', 'S6', 'S8']]
-260. [['S1', 'S5', 'S7'], ['S2', 'S4', 'S6'], ['S3', 'S8', 'S9']]
-261. [['S1', 'S5', 'S7'], ['S2', 'S4', 'S8'], ['S3', 'S6', 'S9']]
-262. [['S1', 'S2', 'S7'], ['S3', 'S6', 'S9'], ['S4', 'S5', 'S8']]
-263. [['S1', 'S2', 'S7'], ['S3', 'S5', 'S6'], ['S4', 'S8', 'S9']]
-264. [['S1', 'S7', 'S8'], ['S2', 'S3', 'S4'], ['S5', 'S6', 'S9']]
-265. [['S1', 'S8', 'S9'], ['S2', 'S4', 'S5'], ['S3', 'S6', 'S7']]
-266. [['S1', 'S3', 'S9'], ['S2', 'S6', 'S7'], ['S4', 'S5', 'S8']]
-267. [['S1', 'S5', 'S6'], ['S2', 'S3', 'S7'], ['S4', 'S8', 'S9']]
-268. [['S1', 'S4', 'S6'], ['S2', 'S3', 'S7'], ['S5', 'S8', 'S9']]
-269. [['S1', 'S8', 'S9'], ['S2', 'S4', 'S7'], ['S3', 'S5', 'S6']]
-270. [['S1', 'S5', 'S9'], ['S2', 'S7', 'S8'], ['S3', 'S4', 'S6']]
-271. [['S1', 'S5', 'S9'], ['S2', 'S4', 'S7'], ['S3', 'S6', 'S8']]
-272. [['S1', 'S3', 'S4'], ['S2', 'S7', 'S9'], ['S5', 'S6', 'S8']]
-273. [['S1', 'S4', 'S5'], ['S2', 'S3', 'S8'], ['S6', 'S7', 'S9']]
-274. [['S1', 'S3', 'S8'], ['S2', 'S5', 'S9'], ['S4', 'S6', 'S7']]
-275. [['S1', 'S4', 'S9'], ['S2', 'S3', 'S6'], ['S5', 'S7', 'S8']]
-276. [['S1', 'S5', 'S9'], ['S2', 'S4', 'S6'], ['S3', 'S7', 'S8']]
-277. [['S1', 'S6', 'S9'], ['S2', 'S3', 'S5'], ['S4', 'S7', 'S8']]
-278. [['S1', 'S2', 'S6'], ['S3', 'S5', 'S7'], ['S4', 'S8', 'S9']]
-279. [['S1', 'S2', 'S3'], ['S4', 'S6', 'S8'], ['S5', 'S7', 'S9']]
-280. [['S1', 'S8', 'S9'], ['S2', 'S5', 'S7'], ['S3', 'S4', 'S6']]
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Drugi način nam daje jednostavnu zatvorenu formu za računanje ovakvih podela, odnosno formalno:</p>
-<p>Broj načina da se $n$ različitih osoba rasporedi u $m$ timova, svaki od po $k$ osoba, pri čemu međusoban redosled timova nije bitan.</p>
-<p>$$\frac{n!}{(k!)^m\cdot m!}$$</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Primer---serveri">Primer - serveri<a class="anchor-link" href="#Primer---serveri">¶</a></h3><p>Na raspolaganju nam je 15 servera. Na koliko načina možemo izabrati 5 na kojima bismo pokrenuli po instancu našeg programa.</p>
-<p><em>Rešenje:</em></p>
-<p>Broj načina jednak je broju kombinacija bez ponavljanja klase 5 od 15 elemenata, odnosno
-$$C(15; 5) = \frac{15\cdot14\cdot13\cdot12\cdot11}{5!} = 3003$$</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [6]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">generate_combinations</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">)),</span> <span class="mi">5</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>3003
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Veza-kombinacija-i-funkcija">Veza kombinacija i funkcija<a class="anchor-link" href="#Veza-kombinacija-i-funkcija">¶</a></h2><p>Kao što smo kod uređenih izbora mogli uočiti povezanost sa brojem određenih funkcija, tako postoji i veza kombinacija sa određenim funkcijama.</p>
-<h3 id="Broj-svih-monotono-rastu%C4%87ih-(opadaju%C4%87ih)-funkcija">Broj svih monotono rastućih (opadajućih) funkcija<a class="anchor-link" href="#Broj-svih-monotono-rastu%C4%87ih-(opadaju%C4%87ih)-funkcija">¶</a></h3><p>Neka je $m\le n$. Tada je broj monotono rastućih (opadajućih) funkcija iz $N_m$ u $N_n$ jednak broju kombinacija bez ponavljanja klase $m$ skupa $N_n$, odnosno:
-$$\left| \{f: N_m\rightarrow N_n | f \nearrow\}\right| = C(n; m)$$</p>
-<p><em>Dokaz:</em></p>
-<p>Svaka $m$-kombinacija predstavlja jedan $m$-točlani podskup skupa $N_n$. Elementi svakog skupa se mogu na jedinstveni način rasporediti u rastući poredak. Što znači da svaka kombinacija jedinstveno određuje jednu rastuću funkciju.</p>
-<p>$$\tag*{□}$$</p>
-<p><br/></p>
-<h3 id="Broj-svih-monotono-neopadaju%C4%87ih-(nerastu%C4%87ih)-funkcija">Broj svih monotono neopadajućih (nerastućih) funkcija<a class="anchor-link" href="#Broj-svih-monotono-neopadaju%C4%87ih-(nerastu%C4%87ih)-funkcija">¶</a></h3><p>Neka je $m\le n$. Tada je broj monotono neopadajućih (nerastućih) funkcija iz $N_m$ u $N_n$ jednak broju kombinacija sa ponavljanja klase $m$ skupa $N_n$, odnosno:
-$$\left| \{f: N_m\rightarrow N_n | f \underline{\nearrow}\}\right| = \overline{C}(n; m)$$</p>
-<p><em>Dokaz:</em></p>
-<p>Svaka $m$-kombinacija sa ponavljanjem predstavlja jedan $m$-točlani podmultiskup čiji su elementi iz skupa $N_n$. Kao i u prethodnoj teoremi ,elementi svakog multiskupa se mogu na jedinstveni način rasporediti u rastući poredak. Što znači da svaka kombinacija sa ponavljanjem jedinstveno određuje jednu ne opadajuću funkciju.</p>
-<p>$$\tag*{□}$$</p>
-<p><br/></p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [7]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">generate_increasing_functions</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">m</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">[</span><span class="nb">sorted</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">generate_combinations</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)),</span> <span class="n">m</span><span class="p">)]</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [8]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_increasing_functions</span><span class="p">(</span><span class="n">functions</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">functions</span><span class="p">)):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">:</span><span class="s2"> &gt;3</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">functions</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [9]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">print_increasing_functions</span><span class="p">(</span><span class="n">generate_increasing_functions</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>  1.   1    2    3  
-  2.   1    2    4  
-  3.   1    2    5  
-  4.   1    3    4  
-  5.   1    3    5  
-  6.   1    4    5  
-  7.   2    3    4  
-  8.   2    3    5  
-  9.   2    4    5  
- 10.   3    4    5  
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [10]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">excpected_value</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">//</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="o">-</span><span class="mi">3</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">excpected_value</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">bin_koef</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -13806,19 +13182,732 @@ $$\left| \{f: N_m\rightarrow N_n | f \underline{\nearrow}\}\right| = \overline{C
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Re%C5%A1avanje-celobrojnih-jedna%C4%8Dina">Rešavanje celobrojnih jednačina<a class="anchor-link" href="#Re%C5%A1avanje-celobrojnih-jedna%C4%8Dina">¶</a></h2><h3 id="Zadatak-1">Zadatak 1<a class="anchor-link" href="#Zadatak-1">¶</a></h3><p>Odrediti broj rešenja jednačine
-$$x_1+x_2+...+x_n = m$$
-pri čemu je $x_i\ge 0$ za $i\in \{1, 2, ..., n\}$</p>
+<h3 id="Osobine-binomnih-koeficijenata">Osobine binomnih koeficijenata<a class="anchor-link" href="#Osobine-binomnih-koeficijenata">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$\dbinom{n}{0} = 1$$</p>
+<p><em>Alegbarski:</em></p>
+<p>$$
+    \dbinom{n}{0} = \frac{n!}{0!(n-0)!} = \frac{n!}{1n!} = 1
+$$</p>
+<p><em>Kombinatorno:</em></p>
+<p>Na samo jedan način možemo odabrati 0 elemenata od mogućih $n$.</p>
+<p>$$\dbinom{n}{1} = n$$</p>
+<p><em>Alegbarski:</em></p>
+<p>$$
+    \dbinom{n}{1} = \frac{n!}{1!(n-1)!} = \frac{n(n-1)!}{1(n-1)!} = n
+$$</p>
+<p><em>Kombinatorno:</em></p>
+<p>Od ponuđenih $n$ elemenata možemo izabrati jedan element na $n$ načina, odnosno svaki element pojedinačno.</p>
+<p>$$\dbinom{n}{n} = 1$$</p>
+<p><em>Alegbarski:</em></p>
+<p>$$
+    \dbinom{n}{n} = \frac{n!}{n!(n-n)!} = \frac{n!}{n!1} = 1
+$$</p>
+<p><em>Kombinatorno:</em></p>
+<p>Od ponuđenih $n$ elemenata možemo izabrati $n$ element na 1 način tako što odaberemo sve elemente.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Simetri%C4%8Dnost">Simetričnost<a class="anchor-link" href="#Simetri%C4%8Dnost">¶</a></h4><p>Ako je $n$ prirodan broj i $k \in \mathbb{Z}$ tada je
+$${n \choose k} = {n \choose n-k}$$
+gde je $n \choose k$ binomni koeficijent</p>
+<p><em>Dokaz:</em></p>
+<p>Ukoliko je $k &lt; 0$ tada je i $n−k &gt; n$<br/>
+Ukoliko je $k &gt; n$ tada je i $n−k &lt; 0$
+U oba navedena slučaja važi
+$${n \choose k} = {n \choose n-k} = 0$$</p>
+<p>Neka $k$ bude takvo da $0 ≤ k ≤ n$. Tada važi
+$${n \choose k} = {n! \over {k! (n-k)!}}$$
+$$= {n! \over {(n-k)!k!}}$$
+$$= {n! \over {(n-k)!(n-(n-k))!}}$$
+$$= {n \choose {n-k}}$$</p>
+<p><br/></p>
+<p>$$\tag*{□}$$</p>
+<p><br/></p>
+<h4 id="Kombinatorna-interpretacija">Kombinatorna interpretacija<a class="anchor-link" href="#Kombinatorna-interpretacija">¶</a></h4><p>Binomni koeficijent u kombinatorici ima primenu da odredi na koliko načina se može izabrati $k$ elemenata iz skupa od njih $n$</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Delioci-binomnog-koeficijenta">Delioci binomnog koeficijenta<a class="anchor-link" href="#Delioci-binomnog-koeficijenta">¶</a></h4><p>za svako $r \in \mathbb{R}, k \in \mathbb{Z}$ tada važi
+$$k {r \choose k} = r {r-1 \choose k-1}$$
+gde $r \choose k$ predstavlja binomni koeficijent</p>
+<p>Odatle sledi
+$${r \choose k} = {r \over k}{r-1 \choose k-1}$$
+odnosno
+$${1 \over r}{r \choose k} = {1 \over k}{r-1 \choose k-1}$$</p>
+<p><em>Dokaz:</em></p>
+<p>Ukoliko je k=0 tada je po definiciji
+$${r \choose k} = r{r-1 \choose k-1} = 0$$</p>
+<p>Kada $k \ne 0$ tada je
+$$k {r \choose k} = k{r! \over (r-k)!k!}$$
+$$= k{r(r−1)(r−2)⋯(r−k+1) \over k(k−1)(k−2)⋯1}$$
+$$= {r(r−1)(r−2)⋯(r−k+1) \over (k−1)(k−2)⋯1}$$
+$$= r{r-1 \choose k-1}$$
+Kako $k \ne 0$ možemo podeliti obe strane sa $k$ i dobijamo
+$${r \choose k} = {r \over k}{r-1 \choose k-1}$$
+Ukoliko je i $r \ne 0$ tada važi i
+$${1 \over r}{r \choose k} = {1 \over k}{r-1 \choose k-1}$$</p>
+<p><br/></p>
+<p>$$\tag*{□}$$</p>
+<p><br/></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Paskalov-identitet">Paskalov identitet<a class="anchor-link" href="#Paskalov-identitet">¶</a></h4><p>Neka je $n \choose k$ binomni koeficijent. Tada za pozitivne cele brojeve $n, k$ takve da $1 \leq k \leq n$
+$${n \choose k-1} + {n \choose k} = {n+1 \choose k}$$</p>
+<p><em>Dokaz:</em></p>
+<p>Neka su $n, k \in \mathbb{N}$ takvi da $1 \leq k \leq n$
+$${n \choose k} + {n \choose k-1} = {n! \over {k!(n-k)!}} + {n! \over {k-1}!(n-(k-1))!}$$
+$$= {n!(n-(k-1)) \over {k!(n-k)!(n-(k-1))}} + {n! k \over {k-1}!(n-(k-1))!k}$$
+$$= {n!(n-k+1) \over {k!(n-k+1)!}} + {n! k \over k!(n-k+1)!}$$
+$$= {n!(n-k+1) + n! k \over {k!(n-k+1)!}}$$
+$$= {n!(n-k+1+k) \over {k!(n-k+1)!}}$$
+$$= {n!(n+1) \over {k!(n-k+1)!}}$$
+$$= {(n+1)! \over {k!(n+1-k)!}}$$
+$$= {n+1 \choose k}$$</p>
+<p><br/></p>
+<p>$$\tag*{□}$$</p>
+<p><br/></p>
+<p><em>Kombinatorni dokaz</em></p>
+<p>Recimo da postoji klub od $n+1$ članova koji treba da izabere upravni odbor od $k$ članova. Prema kardinalitetu skupa svih podskupova načina da se odabere odbor postoji tačno
+$$n+1 \choose k$$</p>
+<p><em>Koristimo drugi pristup (Takođe koristimo kardinalitet skupa svih podskupova):</em></p>
+<p>Primetimo neku osobu $A$ u tom klubu. Ukoliko je osoba $A$ izabrana za upravni odbor, tada biramo jos $k-1$ osoba od njih n, odnosno imamo $n \choose k-1$ mogućnosti
+Ukoliko osoba $A$ nije izabrana za upravni odbor, tada biramo svih $k$ članova od preostalih $n$ i to možemo na $n \choose k$ načina.</p>
+<p>Ova dva slučaja su disjunktna te principom zbira dobijamo da je ukupan broj načina na koji se može izabrati upravni odbor
+$${n \choose k} + {n \choose k-1}$$</p>
+<p>Prvi i drugi način moraju dati ista rešenja, prema tome
+$${n+1 \choose k} = {n \choose k} + {n \choose k-1}$$</p>
+<p><br/></p>
+<p>$$\tag*{□}$$</p>
+<p><br/></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Vandermondov-identitet">Vandermondov identitet<a class="anchor-link" href="#Vandermondov-identitet">¶</a></h4><p>$$\binom{m}{0}\binom{n}{k} + \binom{m}{1}\binom{n}{k-1} + ... + \binom{m}{k}\binom{n}{0} = \binom{m+n}{k}$$</p>
+<p><em>Kombinatorni dokaz:</em></p>
+<p>Ukoliko imamo $m$ matematičara i $n$ inženjera od kojih želimo da oformimo tim od $k$ osoba.</p>
+<p>To možemo uraditi tako što ćemo odabrati 0 matematičara na $\binom{m}{0}$ načina i $k$ inženjera na $\binom{n}{k}$ načina, ili 1 matematičara na $\binom{m}{1}$ načina i $k-1$ inženjera na $\binom{n}{k-1}$ načina ili ... ili $k$ matematičara na $\binom{m}{k}$ i 0 inženjera na $\binom{k}{0}$ načina.
+S obzirom da su ovo disjunktni slučajevi (imamo ili izmenju) onda je ukupan broj načina da se odabere tim</p>
+<p>$$\binom{m}{0}\binom{n}{k} + \binom{m}{1}\binom{n}{k-1} + ... + \binom{m}{k}\binom{n}{0}$$</p>
+<p>Drugi način da oformimo ovaj tim jeste da od svih osoba ($m+n$ ljudi) odaberemo $k$ osoba na $\binom{m+n}{k}$ načina.</p>
+<p>S obzirom da su ova dva načina ekvivalentna onda mora da važi i</p>
+<p>$$\binom{m}{0}\binom{n}{k} + \binom{m}{1}\binom{n}{k-1} + ... + \binom{m}{k}\binom{n}{0} = \binom{m+n}{k}$$</p>
+<p>Što je i trebalo dokazati.
+<br/></p>
+<p>$$\tag*{□}$$</p>
+<p><br/></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Polinomni-koeficijent">Polinomni koeficijent<a class="anchor-link" href="#Polinomni-koeficijent">¶</a></h2><h3 id="Definicija"><em>Definicija</em><a class="anchor-link" href="#Definicija">¶</a></h3><p>Neka su dati brojevi $m_{1},\, ... \,,m_{l} \in \mathbb{N_0}$ i neka je $n = m_{1}+...+m_{l}$. Tada polinomni koeficijent definišemo na sledeći način:
+$$\dbinom{n}{m_{1}, m_{2},\, ... \,,m_{l}} = \frac{n!}{m_{1}!\cdot ...\cdot m_{l}!}$$
+Polinomni koeficijent kombinatorno se može interpretirati kao:</p>
+<ul>
+<li>broj permutacija multiskupa $M = \left[a_{1},...,a_{l}\right]_{m_{1},...,m_{l}}$</li>
+<li>broj uređenih $l$-torki $\left(B_{1},...,B_{l}\right)$ skupa $A = \left\{a_{1},...,a_{l}\right\}$ sa osobinom da je za date vrednosti $\left(m_{1},...,m_{l}\right):$<ul>
+<li>$A = B_{1} \cup ... \cup B_{l}$,</li>
+<li>$\left|B_{1}\right| = m1,\,...\,,\left|B_{l}\right| = m_{l}$,</li>
+<li>$m_{1}+...+m_{l} = n$.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Na osnovu prethodne definicije, direktno slede sledeće osobine</p>
+<h3 id="Osobine-polinomnog-koeficijenta">Osobine polinomnog koeficijenta<a class="anchor-link" href="#Osobine-polinomnog-koeficijenta">¶</a></h3><p>Neka su dati celi brojevi $m_1, m_2, ..., m_l \ge 0$ i neka je $n = m_1+m_2+...+m_l$</p>
+<h4 id="Teorema-1"><em>Teorema 1</em><a class="anchor-link" href="#Teorema-1">¶</a></h4><p>$$\dbinom{n}{m_1, m_2, ..., m_l} = \dbinom{n}{m_1}\dbinom{n-m_1}{m_2}\dbinom{n-(m_1+m_2)}{m_3}...\dbinom{m_l}{m_l}$$</p>
+<p><em>Alegbarski dokaz:</em></p>
+<p>Ako se primeni definicija binomnog koeficijenta na desnu stranu, po jedan činilac iz imenioca se uvek skrati sa brojiocem narednog razlomka:</p>
+<p>$$
+\begin{aligned}
+\dbinom{n}{m_1}\dbinom{n-m_1}{m_2}...\dbinom{m_l}{m_l} &amp;= 
+\frac{n!}{m_1!(n-m_1)!}\frac{(n-m_1)!}{m_2!(n-m_1-m_2)!}...\frac{m_l!}{m_l!0!} \\
+&amp;= \frac{n!}{m_1!m_2!...m_l!} \\
+&amp;= \dbinom{n}{m_1, m_2, ..., m_l}
+\end{aligned}
+$$</p>
+<p>$$\tag*{□}$$</p>
+<p><br/></p>
+<p><em>Kombinatorni dokaz:</em></p>
+<p>Kombinatorni dokaz se zasniva na postupnom izboru elemenata, grupu po grupu. Pogledajmo kako ovaj proces funkcioniše korak po korak:</p>
+<ol>
+<li>Prvi korak: Imamo $n$ elemenata i želimo da odaberemo $m_1$ elemenata za prvu grupu. Broj načina da se izabere $m_1$ elemenata iz skupa od $n$ elemenata je:
+$$\dbinom{n}{m_1}$$</li>
+</ol>
+<p>Dakle, prvo biramo $m_1$ elemenata za prvu grupu.
+2.	Drugi korak: Nakon što smo odabrali $m_1$ elemenata, ostaje nam $n−m_1$ elemenata. Sada biramo $m_2$ elemenata za drugu grupu iz preostalih $n−m_1$ elemenata. Broj načina da to uradimo je:
+$$\dbinom{n-m_1}{m_2}$$
+3.	Treći korak: Nakon što smo odabrali $m_1$ za prvu grupu i $m_2$ za drugu grupu, preostaje $n−(m_1+m_2)$ elemenata. Sada biramo $m_3$ elemenata za treću grupu. Broj načina za ovo je:
+$$\dbinom{n-m_1-m_2}{m_3}$$
+4.	Nastavljamo ovaj proces dok ne rasporedimo sve preostale elemente u grupe. Na kraju, kada raspoređujemo poslednjih $m_l$ elemenata u poslednju grupu, imamo preostalo tačno $m_l$ elemenata, pa za taj izbor postoji samo jedan način.</p>
+<p><em>Skupljanje izbora</em></p>
+<p>Svaki korak u ovom postupku je nezavisan, što znači da možemo množiti broj načina za svaku fazu izbora:
+$$
+\dbinom{n}{m_1}\dbinom{n-m_1}{m_2}\dbinom{n-(m_1+m_2)}{m_3}...\dbinom{n-(m_1+m_2+...+m_{l-1})}{m_l}
+$$</p>
+<p>Ova formula zapravo daje ukupan broj načina da se $n$ elemenata rasporedi u $l$ grupa veličine $m_1,m_2,…,m_l$.</p>
+<p><em>Zbog čega ovo važi?</em></p>
+<p>Posmatrajmo sada kompletnu raspodelu:
+<br/> • Prvo biramo $m_1$ elemenata iz $n$,
+<br/> •	Zatim biramo $m_2$ iz preostalih $n−m_1$,
+<br/>•	Zatim $m_3$ iz $n−(m_1+m_2)$, i tako dalje.</p>
+<p>Kada se sve to uzme u obzir, ukupni broj nacina da se svi ovi izbori izvrse za sve $l$ grupa jednak je ukupnom polinomnom koeficijentu $\dbinom{n}{m_1,m_2, ..., m_l}$,koji predstavlja broj nacina da se izvrsi kompletna raspodela odjednom.</p>
+<p>Dakle, dokazali smo da je:</p>
+<p>$$\dbinom{n}{m_1, m_2, ..., m_l} = \dbinom{n}{m_1}\dbinom{n-m_1}{m_2}\dbinom{n-(m_1+m_2)}{m_3}...\dbinom{m_l}{m_l}$$</p>
+<p>$$\tag*{□}$$</p>
+<p><br/></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Teorema-2"><em>Teorema 2</em><a class="anchor-link" href="#Teorema-2">¶</a></h4><p>Ako je $\{\{m_1, m_2, ..., m_l\}\} = \{\{k_1, k_2, ..., k_l\}\}$, onda je
+$$\dbinom{n}{m_1, m_2, ..., m_l} = \dbinom{n}{k_1, k_2, ..., k_l} $$</p>
+<p><em>Algebarski dokaz:</em></p>
+<p>Treba primetit da osobina znaci da se u imeniocu nalaze isti faktorijeli, samo da su mozda uredjeni na razlicite nacine.Kako je mnozenje komutativno I asocijativno, kojim god redom da mnozimo te faktorijele, na kraju cemo dobiti istu vrednost.</p>
+<p>$$\tag*{□}$$</p>
+<p><br/></p>
+<p><em>Kombinatorni dokaz:</em></p>
+<p>Jednakost sugeriše da, ako su dva multiskupa (ili podele) $\{\{m_1, m_2, ..., m_l\}\}$ i $\{\{k_1, k_2, ..., k_l\}\}$ jednaka, tada je broj načina da se $n$ objekata raspodeli u grupe veličina $m_1,…,m_l$ isti kao i broj načina da se raspodele u grupe veličina $k_1,…,k_l$.</p>
+<p>Jednakost multiskupova: ako su multiksupoviskupovi ${{m_1, m_2, ..., m_l}}$ i ${{k_1, k_2, ..., k_l}}$ jednaki, to znači da sadrže iste elemente, ali možda u različitom redosledu. Odnosno, implicira da za svaki $i$ postoji $j$ takav da je $m_i=k_j$.
+Posto su dva multiskupa identična, redosled u kojem su veličina grupa navedena nije važan. Polinomni koeficijent zavisi samo od veličine grupa, a ne od njihovog rasporeda u formuli. Faktorijali u imenilacu će biti isti (pošto su elementi dva multiskupa isti, iako je drugačiji redosled). Dakle: 
+$$\dbinom{n}{m_1, m_2, ..., m_l} = \dbinom{n}{k_1, k_2, ..., k_l}$$</p>
+<p>$$\tag*{□}$$</p>
+<p><br/></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Teorema-3"><em>Teorema 3</em><a class="anchor-link" href="#Teorema-3">¶</a></h4><p>Ako je $0\lt m_1, m_2, ..., m_l\lt n$ onda važi
+$$
+\dbinom{n}{m_1, m_2, ..., m_l}  = \dbinom{n-1}{m_1-1, m_2, ..., m_l}  + \dbinom{n-1}{m_1, m_2-1, ..., m_l}  + ... + \dbinom{n-1}{m_1, m_2, ..., m_l-1} 
+$$</p>
+<p><em>Algebarski dokaz:</em>
+$$
+\dbinom{n-1}{m_1-1, m_2, ..., m_l}  + \dbinom{n-1}{m_1, m_2-1, ..., m_l}  + ... + \dbinom{n-1}{m_1, m_2, ..., m_l-1} \\
+= \frac{(n-1)!}{(m_1-1)!m_2!...m_l!}\frac{m_1}{m_1} + \frac{(n-1)!}{m_1!(m_2 - 1)!...m_l!}\frac{m_2}{m_2} + ... + \frac{(n-1)!}{m_1!m_2!...(m_l-1)!}\frac{m_l}{m_l} \\
+= \frac{(n-1)!m_1}{m_1!m_2!...m_l!} + \frac{(n-1)!m_2}{m_1!m_2!...m_l!} + ... + \frac{(n-1)!m_l}{m_1!m_2!...m_l!} \\
+= \frac{(n-1)!(m_1 + m_2 + ... + m_l)}{m_1!m_2!...m_l!} \\
+= \frac{(n-1)!n}{m_1!m_2!...m_l!} \\
+= \frac{n!}{m_1!m_2!...m_l!} \\
+= \dbinom{n}{m_1, m_2, ..., m_l}
+$$</p>
+<p>$$\tag*{□}$$</p>
+<p><br/></p>
+<p><em>Kombinatorni dokaz:</em></p>
+<p>Leva strana odgovara permutacujama sa ponavljanjem $P(m_1,…,m_l)$</p>
+<p>Što je broj načina da se uredi $m_1 +…+m_l$ elemenata među kojima se npr. $a_1$ ponavlja $m_1$ puta, $a_2$ ponavlja $m_2$ puta, itd.</p>
+<p>Ako posmatramo desnu stranu, kombinatorna interpretacija je sledeća. Skup svih uređenja mozemo podeliti na $l$ podskupova, tako da svaki podskup sadrži $n$-torke sa istom prvom komponentom. Kako su ti podskupovi po parovima disjunktni, mozemo primeniti princip zbira. Dalje samo treba zakljuciti da je broj načina da se urede preostalih $n-1$ elemenata, pri čemu će biti jedan manje $a_1$ na raspolaganju, a to je $P(m_1-1,m_2,…,m_l)$</p>
+<p>Slično se rezonuje o ostalim elementima koji se mogu pojaviti na prvom mestu.</p>
+<p>$$\tag*{□}$$</p>
+<p><br/></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Teorema-4"><em>Teorema 4</em><a class="anchor-link" href="#Teorema-4">¶</a></h4><p>$$
+\dbinom{n}{m_1, m_2, ..., m_l, 0} = \dbinom{n}{m_1, m_2, ...m m_l}
+$$</p>
+<p><em>Alegbarski dokaz:</em></p>
+<p>$$
+\begin{aligned}
+\dbinom{n}{m_1, m_2, ..., m_l, 0} &amp;= \frac{n!}{m_1!m_2!...m_l!0!} \\
+&amp;= \frac{n!}{m_1!m_2!...m_l!1} \\
+&amp;= \frac{n!}{m_1!m_2!...m_l!} \\
+&amp;= \dbinom{n}{m_1, m_2, ...m m_l}
+\end{aligned}
+$$</p>
+<p>$$\tag*{□}$$</p>
+<p><br/></p>
+<p><em>Kombinatorni dokaz:</em></p>
+<p>Desna strana odgovara pemutacijama sa ponavljanjem $P(m_1,…,m_l)$, što je broj načina da se uredi $m_1+…+m_l$ elmenata među kojima se npr. $a_1$ ponavlja $m_1$ puta, $a_2$ ponavlja $m_2$ puta, itd.</p>
+<p>Ako posmatramo levu stranu, kombinatorna interpretacija je sledeća. Skup svih uređenja možemo podeliti na $l+1$ podksupova, tako da svaki podskup sadrzi $n$-torke sa istom prvom komponentom, gde je poslednji $l+1$ podskup zapravo prazan podskup.  Dalje  ostaje isto odgovara pemutacijama sa ponavljanjem  $P(m_1,…,m_l,0)$, što je broj načina da se uredi $m_1+…+m_l$ elmenata medju kojima se npr. $a_1$ ponavlja $m_1$ puta, $a_2$ ponavlja $m_2$ puta, itd a $0!=1$.
+$$\tag*{□}$$</p>
+<p><br/></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Binomna-formula">Binomna formula<a class="anchor-link" href="#Binomna-formula">¶</a></h2><h3 id="Teorema"><em>Teorema</em><a class="anchor-link" href="#Teorema">¶</a></h3><p>Za sve prirodne brojeve $n$ i $k$, $k\le n$ važi formula:
+$$(a+b)^n = \dbinom{n}{0}a^n+\dbinom{n}{1}a^{n-1}b+\dbinom{n}{2}a^{n-2}b^2+...+\dbinom{n}{n-1}a b^{n-1}+\dbinom{n}{n}b^n$$</p>
+<p>Kraći zapis bi bio
+$$(a+b)^n = \sum\limits_{k=0}^{n}\dbinom{n}{k}a^{n-k}{b^k}$$</p>
+<p>Opšti član razvoja bionoma $(a+b)^n$ dat je sa:
+$$T_{k+1} = \dbinom{n}{k}a^{n-k}b^{k}\text{ }\text{ za } 0\le k\le n$$</p>
+<p><em>Dokaz:</em></p>
+<p>Dokaz ćemo dati indukcijom po $n$</p>
+<p><em>Baza indukcije:</em> Proveravamo da li tvrđenje važi za $n = 0$
+$$(a+b)^0 = 1, \sum\limits_{k=0}^{0}\dbinom{0}{k} = \dbinom{0}{0}a^0b^0=1$$</p>
+<p><em>Induktivna hipoteza:</em> Pretpostavimo da trvđenje važi za $n\in\mathbb{N}$ tj.
+$$(a+b)^n = \sum\limits_{k = 0}^{n}\dbinom{n}{k}a^{n-k}b^k$$</p>
+<p><em>Induktivni korak:</em> Dokazaćemo da tvrđenje važi za $n+1$ tj.
+$$(a+b)^{n+1} = \sum\limits_{k = 0}^{n+1}\dbinom{n+1}{k}a^{n+1-k}b^k$$</p>
+<p>$$
+\begin{aligned}
+(a+b)^n+1 &amp;= (a+b)(a+b)^n \\
+&amp;= (a+b)(a+b)^n \\
+&amp;\overset{\text{BI}}{=} (a+b)\sum\limits_{k=0}^{n}\dbinom{n}{k}a^{n-k}b^k \\
+&amp;=a\sum\limits_{k=0}^{n}\dbinom{n}{k}a^{n-k}b^k + b\sum\limits_{k=0}^{n}\dbinom{n}{k}a^{n-k}b^k \\
+&amp;=\sum\limits_{k=0}^{n}\dbinom{n}{k}a^{n+1-k}b^k + \sum\limits_{k=0}^{n}\dbinom{n}{k}a^{n-k}b^{k+1} \\
+&amp;=\dbinom{n}{0}a^{n+1-0} + \sum\limits_{k=1}^{n}\dbinom{n}{k}a^{n+1-k}b^k + \sum\limits_{k=0}^{n-1}\dbinom{n}{k}a^{n-k}b^{k+1} + \dbinom{n}{n}a^{n-n}b^{n+1} \\
+&amp;\overset{\text{k-1 = t}}{=}a^{n+1} + \sum\limits_{k=1}^{n}\dbinom{n}{k}a^{n+1-k}b^k + \sum\limits_{t=1}^{n}\dbinom{n}{t-1}a^{n-t+1}b^{t} + b^{n+1} \\
+&amp;\overset{\text{spajamo sume}}{=} a^{n+1} + \sum\limits_{k=1}^{n}(\dbinom{n}{k}+\dbinom{n}{k-1})a^{n+1-k}b^k + b^{n+1} \\
+&amp;\overset{\text{Paskal}}{=} a^{n+1} + \sum\limits_{k=1}^{n}\dbinom{n+1}{k}a^{n+1-k}b^k + b^{n+1} \\
+&amp;=\sum\limits_{k=0}^{n+1}\dbinom{n+1}{k}a^{n+1-k}b^k
+\end{aligned}
+$$</p>
+<p><br/></p>
+<p>$$\tag*{□}$$</p>
+<p><br/></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Polinomna-formula">Polinomna formula<a class="anchor-link" href="#Polinomna-formula">¶</a></h2><h3 id="Teorema:"><em>Teorema</em>:<a class="anchor-link" href="#Teorema:">¶</a></h3><p>Neka su: $ n, k \in \mathbb{N} $. Tada za sve $(x_1,x_2,\dots,x_k\in\mathbb{C}) $ važi:
+$$(x_1+x_2+\dots+x_k)^n=\sum_{(n_1,n_2,\dots,n_k)}\binom{n}{n_1\,n_2\dots n_k}x_1^{n_1}x_2^{n_2}\dots x_k^{n_k},$$
+pri čemu je svaka $k$-torka $(n_1,n_2,\dots,n_k)$ nenegativnih celih brojeva, takvih da je $n_1+n_2+\dots+n_k=n.$</p>
+<p><em>Dokaz:</em></p>
+<p>Teoremu ćemo dokazati uopštavanjem kombinatornog dokaza binomne teoreme.
+Prvo ćemo izvršiti sva množenja
+$$(x_1+x_2+\dots+x_k)^n=(x_1+x_2+\dots+x_k)(x_1+x_2+\dots+x_k)\dots(x_1+x_2+\dots+x_k)$$
+Oslobađanjem od zagrada, posle izvršenih $k$ množenja,dobijamo sabirke oblika $ x_1^{n_1}x_2^{n_2}\dots x_k^{n_k} $. Za svaku $k$ -torku $(n_1,n_2,\dots,n_k)$ ne negativnih celih brojeva, takvih da je $n_1+n_2+\dots+n_k=n$ ,dobijamo monom $ x_1^{n_1}x_2^{n_2}\dots x_k^{n_k} $ koji se u dobijenoj sumi pojavljuje kao sabirak onoliko puta koliko imamo mogućnosti da se od ponuđenih $n$ zagrada za sabirak $x_1$ odlučimo $n_1$ puta, za sabira  $x_2$ ,od preostalih $n-n_1$ zagrada, se odlučimo $n_2$ ...<br/>
+Prema principu proizvoda zaključujemo da se monom $x_1^{n_1}x_2^{n_2}\dots x_k^{n_k}$ pojavljuje:
+$$\binom{n}{n_1}\binom{n-n_1}{n_2}\binom{n-n_1-n_2}{n_3}\dots\binom{n-n_1-n_2-\dots-n_{k-1}}{n_k}=\frac{n!}{n_1!n_2!\dots n_k!}=\binom{n}{n_1\,n_2\dots n_k}\text{ puta}.$$</p>
+<p><br/></p>
+<p>$$\tag*{□}$$</p>
+<p><br/></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Primer-1">Primer 1<a class="anchor-link" href="#Primer-1">¶</a></h4><p>Odrediti koeficijent uz $x^{10}$ u razvoju polinoma $(1 - x^2 + x^3)^{20}$</p>
 <p><em>Rešenje:</em></p>
-<p>Ukoliko bismo svaki od elemenata $x_i$ zamenili sa $x_i$ jedinica, niz od tih $x_1+x_2+...+x_n = m$ jedinica i $n-1$ jedinica dobili bismo jedno rešenje polazne jednačine.</p>
-<p>Formirajmo sada multiskup $M$ od elemenata $1$ i $+$, pri čemu imamo $m$ jedinica i $n-1$ pluseva. Svaka permutacija ovog multiskupa jednoznačno određuje jedno rešenje i to na sledeći način:
-$$\underbrace{1\text{ } 1...1}_{x_1}+\underbrace{1\text{ } 1...1}_{x_2}+...+\underbrace{1\text{ } 1...1}_{x_n}$$</p>
-<p>Na primer za $m = 5$, $n = 3$, permutacija $1+1111+$ odgovara rešenju $(x_1, x_2, x_3) = (1, 4, 0)$.</p>
-<p>Broj ovih permutacije jednak je $\overline{P}(m, n-1) = \frac{(m+n-1)!}{m!(n-1)!} = \overline{C}(n; m)$.</p>
-<h3 id="Primer">Primer<a class="anchor-link" href="#Primer">¶</a></h3><p>Nad skupom nenegativnih celih brojeva odrediti broj rešenja sledeće jednačine:
-$$x_1 + x_2 + x_3 = 4$$</p>
-<p><em>Rešenje:</em></p>
-<p>Na osnovu prethodnog zadataka, broj rešenja je $\overline{C}(3; 4) = \frac{(4 + 3 - 1)!}{4!(3-1)!} = \frac{6!}{4!2!} = 15$</p>
+<p>Broj 10 se može napisati kao:
+$10 = 5 * 2 = 2 * 2 + 2* 3$<br/>
+Sada je potrebno da se izračunaju koeficijenti uz te dve kombinacije:<br/>
+U slučeju $ 5 * 2 $ imamo: $ -\binom{20}{15\,5\,0}  $</p>
+<p>U drugom slučaju imamo: $\binom{20}{16\,2\,2}$</p>
+<p>Sada sabiranjem ovih vrednosti dobijamo rezultat pa bi koeficijent uz $x^{10}$ bio jednak:</p>
+<p>$$ \binom{20}{16\,2\,2} - \binom{20}{15\,5\,0} $$</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Primer2">Primer2<a class="anchor-link" href="#Primer2">¶</a></h4><p>Kod koji računa koeficijente na osnovnu polinomne formule</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">from</span> <span class="nn">sympy.parsing.sympy_parser</span> <span class="kn">import</span> <span class="n">parse_expr</span>
+
+<span class="k">def</span> <span class="nf">expand_polynomial</span><span class="p">(</span><span class="n">poly_str</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">poly_expr</span> <span class="o">=</span> <span class="n">parse_expr</span><span class="p">(</span><span class="n">poly_str</span><span class="p">)</span>
+    <span class="n">expanded_poly</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">expand</span><span class="p">((</span><span class="n">poly_expr</span><span class="p">)</span><span class="o">**</span><span class="n">n</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">expanded_poly</span>
+
+<span class="c1"># Example usage</span>
+<span class="n">poly_str</span> <span class="o">=</span> <span class="s2">"1 - x**2 + x**3"</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">expanded_poly</span> <span class="o">=</span> <span class="n">expand_polynomial</span><span class="p">(</span><span class="n">poly_str</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">expanded_poly</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>x**9 - 3*x**8 + 3*x**7 + 2*x**6 - 6*x**5 + 3*x**4 + 3*x**3 - 3*x**2 + 1
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Broj-sirjektivnih-funkcija-skupa-A-u-skup-B">Broj sirjektivnih funkcija skupa A u skup B<a class="anchor-link" href="#Broj-sirjektivnih-funkcija-skupa-A-u-skup-B">¶</a></h2><h3 id="Teorema:"><em>Teorema:</em><a class="anchor-link" href="#Teorema:">¶</a></h3><p>Neka su $A$ i $B$ skupovi sa osobinom $|A| = n, |B| = k$ i $1\le k\le n$. Broj sirjektivnih preslikavanja skupa $A$ u skup $B$ jednak je
+$$|\{f| f: A\xrightarrow{\text{"na"}} B\}| = \sum\limits_{i=0}^{k-1}\dbinom{k}{i}(-1)^i(k-i)^n$$</p>
+<p><em>Dokaz:</em></p>
+<p>Neka je $B = \{b_1, b_2, ..., b_k\}$. Preslikavanje $f: A\rightarrow B$ koje nije sirjektivno ima osobinu da postoji element skupa $B$ koji nije u skupu slika elemenata iz skupa $A$ (u oznaci $im(f)$), tj. $f$ pripada jednom od sledećih skupova:
+$$
+\begin{aligned}
+B_1 &amp;= \{f: A\rightarrow B | b_1\notin im(f)\} \\
+B_2 &amp;= \{f: A\rightarrow B | b_2\notin im(f)\} \\
+... \\
+B_k &amp;= \{f: A\rightarrow B | b_k\notin im(f)\} \\
+\end{aligned}
+$$
+
+Skup svih preslikavanja skupa $A$ u skup $B$ možemo podeliti na skup svih preslikavanja koja su "na" i skup svih preslikavanja koja nisu "na". Tada je:
+$$
+\begin{aligned}
+\{f| f: A\rightarrow B\} &amp;= \{f | f: A\xrightarrow{\text{"na"}} B\} \cup \{f | f: A\xrightarrow{\text{nije "na"}} B\} \\
+\{f| f: A\rightarrow B\} &amp;= \{f | f: A\xrightarrow{\text{"na"}} B\} \cup B_1 \cup B_2 \cup ... \cup B_k
+\end{aligned}
+$$
+
+Na osnovu principa sume sledi
+$$|{f| f: A\rightarrow B}| = |{f | f: A\xrightarrow{\text{"na"}} B}| + |B_1 \cup B_2 \cup ... \cup B_k|$$
+
+Primenom principa uključenja-isključenja:
+$$|B_1 \cup B_2 \cup ... \cup B_k| = \sum\limits_{\emptyset \not= I\subseteq {1,..., k}}{(-1)^{|I|-1} \left| \bigcap\limits_{i\in I} B_i\right|}$$
+
+Može se zaključiti da za sve $i, j, i_1, ..., i_k\in \{1,..., k\}$ važi:
+$$
+\begin{aligned}
+|B_i| &amp;= |\{f: A\rightarrow B\setminus\{b_i\}\}| = (k-1)^n \\
+|B_i\cap B_j| &amp;= |\{f: A\rightarrow B\setminus\{b_i, b_j\}\}| = (k-2)^n \\
+&amp;... \\ 
+|B_{i_1} \cap...\cap B_{i_{k-1}}| &amp;= |\{f: A\rightarrow B\setminus\{b_{i_1},...,b_{i_{k-1}}\}\}| = (k-(k-1))^n = 1 \\
+|B_{i_1} \cap...\cap B_{i_{k}}| &amp;= |\{f: A\rightarrow B\setminus\{b_{i_1},...,b_{i_{k}}\}\}| = (k-k)^n = 0 \\
+\end{aligned}
+$$
+Tako dobijamo
+$$|B_1 \cup B_2 \cup ... \cup B_k| = \dbinom{k}{1}(k-1)^n - \dbinom{k}{2}(k-2)^n + ... + (-1)^{k-2} $$
+
+<i>Napomena:</i> Binomni koeficijent se pojavljuje kao broj načina da odaberemo $i$ elemenata koji se neće nalaziti u skupu slika.
+
+S obzirom da je ukupan broj preslikavanja skupa $A$ u skup $B$ jednak $k^n$, dobijamo da je:
+$$
+\begin{aligned}
+|\{f| f: A\xrightarrow{\text{"na"}} B\}| &amp;= |\{f| f: A\rightarrow B\}| - |B_1\cup B_2 \cup ... \cup B_k| \\
+&amp;= k^n - k(k-1)^n + \dbinom{k}{2}(n-2)^n - ... + (-1)^{k-1} \\
+&amp;= \sum\limits_{i = 0}^{n-1}{\dbinom{k}{i}(-1)^i(k-i)^n}
+\end{aligned}
+$$
+
+<br/>
+
+$$\tag*{□}$$</p>
+<p><br/></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sirjective</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">([(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">i</span> <span class="o">*</span> <span class="n">bin_koef</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span><span class="o">**</span><span class="n">n</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">sirjective</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>6
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Stirlingovi-brojevi-II-vrste">Stirlingovi brojevi II vrste<a class="anchor-link" href="#Stirlingovi-brojevi-II-vrste">¶</a></h2><p>Stirlingovi brojevi II vrste (u oznaci $\left\{ n \atop k \right\}$ ili $S(n, k)$) predstavljaju broj mogućnosti da se skup od $n$ elemenata podeli na $k$ disjunktinih nepraznih skupova.</p>
+<p><em>Primer:</em>
+$$
+A = \{a, b, c, d\} \\
+n = |A| = 4 \\
+k = 3 \\
+\left\{ 4 \atop 3 \right\} = 6
+$$
+Želimo da podelimo skup $A$ na 3 neprazna disjunktna skupa.
+$$
+\{a, b\}, \{c\}, \{d\} \\
+\{a, c\}, \{b\}, \{d\} \\
+\{a, d\}, \{b\}, \{c\} \\
+\{a\}, \{b, c\}, \{d\} \\
+\{a\}, \{b, d\}, \{c\} \\
+\{a\}, \{b\}, \{c, d\} \\
+$$</p>
+<p><em>Rekurzivna definicija</em></p>
+<p>$$S(n, k) = \underbrace{k\cdot S(n-1, k)}_{\text{1.}} + \underbrace{S(n-1, k-1)}_{\text{2.}}$$</p>
+<ol>
+<li>Ako imamo $n$ elemenata, onda uzmemo jedan element i dodamo ga u jedan od $k$ podskupova, a ostalih $n-1$ elemenata rasporedimo u $k$ podskupova.</li>
+<li>Kako smo uzeli jedan element i formurali jedan podskup, ostalo nam je $n-1$ elemanta rasporedimo u $k-1$ podskupova</li>
+</ol>
+<p><em>Bazni slučajevi:</em>
+$S(n, 0) = 0, n\gt 0$ - ne možemo imati podskupove bez elemenata</p>
+<p>$S(0, 0) = 1$ - jedan praz skupo može biti podeljen u 0 podskupova na 1 način</p>
+<p>$S(n, n) = 1$ - svaki element je u svom podskupu</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">stirling_second_kind</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="n">k</span> <span class="ow">or</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">k</span> <span class="o">*</span> <span class="n">stirling_second_kind</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="n">stirling_second_kind</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">stirling_second_kind</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1"># Output: 6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>6
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Sirjektivne-funkcije-i-Stirlingovi-brojevi">Sirjektivne funkcije i Stirlingovi brojevi<a class="anchor-link" href="#Sirjektivne-funkcije-i-Stirlingovi-brojevi">¶</a></h2><p>Kada podelimo skup $A$ sa $n$ elemenata u $k$ nepraznih podskupa, svaki od njih se može posmatrati kao da odgovara po jednom elementu iz skupa $B$ sa $k$ elemenata. Svaki podskup možemo "mapirati" na jedan od elemenata skupa $B$ (što možemo uraditi na $k!$ načina). Ako je svaki podskup povezan sa rezličitim elementom iz skupa $B$, onda ćemo imati sirjektivnu funkciju.</p>
+<p><em>Primer:</em></p>
+<p>$$A=\{1,2,3\}\\
+B = \{x, y\}$$</p>
+<p>Podele skupa $A$ su:
+$$
+\begin{aligned}
+P_1 &amp;= \{\{1, 2\}, \{3\}\} \\
+P_2 &amp;= \{\{1, 3\}, \{2\}\} \\
+P_3 &amp;= \{\{1\}, \{2, 3\}\}
+\end{aligned}
+$$</p>
+<p>Ove particije možemo "mapirati" na sledeće načine da bismo dobili sirjektivne funkcije:</p>
+<p>Od $P_1$:
+$$
+\begin{aligned}
+f_{11} &amp;= \begin{pmatrix}
+   1 &amp; 2 &amp; 3 \\
+   x &amp; x &amp; y \\
+\end{pmatrix} \\
+f_{12} &amp;= \begin{pmatrix}
+   1 &amp; 2 &amp; 3 \\
+   y &amp; y &amp; x \\
+\end{pmatrix}
+\end{aligned}
+$$</p>
+<p>Od $P_2$:
+$$
+\begin{aligned}
+f_{21} &amp;= \begin{pmatrix}
+   1 &amp; 2 &amp; 3 \\
+   x &amp; y &amp; x \\
+\end{pmatrix} \\
+f_{22} &amp;= \begin{pmatrix}
+   1 &amp; 2 &amp; 3 \\
+   y &amp; x &amp; y \\
+\end{pmatrix}
+\end{aligned}
+$$</p>
+<p>Od $P_3$:
+$$
+\begin{aligned}
+f_{31} &amp;= \begin{pmatrix}
+   1 &amp; 2 &amp; 3 \\
+   x &amp; y &amp; y \\
+\end{pmatrix} \\
+f_{32} &amp;= \begin{pmatrix}
+   1 &amp; 2 &amp; 3 \\
+   y &amp; x &amp; x \\
+\end{pmatrix}
+\end{aligned}
+$$</p>
+<p>Stoga je ukupan broj sirjektivnih funkcija skupa od $n$ elemenata na skup od $k$ elemenata jednak $$k!S(n, k)$$</p>
+<p>Odnosno za date skupove $A = \{a_1, a_2, ..., a_n\}$ i $B = {b_1, b_2, ..., b_k}$ važi:</p>
+<p>$$|\{f| f: A\xrightarrow{\text{"na"}} B\}| = k!\cdot S(n, k)$$</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">sirjective_stirling</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">stirling_second_kind</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"x"</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">}</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">k</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sirjective_stirling</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span> <span class="c1"># Output: 6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>6
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Algoritmi-i-primeri">Algoritmi i primeri<a class="anchor-link" href="#Algoritmi-i-primeri">¶</a></h2><ul>
+<li>Paskalov trougao, algoritmi za razvoj binomne i polinomne formule</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1.-Paskalov-trougao">1. Paskalov trougao<a class="anchor-link" href="#1.-Paskalov-trougao">¶</a></h3><p>Bazira se na Paskalovom identitetu koji glasi:
+Za cele brojeve $n$ i $m$, $1 \leq m \leq n$, važi:</p>
+<p>$ \binom{n}{k} = \binom{n-1}{m} + \binom{n-1}{m-1}$</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pascal_triangle_half</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">triangle</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>  
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">((</span><span class="n">i</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)):</span>
+                <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">triangle</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">triangle</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+        <span class="n">triangle</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">row</span> <span class="o">+</span> <span class="n">row</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">triangle</span>
+
+<span class="k">def</span> <span class="nf">PrintT</span><span class="p">(</span><span class="n">triangle</span><span class="p">):</span>
+    <span class="n">max_width</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">triangle</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>  <span class="c1"># calculate the width of the longest row</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">triangle</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">row</span><span class="p">)</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="n">max_width</span><span class="p">))</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">triangle</span> <span class="o">=</span> <span class="n">PrintT</span><span class="p">(</span><span class="n">pascal_triangle_half</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>             1             
+            1 1            
+           1 2 1           
+          1 3 3 1          
+         1 4 6 4 1         
+       1 5 10 10 5 1       
+      1 6 15 20 15 6 1     
+    1 7 21 35 35 21 7 1    
+   1 8 28 56 70 56 28 8 1  
+1 9 36 84 126 126 84 36 9 1
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Prikaz Paskalovog trougla kao 'tabela'</p>
 </div>
 </div>
 </div>
@@ -13827,26 +13916,65 @@ $$x_1 + x_2 + x_3 = 4$$</p>
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_solutions</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
-    <span class="c1"># m is the total sum, m is the number of variables</span>
-    <span class="n">solutions</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pascal_triangle_table</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">triangle</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+                <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">triangle</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">triangle</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+            <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">triangle</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
     
-    <span class="c1"># Generate non-negative solutions for x1 + x2 + ... + xn = m</span>
-    <span class="k">for</span> <span class="n">combo</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">combinations_with_replacement</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="c1"># Start with [0, 0, ..., 0] and increment positions based on combo</span>
-        <span class="n">current</span> <span class="o">=</span> <span class="p">[</span><span class="n">combo</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+</span> <span class="p">[</span><span class="n">combo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">combo</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">combo</span><span class="p">))]</span> <span class="o">+</span> <span class="p">[</span><span class="n">m</span> <span class="o">-</span> <span class="n">combo</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
-        <span class="n">solutions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">solutions</span>
+    <span class="n">max_num</span> <span class="o">=</span> <span class="n">triangle</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="nb">len</span><span class="p">(</span><span class="n">triangle</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="n">cell_width</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">max_num</span><span class="p">))</span> <span class="o">+</span> <span class="mi">2</span>  <span class="c1"># Adjust +2 for padding</span>
 
-<span class="k">def</span> <span class="nf">count_and_print_solutions</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
-    <span class="n">solutions</span> <span class="o">=</span> <span class="n">find_solutions</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The number of solutions to x1 + x2 + ... + x</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2"> is:"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">solutions</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"The solutions are:"</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">sol</span> <span class="ow">in</span> <span class="n">solutions</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">" + "</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">sol</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s2"> ^5</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span> <span class="o">+</span> <span class="s2">" = "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
+    <span class="n">max_cols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">triangle</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s2">" "</span> <span class="o">*</span> <span class="n">cell_width</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">^</span><span class="si">{</span><span class="n">cell_width</span><span class="si">}}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_cols</span><span class="p">)]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">header</span><span class="p">))</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">" "</span> <span class="o">*</span> <span class="n">cell_width</span> <span class="o">+</span> <span class="s2">"_"</span> <span class="o">*</span> <span class="p">(</span><span class="n">cell_width</span> <span class="o">*</span> <span class="n">max_cols</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">triangle</span><span class="p">):</span>
+        <span class="n">row_str</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">^</span><span class="si">{</span><span class="n">cell_width</span><span class="si">}}</span><span class="s2">"</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">num</span><span class="si">:</span><span class="s2">^</span><span class="si">{</span><span class="n">cell_width</span><span class="si">}}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">row</span><span class="p">]</span>
+        <span class="n">row_str</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"-"</span> <span class="o">*</span> <span class="n">cell_width</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">max_cols</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">row</span><span class="p">))</span>  <span class="c1"># Fill remaining cells with '-'</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"|"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">row_str</span><span class="p">))</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">pascal_triangle_table</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>       0    1    2    3    4    5    6    7    8    9  
+     __________________________________________________
+  0  |  1  |-----|-----|-----|-----|-----|-----|-----|-----|-----
+  1  |  1  |  1  |-----|-----|-----|-----|-----|-----|-----|-----
+  2  |  1  |  2  |  1  |-----|-----|-----|-----|-----|-----|-----
+  3  |  1  |  3  |  3  |  1  |-----|-----|-----|-----|-----|-----
+  4  |  1  |  4  |  6  |  4  |  1  |-----|-----|-----|-----|-----
+  5  |  1  |  5  | 10  | 10  |  5  |  1  |-----|-----|-----|-----
+  6  |  1  |  6  | 15  | 20  | 15  |  6  |  1  |-----|-----|-----
+  7  |  1  |  7  | 21  | 35  | 35  | 21  |  7  |  1  |-----|-----
+  8  |  1  |  8  | 28  | 56  | 70  | 56  | 28  |  8  |  1  |-----
+  9  |  1  |  9  | 36  | 84  | 126 | 126 | 84  | 36  |  9  |  1  
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Razvoj-binomne-formule">Razvoj binomne formule<a class="anchor-link" href="#Razvoj-binomne-formule">¶</a></h2><p>Podsetimo se matematičkog zapisa:</p>
+<p>$ (x+y)^n = \displaystyle\sum_{m=0}^n \binom{n}{k} x ^ {n-m} y ^{m}$</p>
 </div>
 </div>
 </div>
@@ -13855,9 +13983,41 @@ $$x_1 + x_2 + x_3 = 4$$</p>
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">m</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">count_and_print_solutions</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">binomial_coefficient</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">//</span> <span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">binomial_expansion_latex</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">terms</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">coeff</span> <span class="o">=</span> <span class="n">binomial_coefficient</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+        <span class="n">term_a</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">^</span><span class="se">{{</span><span class="si">{</span><span class="n">n</span><span class="o">-</span><span class="n">k</span><span class="si">}</span><span class="se">}}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">""</span>
+        <span class="n">term_b</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">^</span><span class="se">{{</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="se">}}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">""</span>
+        
+        <span class="k">if</span> <span class="n">coeff</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">term_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">coeff</span><span class="si">}</span><span class="s2"> </span><span class="se">\\</span><span class="s2">cdot </span><span class="si">{</span><span class="n">term_a</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">term_a</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">coeff</span><span class="si">}</span><span class="s2">"</span>
+            <span class="k">if</span> <span class="n">term_b</span><span class="p">:</span>
+                <span class="n">term_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">" </span><span class="se">\\</span><span class="s2">cdot </span><span class="si">{</span><span class="n">term_b</span><span class="si">}</span><span class="s2">"</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">term_str</span> <span class="o">=</span> <span class="n">term_a</span> <span class="k">if</span> <span class="n">term_a</span> <span class="k">else</span> <span class="n">term_b</span>
+        
+        <span class="n">terms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">term_str</span><span class="p">)</span>
+
+    <span class="n">expansion</span> <span class="o">=</span> <span class="s2">" + "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">terms</span><span class="p">)</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"(</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">)^</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">expansion</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">latex_expansion</span> <span class="o">=</span> <span class="n">binomial_expansion_latex</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">"$$ </span><span class="si">{</span><span class="n">latex_expansion</span><span class="si">}</span><span class="s2"> $$"</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -13866,25 +14026,8 @@ $$x_1 + x_2 + x_3 = 4$$</p>
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The number of solutions to x1 + x2 + ... + x3 = 4 is: 15
-The solutions are:
-  0   +   0   +   4   = 4
-  0   +   1   +   3   = 4
-  0   +   2   +   2   = 4
-  0   +   3   +   1   = 4
-  0   +   4   +   0   = 4
-  1   +   0   +   3   = 4
-  1   +   1   +   2   = 4
-  1   +   2   +   1   = 4
-  1   +   3   +   0   = 4
-  2   +   0   +   2   = 4
-  2   +   1   +   1   = 4
-  2   +   2   +   0   = 4
-  3   +   0   +   1   = 4
-  3   +   1   +   0   = 4
-  4   +   0   +   0   = 4
-</pre>
+<div class="output_markdown rendered_html output_subarea">
+<p>$$ (5 + 9)^5 = 5^{5} + 5 \cdot 5^{4} \cdot 9^{1} + 10 \cdot 5^{3} \cdot 9^{2} + 10 \cdot 5^{2} \cdot 9^{3} + 5 \cdot 5^{1} \cdot 9^{4} + 9^{5} $$</p>
 </div>
 </div>
 </div>
@@ -13893,7 +14036,8 @@ The solutions are:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>U prethondom kodu smo koristi ugrađenu funkciju <code>combinations_with_replacement</code>, a u sledećem kodu generisemo rešenja rekurzivno</p>
+<h2 id="Razvoj-polinomne-formule">Razvoj polinomne formule<a class="anchor-link" href="#Razvoj-polinomne-formule">¶</a></h2><p>Matematički zapis:</p>
+<p>$ \binom{n}{m_1, m_2, ..., m_l} = \frac{n!}{m_1! \cdot ... \cdot m_l!} $</p>
 </div>
 </div>
 </div>
@@ -13902,43 +14046,49 @@ The solutions are:
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_solutions_recursive</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">current_solution</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">current_sum</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">current_solution</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">current_solution</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 
-    <span class="c1"># Base case: if we have used all n variables and reached the sum m</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">current_solution</span><span class="p">)</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">current_sum</span> <span class="o">==</span> <span class="n">m</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">[</span><span class="n">current_solution</span><span class="p">]</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">[]</span>
+<span class="k">def</span> <span class="nf">multinomial_coefficient</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">coeff</span> <span class="o">=</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">k</span><span class="p">:</span>
+        <span class="n">coeff</span> <span class="o">//=</span> <span class="n">factorial</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">coeff</span>
 
-    <span class="c1"># Recursive case: Try all possible values for the next variable</span>
-    <span class="n">solutions</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="n">current_sum</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>  <span class="c1"># x_k can be any value from 0 to (m - current_sum)</span>
-        <span class="n">solutions</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">find_solutions_recursive</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">current_solution</span> <span class="o">+</span> <span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">current_sum</span> <span class="o">+</span> <span class="n">i</span><span class="p">))</span>
-    
-    <span class="k">return</span> <span class="n">solutions</span>
+<span class="k">def</span> <span class="nf">polynomial_formula_latex</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">terms</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">variables</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">variables</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">count_and_print_solutions_recursive</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
-    <span class="n">solutions</span> <span class="o">=</span> <span class="n">find_solutions_recursive</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The number of solutions to x1 + x2 + ... + x</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2"> is:"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">solutions</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"The solutions are:"</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">sol</span> <span class="ow">in</span> <span class="n">solutions</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">" + "</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">sol</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s2"> ^5</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span> <span class="o">+</span> <span class="s2">" = "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [14]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">m</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">count_and_print_solutions_recursive</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+    <span class="c1"># Generate all possible combinations of exponents for the variables</span>
+    <span class="k">def</span> <span class="nf">generate_terms</span><span class="p">(</span><span class="n">exponents</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="n">m</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">exponents</span><span class="p">)</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+                <span class="n">coeff</span> <span class="o">=</span> <span class="n">multinomial_coefficient</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">exponents</span><span class="p">)</span>
+                <span class="n">term</span> <span class="o">=</span> <span class="s1">' </span><span class="se">\\</span><span class="s1">cdot '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">variables</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">^</span><span class="se">{{</span><span class="si">{</span><span class="n">exponents</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="se">}}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="k">if</span> <span class="n">exponents</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span>
+                <span class="p">)</span>
+                <span class="n">terms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">coeff</span><span class="si">}</span><span class="s2"> </span><span class="se">\\</span><span class="s2">cdot </span><span class="si">{</span><span class="n">term</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">coeff</span> <span class="o">!=</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">term</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="k">for</span> <span class="n">exp</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">exponents</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">exp</span>
+            <span class="n">generate_terms</span><span class="p">(</span><span class="n">exponents</span><span class="p">,</span> <span class="n">total</span> <span class="o">+</span> <span class="n">exp</span><span class="p">,</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">generate_terms</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">m</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">polynomial</span> <span class="o">=</span> <span class="s2">" + "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">terms</span><span class="p">)</span>
+    <span class="n">variables_string</span> <span class="o">=</span> <span class="s2">" + "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">variables</span><span class="p">)</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"(</span><span class="si">{</span><span class="n">variables_string</span><span class="si">}</span><span class="s2">)^</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">polynomial</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">polynomial_expansion_latex</span> <span class="o">=</span> <span class="n">polynomial_formula_latex</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">"$$ </span><span class="si">{</span><span class="n">polynomial_expansion_latex</span><span class="si">}</span><span class="s2"> $$"</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -13947,25 +14097,8 @@ The solutions are:
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The number of solutions to x1 + x2 + ... + x3 = 4 is: 15
-The solutions are:
-  0   +   0   +   4   = 4
-  0   +   1   +   3   = 4
-  0   +   2   +   2   = 4
-  0   +   3   +   1   = 4
-  0   +   4   +   0   = 4
-  1   +   0   +   3   = 4
-  1   +   1   +   2   = 4
-  1   +   2   +   1   = 4
-  1   +   3   +   0   = 4
-  2   +   0   +   2   = 4
-  2   +   1   +   1   = 4
-  2   +   2   +   0   = 4
-  3   +   0   +   1   = 4
-  3   +   1   +   0   = 4
-  4   +   0   +   0   = 4
-</pre>
+<div class="output_markdown rendered_html output_subarea">
+<p>$$ (a + b + c + d)^2 = d^{2} + 2 \cdot c^{1} \cdot d^{1} + c^{2} + 2 \cdot b^{1} \cdot d^{1} + 2 \cdot b^{1} \cdot c^{1} + b^{2} + 2 \cdot a^{1} \cdot d^{1} + 2 \cdot a^{1} \cdot c^{1} + 2 \cdot a^{1} \cdot b^{1} + a^{2} $$</p>
 </div>
 </div>
 </div>
@@ -13974,46 +14107,50 @@ The solutions are:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Zadatak-2">Zadatak 2<a class="anchor-link" href="#Zadatak-2">¶</a></h3><p>Odrediti broj rešenja jednačine
-$$x_1+x_2+...+x_n = m$$
-pri čemu je $x_i\ge 1$ za $i\in \{1, 2, ..., n\}$</p>
-<p><em>Rešenje:</em></p>
-<p>Jedina razlika u odnosu na prethodni zadatak što sada ne možemo da imamo $0$. Ovaj zadatak se smenom $y_i = x_i - 1 \iff x_i = y_i - 1$ može svesti na prethodni zadatak, zato što ako je $x_i \ge 1 \iff x_i - 1 \ge 0 \iff y_i \ge 0$.
-$$
-\begin{aligned}
-x_1+x_2+...+x_n &amp;= m \\
-(y_1 - 1) + (y_2 - 1) + ... + (y_n - 1) &amp;= m \\
-y_1 + y_2 + ... + y_n &amp;= m - n
-\end{aligned}
-$$</p>
-<p>Pa je rešenje $\overline{C}(n, m-n)$.</p>
-<h3 id="Zadatak-3">Zadatak 3<a class="anchor-link" href="#Zadatak-3">¶</a></h3><p>Odrediti broj rešenja jednačine nad skupom nenegativnih celih brojeva
-$$x_1+x_2+x_3+x_4+x_5 = 10$$
-pri čemu je $x_i\le 5$ za $i\in \{1, 2, 3, 4, 5\}$</p>
-<p><em>Rešenje:</em></p>
-<p>Slično kao u prethodnom zadatku uvođenjem smene $y_i = 5 - x_i \iff x_i = 5 - y_i$ zadatak svodimo na prvi. Smena je validna zato što važi
-$$x_i\le 5 \iff x_i-5\le 0 \iff 5-x_i\ge 0 \iff y_i\ge 0$$</p>
-<p>Pa dobijamo:
-$$
-\begin{aligned}
-x_1+x_2+x_3+x_4+x_5 &amp;= 10 \\
-(5 - y_1) + (5-y_2) + (5-y_3) + (5-y_4) + (5-y_5)  &amp;= 10 \\
-25 - y_1 - y_2 - y_3 - y_4 - y_5 &amp;= 10 \\
-y_1 + y_2 + y_3 + y_4 + y_5 &amp;= 25 - 10 \\
-y_1 + y_2 + y_3 + y_4 + y_5 &amp;= 15 \\
-\end{aligned}
-$$</p>
-<p>Pa je rešenje $\overline{C}(5, 15) = \frac{(15 + 5 - 1)!}{15!(5-1)!} = \frac{19!}{15!4!} = \frac{19\cdot 18\cdot 17\cdot 16\cdot 15!}{15! \cdot 4\cdot 3\cdot 2\cdot 1} = 3876$</p>
+<h3 id="Vandermondov-identitet">Vandermondov identitet<a class="anchor-link" href="#Vandermondov-identitet">¶</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [15]:</div>
+<div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">all_solutions</span> <span class="o">=</span> <span class="n">find_solutions</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Number of solutions for 5 variables and sum 15: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_solutions</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Calculate factorial of x."""</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">binomial_coefficient</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Calculate the binomial coefficient C(n, k)."""</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">//</span> <span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">vandermonde_identity</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Verify Vandermonde's identity: </span>
+<span class="sd">    sum_{k=0}^{r} C(m, k) * C(n, r-k) = C(m+n, r)"""</span>
+    
+    <span class="n">lhs</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">binomial_coefficient</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">binomial_coefficient</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">r</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+    
+    <span class="n">rhs</span> <span class="o">=</span> <span class="n">binomial_coefficient</span><span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">n</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"LHS: </span><span class="si">{</span><span class="n">lhs</span><span class="si">}</span><span class="s2">, RHS: </span><span class="si">{</span><span class="n">rhs</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">lhs</span> <span class="o">==</span> <span class="n">rhs</span>
+
+<span class="c1"># Example usage</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">is_valid</span> <span class="o">=</span> <span class="n">vandermonde_identity</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">is_valid</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Vandermonde's identity holds for m=</span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2">, n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">, r=</span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Vandermonde's identity does not hold for m=</span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2">, n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">, r=</span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -14023,7 +14160,8 @@ $$</p>
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Number of solutions for 5 variables and sum 15: 3876
+<pre>LHS: 70, RHS: 70
+Vandermonde's identity holds for m=5, n=3, r=4.
 </pre>
 </div>
 </div>
@@ -14035,10 +14173,10 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <div style="display:flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;">
 <p>
-<a href="./07-permutacije.html">&lt; 07 Uređeni izbori - permutacije</a>
+<a href="./08-kombinacije.html">&lt; 08 Neuređeni izbori - kombinacije</a>
 </p>
 <p>
-<a href="./09-binomni-i-polinomni-koeficijenti.html">09 Binomni i polinomni koeficijent &gt;</a>
+<a href="#">USKORO &gt;</a>
 </p>
 </div>
 </div>
