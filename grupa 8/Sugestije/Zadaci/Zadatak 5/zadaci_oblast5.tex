@@ -1,70 +1,93 @@
-\documentclass{article}
-\usepackage{amsmath, amssymb}
+
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[serbian]{babel}
+\usepackage{amsmath,amsfonts,amssymb}
 
 \begin{document}
 
-\section*{Dodatni zadaci binomni koeficijent}
+\section*{Zadaci oblast 5}
 
-\begin{enumerate}
-    \item \textbf{Zadatak 1:} Neka su $n,m,k \in \mathbb{N}_0$. Dokazati da važi:
-    \[
-    k \cdot \binom{n+1}{k} = (n+1) \cdot \binom{n}{k-1}.
-    \]
+\subsection*{Zadatak 1}
+Rešiti rekurentnu relaciju:
+\[
+a_n^2 - 2a_{n-1} = 0, \quad za \; n \geq 1,
+\]
+ako je $a_0 = 2$.
 
-    \textbf{Rešenje:} Prema definiciji binomnog koeficijenta, dobijamo sledeći niz ekvivalencija:
-    \[
-    k \cdot \binom{n+1}{k} = (n+1) \cdot \binom{n}{k-1} \iff
-    \frac{k \cdot (n+1)!}{k!(n+1-k)!} = \frac{(n+1) \cdot n!}{(k-1)!(n-k+1)!}.
-    \]
-    Daljom obradom potvrđuje se identitet. $\Box$
+Rešenje: Kako je $a_n^2 = 2a_{n-1}$, logaritmovanjem jednačine dobijamo:
+\[
+2 \log_2 a_n = \log_2 2 + \log_2 a_{n-1} = 1 + \log_2 a_{n-1}.
+\]
+Smenom $b_n = \log_2 a_n$ se dobija nehomogena rekurentna relacija:
+\[
+2b_n = 1 + b_{n-1},
+\]
+koja zadovoljava početni uslov $b_0 = \log_2 2 = 1$. Rešenje homogenog dela je $h_n = A \left( \frac{1}{2} \right)^n$, a partikularno rešenje tražimo kao $p_n = C$. Upravljanjem $p_n$ u nehomogenu jednačinu dobijamo $C = 1$, a zbog početnog uslova važi $1 = b_0 = A (1) + 1$, pa je $A = 0$. Dobijamo:
+\[
+b_n = 1,
+\]
+pa je $a_n = 2^1 = 2$ za sve $n \geq 1$.
 
-    \item \textbf{Zadatak 2:} Dati kombinatornu interpretaciju identiteta:
-    \[
-    \binom{5}{3} = \binom{2}{2} \cdot \binom{3}{3} + \binom{2}{1} \cdot \binom{3}{2} + \binom{2}{0} \cdot \binom{3}{1}.
-    \]
+\subsection*{Zadatak 2}
+Rešiti sistem rekurentnih relacija:
+\begin{align*}
+a_{n+1} &= 3b_n, \\
+b_{n+1} &= 2a_n - b_n,
+\end{align*}
+ako je $a_0 = 1$ i $b_0 = 0$.
 
-    \textbf{Rešenje:} Posmatramo petočlani skup $A = \{a, b, c, d, e\}$ i njegovu particiju na proizvoljan dvočlani podskup i njegov komplement. Na osnovu principa sume i proizvoda dobijamo zadati identitet. $\Box$
+Rešenje: Kada u drugu jednačinu uvrstimo da je $a_n = 3b_{n-1}$ dobijamo rekurentnu relaciju $b_{n+1} = 6b_{n-1} - b_n$. Njena karakteristična jednačina $t^2 + t - 6 = 0$ ima korene $t_1 = 3$ i $t_2 = -2$, te je $b_n = A(3^n) + B(-2)^n$. Za rešavanje dobijene rekurentne relacije drugog reda trebaju nam dva početna uslova, $b_0$ i $b_1$. Kako je $b_1 = 2a_0 - b_0 = 2$, iz druge jednačine, konstante $A$ i $B$ dobijamo rešenjem sistema:
+\[
+A + B = 0, \\
+-3A + 2B = 2.
+\]
+Sada je $A = -\frac{2}{5}$ i $B = \frac{2}{5}$, te je $b_n = -\frac{2}{5}(-2)^n + \frac{2}{5}(3^n)$. Opšti član niza $a_n$ na kraju dobijamo na sledeći način:
+\[
+a_n = 3b_{n-1} = \frac{2}{5}(-3)^n + \frac{3}{5}(2^n).
+\]
 
-    \item \textbf{Zadatak 5:} Odrediti koeficijent uz $x^2y^3z^5$ u razvoju stepena trinoma $(x+2y-z)^{10}$.
+\subsection*{Zadatak 3}
+Rešite nehomogenu rekurentnu relaciju:
+\[
+b_n = 3b_{n-1} + 2^n
+\]
+sa početnim uslovom \(b_0 = 2\).
 
-    \textbf{Rešenje:} Koeficijent uz $x^2y^3z^5$ sadrži se u sabirku:
-    \[
-    \binom{10}{2,3,5} x^2(2y)^3(-z)^5.
-    \]
-    Izračunavanjem dobijamo:
-    \[
-    \binom{10}{2,3,5} = \frac{10!}{2! \cdot 3! \cdot 5!} = 2520, \quad (2y)^3 = 8y^3, \quad (-z)^5 = -z^5.
-    \]
-    Konačno, koeficijent je:
-    \[
-    2520 \cdot 8 \cdot (-1) = -20160.
-    \]
-    Dakle, koeficijent je $-20160$. $\Box$
+Rešenje:
+1. Prvo rešavamo homogeni deo:
+\[
+b_n^H = 3b_{n-1}^H
+\]
+Karakteristična jednačina je \(r = 3\), pa je homogeno rešenje oblika:
+\[
+b_n^H = C \cdot 3^n
+\]
 
-    \item \textbf{Zadatak 6:} Odrediti koeficijent uz $x$ u razvoju stepena trinoma $(1 + x - x^2)^{1749}$.
+2. Za partikularno rešenje pretpostavljamo oblik \(b_n^P = A \cdot 2^n\), jer je desna strana \(2^n\).  
+Uvrstimo u jednačinu:
+\[
+A \cdot 2^n = 3 \cdot A \cdot 2^{n-1} + 2^n
+\]
+Deljenjem sa \(2^n\) dobijamo:
+\[
+A = \frac{2}{1} = 2
+\]
+Dakle, \(b_n^P = 2 \cdot 2^n\).
 
-    \textbf{Rešenje:} Član koji odgovara stepenu $x$ ima formu:
-    \[
-    T_{i,j,k} = \binom{1749}{i,j,k} x^j(-x^2)^k.
-    \]
-    Za $j=1, k=0$ koeficijent je $1749$. $\Box$
+3. Opšte rešenje je:
+\[
+b_n = b_n^H + b_n^P = C \cdot 3^n + 2 \cdot 2^n
+\]
 
-    \item \textbf{Zadatak 9:} Naći koeficijent uz $a^3b^2$ u razvoju izraza $(3a-2b)^5$.
+4. Koristeći početni uslov \(b_0 = 2\), dobijamo:
+\[
+b_0 = C \cdot 3^0 + 2 \cdot 2^0 = C + 2 \implies C = 0
+\]
 
-    \textbf{Rešenje:} Koristimo multinomnu formulu:
-    \[
-    \binom{5}{3,2}(3a)^3(-2b)^2 = \frac{5!}{3! \cdot 2!} \cdot 27a^3 \cdot 4b^2 = 10 \cdot 108 = 1080.
-    \]
-    Dakle, koeficijent uz $a^3b^2$ je $1080$. $\Box$
-
-    \item \textbf{Zadatak 10:} Naći koeficijent uz $x^4y$ u razvoju izraza $(2x-3y)^5$.
-
-    \textbf{Rešenje:} Koeficijent je dat kao:
-    \[
-    \binom{5}{4,1}(2x)^4(-3y)^1 = \frac{5!}{4! \cdot 1!} \cdot 16x^4 \cdot (-3y) = -240.
-    \]
-    Dakle, koeficijent uz $x^4y$ je $-240$. $\Box$
-
-\end{enumerate}
+Tako da je rešenje:
+\[
+b_n = 2 \cdot 2^n
+\]
 
 \end{document}

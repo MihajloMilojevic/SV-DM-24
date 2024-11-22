@@ -3,114 +3,67 @@
 
 \begin{document}
 
-\section*{Dodatni zadaci za uredjene izbore.}
+\section*{Dodatni zadaci binomni koeficijent}
 
 \begin{enumerate}
-    \item Neka je $A = \{1, 2, 3, 4\}$.
-    \begin{enumerate}
-        \item Napisati sve 3-permutacije skupa $A$.
-        \item Odrediti broj 3-permutacija skupa $A$.
-    \end{enumerate}
-    \textbf{Rešenje:}
-    \begin{enumerate}
-        \item 3-permutacije skupa $A$ su:
-        \[
-        \begin{aligned}
-            &123, 124, 132, 134, 142, 143,\\
-            &213, 214, 231, 234, 241, 243,\\
-            &312, 314, 321, 324, 341, 342,\\
-            &412, 413, 421, 423, 431, 432.
-        \end{aligned}
-        \]
-        \item Broj 3-permutacija je $P(4, 3) = 4 \cdot 3 \cdot 2 = 24$.
-    \end{enumerate}
-
-    \item Neka je dat multiskup $M = \{a, a, b, c\}$.
-    \begin{enumerate}
-        \item Napisati sve 3-permutacije multiskupa $M$.
-        \item Odrediti broj 3-permutacija multiskupa $M$.
-    \end{enumerate}
-    \textbf{Rešenje:}
-    \begin{enumerate}
-        \item 3-permutacije multiskupa $M$ su:
-        \[
-        aaa, aab, aac, aba, abc, aca, acb, baa, bab, bac, bca, cab, cac.
-        \]
-        \item Broj 3-permutacija je:
-        \[
-        P(n, m) = \frac{n!}{(n-m)!} = \frac{4!}{(4-3)!} = 4 \cdot 3 \cdot 2 = 24.
-        \]
-    \end{enumerate}
-
-    \item Profesor je podelio 188 studenata u 4 jednake grupe od po 47 studenata. Svaka grupa bira po dva predstavnika da prezentuju rešenja zadataka. Na koliko načina može biti izabrano tih 8 predstavnika?
-
-    \textbf{Rešenje:}
-    Broj načina da se izaberu dva predstavnika iz svake od četiri grupe računa se kao:
+    \item \textbf{Zadatak 1:} Neka su $n,m,k \in \mathbb{N}_0$. Dokazati da važi:
     \[
-    \binom{47}{2}^4.
+    k \cdot \binom{n+1}{k} = (n+1) \cdot \binom{n}{k-1}.
+    \]
+
+    \textbf{Rešenje:} Prema definiciji binomnog koeficijenta, dobijamo sledeći niz ekvivalencija:
+    \[
+    k \cdot \binom{n+1}{k} = (n+1) \cdot \binom{n}{k-1} \iff
+    \frac{k \cdot (n+1)!}{k!(n+1-k)!} = \frac{(n+1) \cdot n!}{(k-1)!(n-k+1)!}.
+    \]
+    Daljom obradom potvrđuje se identitet. $\Box$
+
+    \item \textbf{Zadatak 2:} Dati kombinatornu interpretaciju identiteta:
+    \[
+    \binom{5}{3} = \binom{2}{2} \cdot \binom{3}{3} + \binom{2}{1} \cdot \binom{3}{2} + \binom{2}{0} \cdot \binom{3}{1}.
+    \]
+
+    \textbf{Rešenje:} Posmatramo petočlani skup $A = \{a, b, c, d, e\}$ i njegovu particiju na proizvoljan dvočlani podskup i njegov komplement. Na osnovu principa sume i proizvoda dobijamo zadati identitet. $\Box$
+
+    \item \textbf{Zadatak 5:} Odrediti koeficijent uz $x^2y^3z^5$ u razvoju stepena trinoma $(x+2y-z)^{10}$.
+
+    \textbf{Rešenje:} Koeficijent uz $x^2y^3z^5$ sadrži se u sabirku:
+    \[
+    \binom{10}{2,3,5} x^2(2y)^3(-z)^5.
     \]
     Izračunavanjem dobijamo:
     \[
-    \binom{47}{2} = \frac{47 \cdot 46}{2} = 1081.
+    \binom{10}{2,3,5} = \frac{10!}{2! \cdot 3! \cdot 5!} = 2520, \quad (2y)^3 = 8y^3, \quad (-z)^5 = -z^5.
     \]
-    Ukupan broj načina je:
+    Konačno, koeficijent je:
     \[
-    1081^4 = 1,217,696,081.
+    2520 \cdot 8 \cdot (-1) = -20160.
     \]
+    Dakle, koeficijent je $-20160$. $\Box$
 
-    \item Neka je dat multiskup $M = \{a, a, b, c\}$.
-    \begin{enumerate}
-        \item Napisati sve 3-permutacije multiskupa $M$.
-        \item Napisati Java program koji generiše sve permutacije multiskupa $M$.
-    \end{enumerate}
-    \textbf{Rešenje:}
-    \begin{enumerate}
-        \item 3-permutacije multiskupa $M$ su:
-        \[
-        aaa, aab, aac, aba, abc, aca, acb, baa, bab, bac, bca, cab, cac.
-        \]
-        \item Java program za generisanje svih permutacija multiskupa $M$:
-        \begin{verbatim}
-// Java program to generate all permutations of a multiset
-import java.util.ArrayList;
-import java.util.List;
+    \item \textbf{Zadatak 6:} Odrediti koeficijent uz $x$ u razvoju stepena trinoma $(1 + x - x^2)^{1749}$.
 
-public class MultisetPermutations {
+    \textbf{Rešenje:} Član koji odgovara stepenu $x$ ima formu:
+    \[
+    T_{i,j,k} = \binom{1749}{i,j,k} x^j(-x^2)^k.
+    \]
+    Za $j=1, k=0$ koeficijent je $1749$. $\Box$
 
-    // Function to swap elements
-    private static void swap(char[] array, int i, int j) {
-        char temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
+    \item \textbf{Zadatak 9:} Naći koeficijent uz $a^3b^2$ u razvoju izraza $(3a-2b)^5$.
 
-    // Recursive function to generate all permutations
-    private static void permute(char[] array, int l, int r, List<String> results) {
-        if (l == r) {
-            results.add(new String(array));
-        } else {
-            for (int i = l; i <= r; i++) {
-                swap(array, l, i);
-                permute(array, l + 1, r, results);
-                swap(array, l, i); // backtrack
-            }
-        }
-    }
+    \textbf{Rešenje:} Koristimo multinomnu formulu:
+    \[
+    \binom{5}{3,2}(3a)^3(-2b)^2 = \frac{5!}{3! \cdot 2!} \cdot 27a^3 \cdot 4b^2 = 10 \cdot 108 = 1080.
+    \]
+    Dakle, koeficijent uz $a^3b^2$ je $1080$. $\Box$
 
-    // Main function
-    public static void main(String[] args) {
-        char[] M = {'a', 'a', 'b', 'c'};
-        List<String> results = new ArrayList<>();
-        permute(M, 0, M.length - 1, results);
+    \item \textbf{Zadatak 10:} Naći koeficijent uz $x^4y$ u razvoju izraza $(2x-3y)^5$.
 
-        // Print the results
-        for (String perm : results) {
-            System.out.println(perm);
-        }
-    }
-}
-        \end{verbatim}
-    \end{enumerate}
+    \textbf{Rešenje:} Koeficijent je dat kao:
+    \[
+    \binom{5}{4,1}(2x)^4(-3y)^1 = \frac{5!}{4! \cdot 1!} \cdot 16x^4 \cdot (-3y) = -240.
+    \]
+    Dakle, koeficijent uz $x^4y$ je $-240$. $\Box$
 
 \end{enumerate}
 
