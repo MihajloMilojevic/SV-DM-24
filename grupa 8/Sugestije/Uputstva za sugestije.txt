@@ -1,1 +1,16 @@
-Ovde ce se nalaziti uputstva za sugestije kada sve bude spremno
+Da bismo olakšali razumevanje sugestija grupe 8, pripremili smo kratko uputstvo za sve priložene materijale.
+Sugestije su podeljene u četiri kategorije: gramatičke greške, programi, teorija i zadaci. U nastavku je detaljnije objašnjenje svake kategorije:
+
+-Gramatičke, stilske i štamparske greške:
+Ova sekcija obuhvata sve uočene greške vezane za pravopis, stil i formatiranje teksta. Sve navedene greške je potrebno ispraviti kako bi materijal bio što jasniji i profesionalniji.
+
+-Programi:
+Kada su u pitanju programi, pretpostavljamo da će grupa 1 zadržati većinu svojih primera i da neće pronaći veliku korist u našim. Ipak, priložili smo naše programe jer su opštijeg karaktera i rešavaju probleme vezane za teme u celini, umesto specifičnih primera. Smatramo da naši programi mogu poslužiti kao uvod u temu ili inspiracija za prilagođavanje postojećih primera. Takođe, priložili smo slike koje prikazuju kako naši programi funkcionišu, kako bi pregled bio što jasniji.
+
+-Teorija:
+Kod teorijskog dela, priložili smo sugestije koje smatramo važnim, kao i dodatne predloge koji mogu obogatiti sadržaj. Na primer, preporučujemo dodavanje definicija koje na jednostavniji i manje matematički način objašnjavaju problematiku, uz primere radi lakšeg razumevanja.
+
+-Zadaci:
+Smatramo da grupa 1 nema dovoljno zadataka, te da bi veći broj rešenih primera pomogao čitaocima da bolje razumeju teme kroz praktične probleme. Priložili smo zadatke za svaku obrađenu temu, za koje verujemo da mogu značajno doprineti razumevanju gradiva.
+
+Ovo uputstvo služi da omogući lakše snalaženje i bolju integraciju naših sugestija u rad grupe 1. Nadamo se da će predlozi doprineti kvalitetnijem materijalu i boljoj prezentaciji tema.

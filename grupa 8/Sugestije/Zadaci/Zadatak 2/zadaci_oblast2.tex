@@ -1,0 +1,93 @@
+
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[serbian]{babel}
+\usepackage{amsmath,amsfonts,amssymb}
+
+\begin{document}
+
+\section*{Zadaci oblast 5}
+
+\subsection*{Zadatak 1}
+Rešiti rekurentnu relaciju:
+\[
+a_n^2 - 2a_{n-1} = 0, \quad za \; n \geq 1,
+\]
+ako je $a_0 = 2$.
+
+Rešenje: Kako je $a_n^2 = 2a_{n-1}$, logaritmovanjem jednačine dobijamo:
+\[
+2 \log_2 a_n = \log_2 2 + \log_2 a_{n-1} = 1 + \log_2 a_{n-1}.
+\]
+Smenom $b_n = \log_2 a_n$ se dobija nehomogena rekurentna relacija:
+\[
+2b_n = 1 + b_{n-1},
+\]
+koja zadovoljava početni uslov $b_0 = \log_2 2 = 1$. Rešenje homogenog dela je $h_n = A \left( \frac{1}{2} \right)^n$, a partikularno rešenje tražimo kao $p_n = C$. Upravljanjem $p_n$ u nehomogenu jednačinu dobijamo $C = 1$, a zbog početnog uslova važi $1 = b_0 = A (1) + 1$, pa je $A = 0$. Dobijamo:
+\[
+b_n = 1,
+\]
+pa je $a_n = 2^1 = 2$ za sve $n \geq 1$.
+
+\subsection*{Zadatak 2}
+Rešiti sistem rekurentnih relacija:
+\begin{align*}
+a_{n+1} &= 3b_n, \\
+b_{n+1} &= 2a_n - b_n,
+\end{align*}
+ako je $a_0 = 1$ i $b_0 = 0$.
+
+Rešenje: Kada u drugu jednačinu uvrstimo da je $a_n = 3b_{n-1}$ dobijamo rekurentnu relaciju $b_{n+1} = 6b_{n-1} - b_n$. Njena karakteristična jednačina $t^2 + t - 6 = 0$ ima korene $t_1 = 3$ i $t_2 = -2$, te je $b_n = A(3^n) + B(-2)^n$. Za rešavanje dobijene rekurentne relacije drugog reda trebaju nam dva početna uslova, $b_0$ i $b_1$. Kako je $b_1 = 2a_0 - b_0 = 2$, iz druge jednačine, konstante $A$ i $B$ dobijamo rešenjem sistema:
+\[
+A + B = 0, \\
+-3A + 2B = 2.
+\]
+Sada je $A = -\frac{2}{5}$ i $B = \frac{2}{5}$, te je $b_n = -\frac{2}{5}(-2)^n + \frac{2}{5}(3^n)$. Opšti član niza $a_n$ na kraju dobijamo na sledeći način:
+\[
+a_n = 3b_{n-1} = \frac{2}{5}(-3)^n + \frac{3}{5}(2^n).
+\]
+
+\subsection*{Zadatak 3}
+Rešite nehomogenu rekurentnu relaciju:
+\[
+b_n = 3b_{n-1} + 2^n
+\]
+sa početnim uslovom \(b_0 = 2\).
+
+Rešenje:
+1. Prvo rešavamo homogeni deo:
+\[
+b_n^H = 3b_{n-1}^H
+\]
+Karakteristična jednačina je \(r = 3\), pa je homogeno rešenje oblika:
+\[
+b_n^H = C \cdot 3^n
+\]
+
+2. Za partikularno rešenje pretpostavljamo oblik \(b_n^P = A \cdot 2^n\), jer je desna strana \(2^n\).  
+Uvrstimo u jednačinu:
+\[
+A \cdot 2^n = 3 \cdot A \cdot 2^{n-1} + 2^n
+\]
+Deljenjem sa \(2^n\) dobijamo:
+\[
+A = \frac{2}{1} = 2
+\]
+Dakle, \(b_n^P = 2 \cdot 2^n\).
+
+3. Opšte rešenje je:
+\[
+b_n = b_n^H + b_n^P = C \cdot 3^n + 2 \cdot 2^n
+\]
+
+4. Koristeći početni uslov \(b_0 = 2\), dobijamo:
+\[
+b_0 = C \cdot 3^0 + 2 \cdot 2^0 = C + 2 \implies C = 0
+\]
+
+Tako da je rešenje:
+\[
+b_n = 2 \cdot 2^n
+\]
+
+\end{document}

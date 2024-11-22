@@ -1,0 +1,89 @@
+==============================================
+Definicija za m-kombinacije multiskupa se moze napisati malo razumnije: 
+
+-m-kombinacija multiskupa je nacin da se iz skupa od n razlicitih elemenata
+odabere m elemenata, pri cemu su ponavljanja dozvoljena. Drugim recima,
+biramo m elemenata iz skupa velicine n, ali jedan element mozemo izabrati vise
+puta
+
+=================================================
+Moze se dodati i dokaz za m-kombinacije multiskupa preko kutija i kuglica:
+
+-\subsubsection*{Dokaz}
+
+Zamislimo problem prebrojavanja \( m \)-kombinacija kao raspodelu \( m \) identičnih objekata u \( n \) različitih kategorija. Na primer, ako imamo \( m \) kuglica i \( n \) različitih kutija, želimo da pronadjemo koliko različitih načina možemo rasporediti \( m \) kuglica u \( n \) kutija, pri čemu kutija može biti prazna.
+
+Ovaj problem možemo preformulisati na sledeći način: ako je \( x_i \) broj kuglica u \( i \)-toj kutiji, tada tražimo broj rešenja jednačine:
+
+\[
+x_1 + x_2 + \dots + x_n = m
+\]
+
+pri čemu su \( x_i \geq 0 \). Ovaj problem možemo rešiti korišćenjem principa zvezda i pregrada (engl. \emph{stars and bars}). Raspored \( m \) kuglica možemo posmatrati kao niz od \( m \) zvezdica i \( n-1 \) pregrada, koje razdvajaju različite kutije. Na primer, za \( m = 5 \) i \( n = 3 \), jedan mogući raspored može izgledati ovako:
+
+\[
+\ast \ast | \ast | \ast \ast
+\]
+
+Ovaj raspored odgovara rešenju \( x_1 = 2 \), \( x_2 = 1 \), \( x_3 = 2 \).
+
+Ukupan broj takvih rasporeda je broj načina da se izabere \( m \) pozicija za zvezdice i \( n-1 \) pozicija za pregrade, što je kombinatorni problem sa formulom:
+
+\[
+\binom{m + n - 1}{m}
+\]
+
+Na ovaj način dobijamo traženu formulu za broj \( m \)-kombinacija multiskupa.
+
+==================================================
+Treba dodati i prikaz kombinacija bez ponavljanja preko m-permutacija:
+
+-\subsection{Prikaz neuredjenih preko uredjenih izbora elemenata}
+
+Neuredjeni izbori, odnosno kombinacije, predstavljaju situacije u kojima redosled elemenata nije bitan. Ključna razlika izmedju permutacija i kombinacija je u tome sto permutacije prebrojavaju sve moguce rasporede elemenata, dok kombinacije zanemaruju redosled.
+
+Za svaku kombinaciju od \( m \) elemenata postoji \( m! \) razlicitih nacina da se ti elementi rasporede, sto se u slucaju kombinacija ne razlikuje. Stoga mozemo izracunati broj kombinacija tako sto cemo broj permutacija podeliti sa \( m! \), jer permutacije ukljucuju sve rasporede, dok mi u kombinacijama zelimo samo neuredjene izbore.
+
+Izvodjenje formule za kombinacije polazi od izraza za permutacije:
+
+\[
+C(n, m) = \frac{P(n, m)}{m!}
+\]
+
+Sto mozemo dalje razviti kao:
+
+\[
+C(n, m) = \frac{n!}{m!(n - m)!}
+\]
+
+Dakle, broj kombinacija, odnosno broj nacina da se izabere \( m \) elemenata iz skupa \( n \) elemenata, moze se dobiti tako sto cemo ukupan broj permutacija podeliti sa \( m! \), brojem razlicitih uredjenih rasporeda tih \( m \) elemenata.
+
+\subsubsection{Objasnjenje i primer}
+
+Da bi bilo jasno kako koristimo permutacije za izracunavanje kombinacija, razmotricemo sledeci primer. Pretpostavimo da imamo skup \( S = \{a, b, c, d, e\} \) i zelimo da izaberemo 3 elementa iz tog skupa bez obzira na redosled.
+
+Najpre, racunamo broj permutacija za izbor 3 elementa, gde je redosled bitan:
+
+\[
+P(5, 3) = \frac{5!}{(5 - 3)!} = 60
+\]
+
+Medjutim, mi zelimo da prebrojimo neuredjene izbore. Znamo da za svaki izbor od 3 elementa postoji tacno \( 3! = 6 \) razlicitih uredjenja tih elemenata. Stoga, broj neuredjenih izbora je:
+
+\[
+C(5, 3) = \frac{P(5, 3)}{3!} = \frac{60}{6} = 10
+\]
+
+Dakle, postoji 10 razlicitih nacina da se izaberu 3 elementa iz skupa od 5, kada redosled nije bitan. Ovaj rezultat pokazuje da neuredjene izbore mozemo opisati i prebrojati pomocu uredjenih izbora, uz korekciju za broj rasporeda istih elemenata.
+
+\subsubsection{Zakljucak}
+
+Kroz ovo izvodjenje, jasno je da neuredjeni izbori (kombinacije) mogu biti izrazeni i prebrojani koristeci uredjene izbore (permutacije). Odnos izmedju permutacija i kombinacija dat je formulom:
+
+\[
+C(n, m) = \frac{P(n, m)}{m!}
+\]
+
+Ova formula pokazuje da su kombinacije zapravo podskup permutacija, gde zanemarujemo redosled elemenata. Na taj nacin, prebrojavanje neuredjenih izbora moze biti izvedeno direktno iz prebrojavanja uredjenih izbora, uz odgovarajuce prilagodjavanje.
+
+===============================================================

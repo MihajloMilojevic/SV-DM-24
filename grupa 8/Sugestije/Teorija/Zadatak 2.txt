@@ -1,0 +1,16 @@
+======================================
+Kod veze izmedju preslikavanja i m-permutacija multiskupa moze da se doda teorijski deo koji je laksi za razumevanje:
+
+-Funkcija skupa A u skup B je skup svih uredjenih parova (binarnih relacija)
+takvih da su prvi clanovi elementi skupa A (domena funkcije), a drugi clanovi
+elementi skupa B (kodomena). Neophodno je da se svaki element skupa A pojavi
+tacno jednom kao prva komponenta relacije, dok moze postojati vise relacija sa
+istom drugom komponentom (vise elemenata skupa A se moze preslikavati u isti
+element skupa B).
+Obzirom da se elementi skupa B (slike) mogu ponavljati, znamo da pres-
+likavanje mozemo povezati sa permutacijama multiskupa. Recimo da je m broj
+elemenata skupa A, a l broj elemenata skupa B. Pri preslikavanju biramo m
+od mogucih l slika tako da znamo da skupu svih preslikavanja odgovara m-
+permutacija multiskupa.
+
+=========================================

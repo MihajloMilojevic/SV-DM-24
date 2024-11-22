@@ -1,0 +1,66 @@
+==========================================
+Treba dodati malo objasnjenja kako se generatorne funkcije prikazuju preko brojnog niza i zatvorene forme:
+
+-\subsection{Generatne funkcije kao brojni niz i zatvorena forma}
+
+Generatne funkcije su alat koji omogućava prikaz nizova na više različitih načina. 
+
+\[
+G(z) = a_0 + a_1 z + a_2 z^2 + a_3 z^3 + \ldots
+\]
+
+Ova generatna funkcija se može prikazati na još dva načina:
+\begin{enumerate}
+    \item Kao \textbf{brojni niz} \( (a_0, a_1, a_2, \ldots) \).
+    \item Kao \textbf{zatvorena forma}, koja predstavlja algebarski izraz za generatnu funkciju u kompaktnom obliku.
+\end{enumerate}
+
+\subsubsection{Šta je zatvorena forma?}
+
+Zatvorena forma je način da generatnu funkciju izrazimo kao jednostavan algebarski izraz koji opisuje beskonačni red. Umesto da koristimo beskonačnu sumu, zatvorena forma nam omogućava direktno izražavanje generatne funkcije koristeći funkcije poput razlomaka ili drugih algebarskih izraza.
+
+Na primer:
+\begin{itemize}
+    \item Za brojni niz \( (0, 0, 0, \ldots) \), generatna funkcija je \( G(z) = 0 \) i zatvorena forma je takodje \( 0 \).
+    \item Za niz \( (1, 0, 0, \ldots) \), generatna funkcija je \( G(z) = 1 \), a zatvorena forma je \( 1 \).
+    \item Za niz \( (3, 2, 1, 0, \ldots) \), generatna funkcija je \( G(z) = 3 + 2z + z^2 \), a zatvorena forma je jednostavno \( 3 + 2z + z^2 \).
+    \item Za geometrijski niz \( (1, 1, 1, \ldots) \), zatvorena forma se može izraziti kao \( G(z) = \frac{1}{1 - z} \).
+\end{itemize}
+
+\subsubsection{Pronalaženje zatvorene forme za niz \( (1, 1, 1, \ldots) \)}
+
+Posmatrajmo sada konkretan primer gde svaki član niza ima vrednost 1, tj. \( (1, 1, 1, \ldots) \). Njegova generatna funkcija je beskonačan geometrijski red:
+
+\[
+G(z) = 1 + z + z^2 + z^3 + \ldots
+\]
+
+Da bismo pronašli zatvorenu formu, koristimo sledeći postupak:
+
+\begin{enumerate}
+    \item Množimo generatnu funkciju sa \( (1 - z) \):
+    \[
+    (1 - z) G(z) = (1 - z)(1 + z + z^2 + z^3 + \ldots)
+    \]
+    \item Raširimo izraz sa desne strane:
+    \[
+    (1 - z) G(z) = 1 - z + z - z^2 + z^2 - z^3 + \ldots
+    \]
+    \item Svi sabirci se medjusobno poništavaju osim prvog člana, tako da dobijamo:
+    \[
+    (1 - z) G(z) = 1
+    \]
+    \item Deljenjem obe strane sa \( (1 - z) \) dobijamo zatvorenu formu:
+    \[
+    G(z) = \frac{1}{1 - z}
+    \]
+\end{enumerate}
+
+\noindent
+\textbf{Zaključak:} Generatna funkcija za niz \( (1, 1, 1, \ldots) \) ima zatvorenu formu:
+\[
+G(z) = \frac{1}{1 - z},
+\]
+što znači da ovaj beskonačni niz možemo opisati korišćenjem jednostavnog razlomka. Ova zatvorena forma nam omogućava da na kompaktan način radimo sa beskonačnim nizovima.
+
+===============================================================

@@ -1,0 +1,39 @@
+============================================================
+Moze se dodati koliki je zbir polinomnih koeficijenata i kako se racuna:
+
+-\textbf{Primer 1:} Izračunati
+
+\[
+\sum_{\substack{m_1 + \dots + m_l = n \\ m_1 \geq 0, \dots, m_l \geq 0}} \binom{n}{m_1, \dots, m_l}.
+\]
+
+\textit{Rešenje.} Ako je u polinomnoj formuli \( x_1 = x_2 = \dots = x_l = 1 \), onda dobijamo
+\[
+\sum_{\substack{m_1 + \dots + m_l = n \\ m_1 \geq 0, \dots, m_l \geq 0}} \binom{n}{m_1, \dots, m_l} = (1 + \dots + 1)^n = l^n.
+\]
+
+
+============================================================
+Moze se napisati primer za razvijanje preko polinomne formule:
+
+-\textbf{Primer 2:} Napisati u razvijenom obliku $(x + y + z)^3$
+
+\textit{Rešenje.} Na osnovu polinomne formule sledi
+
+\[
+(x + y + z)^3 = \binom{3}{3, 0, 0} x^3 y^0 z^0 + \binom{3}{0, 3, 0} x^0 y^3 z^0 + \binom{3}{0, 0, 3} x^0 y^0 z^3
+\]
+\[
++ \binom{3}{0, 1, 2} x^0 y^1 z^2 + \binom{3}{0, 2, 1} x^0 y^2 z^1 + \binom{3}{1, 0, 2} x^1 y^0 z^2
+\]
+\[
++ \binom{3}{1, 2, 0} x^1 y^2 z^0 + \binom{3}{2, 0, 1} x^2 y^0 z^1 + \binom{3}{2, 1, 0} x^2 y^1 z^0
+\]
+\[
++ \binom{3}{1, 1, 1} x^1 y^1 z^1
+\]
+\[
+= x^3 + y^3 + z^3 + 3 y^2 z + 3 y z^2 + 3 x z^2 + 3 x y^2 + 3 x^2 z + 3 x^2 y + 6 x y z.
+\]
+
+=================================================================

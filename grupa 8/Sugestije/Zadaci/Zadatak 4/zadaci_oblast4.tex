@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\section*{Dodatni zadaci za uredjene izbore.}
+
+\begin{enumerate}
+    \item Neka je $A = \{1, 2, 3, 4\}$.
+    \begin{enumerate}
+        \item Napisati sve 3-permutacije skupa $A$.
+        \item Odrediti broj 3-permutacija skupa $A$.
+    \end{enumerate}
+    \textbf{Rešenje:}
+    \begin{enumerate}
+        \item 3-permutacije skupa $A$ su:
+        \[
+        \begin{aligned}
+            &123, 124, 132, 134, 142, 143,\\
+            &213, 214, 231, 234, 241, 243,\\
+            &312, 314, 321, 324, 341, 342,\\
+            &412, 413, 421, 423, 431, 432.
+        \end{aligned}
+        \]
+        \item Broj 3-permutacija je $P(4, 3) = 4 \cdot 3 \cdot 2 = 24$.
+    \end{enumerate}
+
+    \item Neka je dat multiskup $M = \{a, a, b, c\}$.
+    \begin{enumerate}
+        \item Napisati sve 3-permutacije multiskupa $M$.
+        \item Odrediti broj 3-permutacija multiskupa $M$.
+    \end{enumerate}
+    \textbf{Rešenje:}
+    \begin{enumerate}
+        \item 3-permutacije multiskupa $M$ su:
+        \[
+        aaa, aab, aac, aba, abc, aca, acb, baa, bab, bac, bca, cab, cac.
+        \]
+        \item Broj 3-permutacija je:
+        \[
+        P(n, m) = \frac{n!}{(n-m)!} = \frac{4!}{(4-3)!} = 4 \cdot 3 \cdot 2 = 24.
+        \]
+    \end{enumerate}
+
+    \item Profesor je podelio 188 studenata u 4 jednake grupe od po 47 studenata. Svaka grupa bira po dva predstavnika da prezentuju rešenja zadataka. Na koliko načina može biti izabrano tih 8 predstavnika?
+
+    \textbf{Rešenje:}
+    Broj načina da se izaberu dva predstavnika iz svake od četiri grupe računa se kao:
+    \[
+    \binom{47}{2}^4.
+    \]
+    Izračunavanjem dobijamo:
+    \[
+    \binom{47}{2} = \frac{47 \cdot 46}{2} = 1081.
+    \]
+    Ukupan broj načina je:
+    \[
+    1081^4 = 1,217,696,081.
+    \]
+
+    \item Neka je dat multiskup $M = \{a, a, b, c\}$.
+    \begin{enumerate}
+        \item Napisati sve 3-permutacije multiskupa $M$.
+        \item Napisati Java program koji generiše sve permutacije multiskupa $M$.
+    \end{enumerate}
+    \textbf{Rešenje:}
+    \begin{enumerate}
+        \item 3-permutacije multiskupa $M$ su:
+        \[
+        aaa, aab, aac, aba, abc, aca, acb, baa, bab, bac, bca, cab, cac.
+        \]
+        \item Java program za generisanje svih permutacija multiskupa $M$:
+        \begin{verbatim}
+// Java program to generate all permutations of a multiset
+import java.util.ArrayList;
+import java.util.List;
+
+public class MultisetPermutations {
+
+    // Function to swap elements
+    private static void swap(char[] array, int i, int j) {
+        char temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+
+    // Recursive function to generate all permutations
+    private static void permute(char[] array, int l, int r, List<String> results) {
+        if (l == r) {
+            results.add(new String(array));
+        } else {
+            for (int i = l; i <= r; i++) {
+                swap(array, l, i);
+                permute(array, l + 1, r, results);
+                swap(array, l, i); // backtrack
+            }
+        }
+    }
+
+    // Main function
+    public static void main(String[] args) {
+        char[] M = {'a', 'a', 'b', 'c'};
+        List<String> results = new ArrayList<>();
+        permute(M, 0, M.length - 1, results);
+
+        // Print the results
+        for (String perm : results) {
+            System.out.println(perm);
+        }
+    }
+}
+        \end{verbatim}
+    \end{enumerate}
+
+\end{enumerate}
+
+\end{document}

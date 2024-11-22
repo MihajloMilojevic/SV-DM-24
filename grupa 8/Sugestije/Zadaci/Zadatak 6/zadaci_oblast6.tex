@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section*{Zadatak 4}
+Izračunati generatornu funkciju za niz $\{a_n\}_{n \geq 0}$ gde je $a_n = 8a_{n-1} + 10^{n-1}$ sa $a_0 = 1$.
+
+\textbf{Rešenje:} \\
+Za generatornu funkciju definišemo:
+\[
+A(z) = \sum_{n=0}^{\infty} a_n z^n.
+\]
+Korišćenjem rekurzivne relacije, formiramo jednadžbu:
+\[
+A(z) = \frac{1 - 9z}{(1 - 8z)(1 - 10z)}.
+\]
+Ova formula proizilazi iz rekurzivne relacije koja uključuje geometrijski niz.
+
+\section*{Zadatak 10}
+
+Koristeći Njutnovu binomnu formulu, razviti sledeće zatvorene forme u otvoreni oblik:
+
+\begin{itemize}
+    \item[(a)] \( \left( 1 + \frac{1}{2} z \right)^{-5} \)
+    \item[(b)] \( \frac{1}{(1 - 2z)^7} \)
+\end{itemize}
+
+\subsection*{Rešenje}
+
+   Koristimo binomni red za izraze oblika \( (1 + x)^r \) kada je eksponent negativan ili ceo broj. Opšti oblik je:
+   \begin{equation*}
+   (1 + x)^r = \sum_{k=0}^{\infty} \binom{r}{k} x^k, \quad \text{gde je} \quad \binom{r}{k} = \frac{r (r-1) \cdots (r-k+1)}{k!}.
+   \end{equation*}
+
+2. **Rešenje za deo (a)**: 
+   Za izraz \( \left( 1 + \frac{1}{2} z \right)^{-5} \), postavljamo \( r = -5 \) i \( x = \frac{1}{2} z \):
+   \begin{equation*}
+   \left( 1 + \frac{1}{2} z \right)^{-5} = \sum_{k=0}^{\infty} \binom{-5}{k} \left( \frac{1}{2} z \right)^k = \sum_{k=0}^{\infty} \binom{-5}{k} \frac{z^k}{2^k}.
+   \end{equation*}
+   
+   Ovaj red predstavlja otvoreni oblik za \( \left( 1 + \frac{1}{2} z \right)^{-5} \).
+
+3. **Rešenje za deo (b)**: 
+   Za izraz \( \frac{1}{(1 - 2z)^7} \), imamo \( r = 7 \) i \( x = 2z \):
+   \begin{equation*}
+   \frac{1}{(1 - 2z)^7} = \sum_{k=0}^{\infty} \binom{6+k}{k} (2z)^k = \sum_{k=0}^{\infty} \binom{6+k}{k} 2^k z^k.
+   \end{equation*}
+
+   Ovde smo iskoristili formulu za pozitivne eksponente u binomnom razvoju. Ovaj izraz predstavlja traženi otvoreni oblik za \( \frac{1}{(1 - 2z)^7} \).
+
+
+\end{document}

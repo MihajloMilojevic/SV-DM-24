@@ -1,0 +1,67 @@
+====================================================
+Kod osobina operacija nad skupovima mogu da se dodaju i:
+
+1. Idempotentnost
+
+\subsubsection{Idempotentnost}
+Unija i presek skupa sa samim sobom daju isti skup:
+
+\[
+A \cup A = A
+\]
+
+\[
+A \cap A = A
+\]
+
+2. Neprisutnost
+
+\subsubsection{Neprisutnost}
+Unija skupa sa praznim skupom daje izvorni skup:
+
+\[
+A \cup \emptyset = A
+\]
+
+Presek skupa sa praznim skupom daje prazan skup:
+
+\[
+A \cap \emptyset = \emptyset
+\]
+
+3.Komplementarnost
+
+\subsubsection{Komplementarnost}
+Skup \( A \) i njegov komplement \( A' \) zadovoljavaju:
+
+\[
+A \cup A' = U
+\]
+
+\[
+A \cap A' = \emptyset
+\]
+
+==================================================
+Kod definicije matematicke indukcije moze da se doda i recenica kao zakljucak koja kaze:
+
+-Ako su prvi i treci korak uspesni, zakljucujemo da tvrdnja vazi.
+
+==================================================
+Kod definicije nabrajanja i prebrojavanja moze da se ubaci mali uvod i da se doda po jedna recenica koja objasnjava ova dva pojma na malo prostiji nacin:
+
+-Nabrojati i prebrojati elemente nekog skupa su fundamentalni zadaci u diskretnoj matematici koji se odnose na brojanje elemenata skupa i identifikaciju njihovih karakteristika.
+
+-Nabrojati znaci izlistati sve elemente skupa.
+
+-Prebrojati znaci odrediti ukupan broj elemenata nekog skupa.
+
+====================================================
+Pre principa sume i principa ukljucenja-iskljucenja moze da se doda mali uvod:
+
+-Ako se broj elemenata nekog konacnog skupa odredjuje pomocu njegove
+dekompozicije na uniju manjih skupova, razlikuju se slucajevi kada neki od
+tih skupova imaju zajednicke elemente i kada su svaka dva skupa medjusobno
+disjunktni. U prvom slucaju koristimo princip ukljucenja-iskljucenja a u drugom slucaju koristimo princip sume.
+
+=====================================================

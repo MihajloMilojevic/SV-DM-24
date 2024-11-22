@@ -1,0 +1,4 @@
+===================================================
+Mogu se dodati konkretni primeri kako izgleda partikularno resenje u zavisnosti od korena homogenog dela i nehomogenog dela jednacine
+
+====================================================
