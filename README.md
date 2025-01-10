@@ -543,6 +543,26 @@ Studenti su podeljeni u 10 grupa i to:
                 <td>Igor Maljik</td>
                 <td>SV37/2023</td>
             </tr>
+            <tr>
+                <td>6.</td>
+                <td>Andrej Dobrić</td>
+                <td>SV18/2023</td>
+            </tr>
+            <tr>
+                <td>7.</td>
+                <td>Luka Berić</td>
+                <td>SV82/2024</td>
+            </tr>
+            <tr>
+                <td>8.</td>
+                <td>Jovan Cvijanović</td>
+                <td>SV83/2024</td>
+            </tr>
+            <tr>
+                <td>9.</td>
+                <td>Dragan Gavrić</td>
+                <td>SV84/2024</td>
+            </tr>
         <tbody>
         </tbody>
     </table>
